@@ -1,0 +1,16 @@
+{
+  "seller": [
+    {
+      "name": "sdf sdf",
+      "email": "sdf@seller.com",
+      "password": "sdf@123",
+      "id": 1
+    },
+    {
+      "name": "sdf sdf",
+      "email": "sdf@seller.com",
+      "password": "sdf@123",
+      "id": 2
+    }
+  ]
+}

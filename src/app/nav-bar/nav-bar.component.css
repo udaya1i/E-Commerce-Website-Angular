@@ -1,13 +1,60 @@
-
-.container{
-    display: flex;
-}
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-between;
 }
-.logo{
-    height: 100px;
-    width: 100px;
+.navbar .clslogo {
+    height: 80px;
+    width: 80px;
+    margin: 0px;
+    justify-content: center;
+}
+.navbar .navigation {
+    display: inline-flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar .navigation li {
+    padding-left: 15px;
+    padding-top: 20px;
+}
+.navbar .navigation li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
 
+.navbar .navigation li a:hover{
+    background-color: lightblue;
+}
+
+
+
+.navbar .search {
+    flex: 1;
+    display: flex;
+    margin-top: 13px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.navbar .search input {
+    flex: 1;
+    border-color: #053D3D;
+    border: 1px solid #053D3D;
+    border-right: 0px;
+    height: 30px;
+    padding-left: 15px;
+    color: #053D3D;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius:5px ;
+}
+.navbar .search button {
+    border-color: #053D3D;
+    border: 1px solid #053D3D;
+    height: 34px;
+    color :#053D3D;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 0px;
 }

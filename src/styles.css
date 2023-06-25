@@ -1,9 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-    background-color: rgb(193, 208, 208);
+body {
+    background-color: rgb(232, 245, 245);
 }
-.container{
+
+.container {
     margin-left: 5%;
     margin-right: 5%;
-
 }
+
+/* common from style start here */
+.common-form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 400px;
+}
+
+
+.form-item {
+    margin-bottom: 10px;
+    height: 25px;
+    border-radius: 3px;
+    text-align: center;
+    color: black;
+}
+
+.form-buttom {
+    height: 30px;
+    border-radius: 3px;
+}
+
+
+
+/* common form style end here */
