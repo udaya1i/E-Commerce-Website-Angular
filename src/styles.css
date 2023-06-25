@@ -24,11 +24,14 @@ body {
     border-radius: 3px;
     text-align: center;
     color: black;
+    border: 2px solid rgb(238, 221, 221);
 }
 
 .form-buttom {
     height: 30px;
     border-radius: 3px;
+    border: 2px solid rgb(238, 221, 221);
+
 }
 
 

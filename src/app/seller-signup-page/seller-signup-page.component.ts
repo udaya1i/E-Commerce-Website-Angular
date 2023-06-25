@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../service/services.service';
+import { Router } from '@angular/router';
+import { SellerSignUp } from '../datatype';
 
 @Component({
   selector: 'app-seller-signup-page',
@@ -7,20 +9,15 @@ import { ServicesService } from '../service/services.service';
   styleUrls: ['./seller-signup-page.component.css']
 })
 export class SellerSignupPageComponent implements OnInit {
-
-   datas:any=[];
-
-  constructor(private services:ServicesService) { }
-
+  constructor(private ser: ServicesService, private router:Router) { }
   ngOnInit(): void {
   }
-
-  signup(data:Object){
-    console.log(data)
-    this.services.userSignUp()
-    
-    
-   
+  signUp(data:SellerSignUp):void{
+    this.ser.userSignUp(data).subscribe((response)=>{
+      if(response){
+        this.router.navigate(['seller-home'])
+      }
+    })
   }
-
 }
+

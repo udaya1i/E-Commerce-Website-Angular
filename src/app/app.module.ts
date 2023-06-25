@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { SellerSignupPageComponent } from './seller-signup-page/seller-signup-page.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

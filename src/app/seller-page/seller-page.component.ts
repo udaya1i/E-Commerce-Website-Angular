@@ -11,5 +11,6 @@ export class SellerPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
 
 }

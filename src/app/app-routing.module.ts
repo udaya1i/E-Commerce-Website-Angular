@@ -4,11 +4,18 @@ import { HomeComponent } from './home/home.component';
 import { SellerPageComponent } from './seller-page/seller-page.component';
 import { SellerSignupPageComponent } from './seller-signup-page/seller-signup-page.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { AuthGuardGuard } from './auth-guard.guard';
 
 const routes: Routes = [
   {
     path:'',
     component:HomeComponent
+  },
+  {
+    path:'seller-home',
+    component:SellerPageComponent,
+    pathMatch:'full',
+    canActivate:[AuthGuardGuard]
   },
   {
     path:'seller-singup-page',
@@ -21,7 +28,8 @@ const routes: Routes = [
   {
     path:'**',
     redirectTo:'404'
-  }
+  },
+  
  
 ];
 

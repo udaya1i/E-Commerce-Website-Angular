@@ -29,8 +29,6 @@
     background-color: lightblue;
 }
 
-
-
 .navbar .search {
     flex: 1;
     display: flex;
@@ -48,13 +46,15 @@
     color: #053D3D;
     border-top-left-radius: 5px;
     border-bottom-left-radius:5px ;
+    border: 2px solid rgb(238, 221, 221);
 }
 .navbar .search button {
     border-color: #053D3D;
     border: 1px solid #053D3D;
-    height: 34px;
+    height: 35px;
     color :#053D3D;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border-left: 0px;
+    border: 2px solid rgb(238, 221, 221);
 }
