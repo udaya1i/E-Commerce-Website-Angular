@@ -13,11 +13,7 @@ export class SellerSignupPageComponent implements OnInit {
   ngOnInit(): void {
   }
   signUp(data:SellerSignUp):void{
-    this.ser.userSignUp(data).subscribe((response)=>{
-      if(response){
-        this.router.navigate(['seller-home'])
-      }
-    })
+     this.ser.userSignUp(data)
   }
 }
 
