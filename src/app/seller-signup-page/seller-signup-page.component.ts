@@ -14,6 +14,7 @@ export class SellerSignupPageComponent implements OnInit {
   }
   signUp(data:SellerSignUp):void{
      this.ser.userSignUp(data)
+     
   }
 }
 
