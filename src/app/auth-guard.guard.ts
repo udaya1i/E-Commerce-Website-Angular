@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ServicesService } from './service/services.service';
 
@@ -7,13 +7,18 @@ import { ServicesService } from './service/services.service';
   providedIn: 'root'
 })
 export class AuthGuardGuard implements CanActivate {
-constructor (private service: ServicesService){}
+constructor (private service: ServicesService, private router:Router){}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.service.isSellerSignedIn;
+      
+        if(localStorage.getItem('seller')){
+          this.router.navigate(['seller-home'])
+          return true;
 
+        }
+      return this.service.isSellerSignedIn;
   }
   
 }

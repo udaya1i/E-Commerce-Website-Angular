@@ -16,20 +16,18 @@ export class ServicesService {
   userSignUp(data: SellerSignUp) {
     try {
       this.http
-        .post('http://localhost:3000/seller', data, { observe: 'response' })
-
-
-      this.router.navigate(['seller-home'])
-      this.isSellerSignedIn.next(true);
+        .post('http://localhost:3000/seller', data, { observe: 'response' }).subscribe((result) => {
+          localStorage.setItem('seller', JSON.stringify(result.body))
+        })
     } catch (e) {
       console.log(e);
-
     }
-
-    return false;
-
-
-
+  }
+  reloadSeller(){
+    if(localStorage.getItem('seller')){
+      this.isSellerSignedIn.next(true);
+      this.router.navigate(['seller-home'])
+    }
   }
 
 }

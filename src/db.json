@@ -1,5 +1,64 @@
 {
-  "seller":[
-
+  "seller": [
+    {
+      "name": "sdf",
+      "email": "asdf",
+      "password": "sadf",
+      "id": 1
+    },
+    {
+      "name": "udaya subedi",
+      "email": "udaya.subedi111@gmial.com",
+      "password": "udayasubedi",
+      "id": 2
+    },
+    {
+      "name": "Udaya Subedi",
+      "email": "Udaya.subedi111@gmail.com",
+      "password": "Test@123",
+      "id": 3
+    },
+    {
+      "name": "Udaya Subedi",
+      "email": "Udaya.subedi111@gmail.com",
+      "password": "Test@123",
+      "id": 4
+    },
+    {
+      "name": "sdfasdf",
+      "email": "sdf",
+      "password": "sdf",
+      "id": 5
+    },
+    {
+      "name": "Udaya Subedi",
+      "email": "udaya@test.com",
+      "password": "test2123",
+      "id": 6
+    },
+    {
+      "name": "Udaya Subedi",
+      "email": "udaya@test.com",
+      "password": "test@123",
+      "id": 7
+    },
+    {
+      "name": "Udaya",
+      "email": "udaya@test.com",
+      "password": "udayasubedi",
+      "id": 8
+    },
+    {
+      "name": "Udaya",
+      "email": "udaya@test.com",
+      "password": "udayasubedi",
+      "id": 9
+    },
+    {
+      "name": "udaya",
+      "email": "udaya@test.com",
+      "password": "udaya",
+      "id": 10
+    }
   ]
-} 
+}

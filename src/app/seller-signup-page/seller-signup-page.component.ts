@@ -10,11 +10,16 @@ import { SellerSignUp } from '../datatype';
 })
 export class SellerSignupPageComponent implements OnInit {
   constructor(private ser: ServicesService, private router:Router) { }
-  ngOnInit(): void {
+  ngOnInit():void{
+    this.ser.reloadSeller()
   }
   signUp(data:SellerSignUp):void{
      this.ser.userSignUp(data)
      
   }
 }
+
+
+
+
 
