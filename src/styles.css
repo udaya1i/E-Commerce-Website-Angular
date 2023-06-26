@@ -23,13 +23,18 @@ body {
     border-radius: 3px;
     text-align: center;
     color: black;
-    border: 2px solid rgb(238, 221, 221);
+    border: 2px solid rgb(180, 205, 241);
 }
 
 .form-buttom {
     height: 30px;
     border-radius: 3px;
-    border: 2px solid rgb(238, 221, 221);
+    border: 2px solid rgb(180, 205, 241);
+    margin-bottom: 20px;
+    background-color: blue;
+    color: white;
+    font: bold;
+    cursor: pointer;
 
 }
 /* common form style end here */

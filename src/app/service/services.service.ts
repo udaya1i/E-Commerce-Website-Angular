@@ -8,26 +8,24 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ServicesService {
-
   isSellerSignedIn = new BehaviorSubject<boolean>(false)
-
   constructor(private http: HttpClient, private router: Router) { }
-
   userSignUp(data: SellerSignUp) {
     try {
       this.http
-        .post('http://localhost:3000/seller', data, { observe: 'response' }).subscribe((result) => {
+        .post('http://localhost:3000/seller', data, { observe: 'response' })
+        .subscribe((result) => {
+          this.isSellerSignedIn.next(true);
           localStorage.setItem('seller', JSON.stringify(result.body))
+          this.router.navigate(['seller-home'])
         })
     } catch (e) {
       console.log(e);
     }
   }
-  reloadSeller(){
-    if(localStorage.getItem('seller')){
-      this.isSellerSignedIn.next(true);
-      this.router.navigate(['seller-home'])
-    }
+  reloadSave(){
+    this.isSellerSignedIn.next(true);
+    this.router.navigate(['seller-home'])
   }
 
 }

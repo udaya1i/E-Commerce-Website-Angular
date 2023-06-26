@@ -12,13 +12,12 @@ constructor (private service: ServicesService, private router:Router){}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      
-        if(localStorage.getItem('seller')){
-          this.router.navigate(['seller-home'])
-          return true;
+      if(localStorage.getItem('seller')){
+        return false;
+      }
 
-        }
-      return this.service.isSellerSignedIn;
+      // return this.service.isSellerSignedIn;
+      return false;
   }
   
 }

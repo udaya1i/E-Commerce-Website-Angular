@@ -5,3 +5,7 @@
 .sub-contianer{
     text-align: center;
 }
+.loginbtn{
+    color: rgb(4, 4, 248);
+    cursor: pointer;
+}

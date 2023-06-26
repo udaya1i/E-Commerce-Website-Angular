@@ -46,7 +46,7 @@
     color: #053D3D;
     border-top-left-radius: 5px;
     border-bottom-left-radius:5px ;
-    border: 2px solid rgb(238, 221, 221);
+    border: 2px solid rgb(180, 205, 241);
 }
 .navbar .search button {
     border-color: #053D3D;
@@ -56,5 +56,5 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border-left: 0px;
-    border: 2px solid rgb(238, 221, 221);
+    border: 2px solid rgb(180, 205, 241);
 }
