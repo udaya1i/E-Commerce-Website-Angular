@@ -12,10 +12,12 @@ export class SellerSignupPageComponent implements OnInit {
   constructor(private ser: ServicesService, private router:Router) { }
   showLogin=false;
  ngOnInit():void{
-    this.ser.reloadSave();
+    // this.ser.reloadSave();
   }
   signUp(data:SellerSignUp):void{
      this.ser.userSignUp(data)
+     this.ser.reloadSave();
+
   }
   openLogin(){
     this.showLogin=true;
