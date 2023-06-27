@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../service/services.service';
 import { Router } from '@angular/router';
-import { SellerSignUp } from '../datatype';
+import { SellerLogin, SellerSignUp } from '../datatype';
 
 @Component({
   selector: 'app-seller-signup-page',
@@ -12,11 +12,15 @@ export class SellerSignupPageComponent implements OnInit {
   constructor(private ser: ServicesService, private router:Router) { }
   showLogin=false;
  ngOnInit():void{
+  if(localStorage.getItem('seller')){
+    // this.router.navigate(['seller-home'])
     // this.ser.reloadSave();
   }
+  this.ser.reloadSave();
+}
   signUp(data:SellerSignUp):void{
      this.ser.userSignUp(data)
-     this.ser.reloadSave();
+    //  this.ser.reloadSave();
 
   }
   openLogin(){
@@ -28,6 +32,11 @@ export class SellerSignupPageComponent implements OnInit {
   openSignUp(){
     this.showLogin=false;
   }
+  LoginUser(data:SellerLogin){
+      this.ser.LoginUser(data);
+      this.ser.reloadSave();
+      
+    }
 }
 
 

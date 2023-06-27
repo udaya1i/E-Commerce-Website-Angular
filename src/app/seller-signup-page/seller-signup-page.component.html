@@ -15,8 +15,8 @@
     <!-- Login Page Start Here -->
     <div *ngIf="showLogin" class="sub-contianer">
         <h1 class="text">Login Your Account</h1>
-        <form #sellerLogin="ngForm" (ngSubmit)="Login(sellerLogin.value)" class="common-form">
-            <input ngModel name="email" class="form-item" type="email" placeholder="Enter Your Email">
+        <form #sellerLogin="ngForm" (ngSubmit)="LoginUser(sellerLogin.value)" class="common-form">
+            <input ngModel name="username" class="form-item" type="" placeholder="Enter Your Username">
             <input ngModel name="password" class="form-item" type="password" placeholder="Enter Your Password">
             <button class="form-buttom">Log-In</button>
             <a>Don't Have Account?<a class="loginbtn" (click)="openSignUp()"> Sign Up Here</a></a>
