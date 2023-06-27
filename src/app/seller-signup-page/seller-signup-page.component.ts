@@ -11,6 +11,7 @@ import { SellerLogin, SellerSignUp } from '../datatype';
 export class SellerSignupPageComponent implements OnInit {
   constructor(private ser: ServicesService, private router:Router) { }
   showLogin=false;
+  checkError:string = '';
  ngOnInit():void{
   if(localStorage.getItem('seller')){
     // this.router.navigate(['seller-home'])
@@ -33,9 +34,14 @@ export class SellerSignupPageComponent implements OnInit {
     this.showLogin=false;
   }
   LoginUser(data:SellerLogin){
+    this.checkError = "";
       this.ser.LoginUser(data);
       this.ser.reloadSave();
-      
+      this.ser.errorCheck.subscribe((check)=>{
+        if(check){
+          this.checkError = "Username/Password Incorrect";
+        }
+      })
     }
 }
 

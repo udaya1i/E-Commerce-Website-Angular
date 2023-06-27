@@ -1,5 +1,28 @@
 {
   "seller": [
-   
+    {
+      "name": "fasdfasdf",
+      "email": "bibek",
+      "password": "test@123",
+      "id": 1
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 2
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 3
+    },
+    {
+      "name": "dfa",
+      "email": "bibek",
+      "password": "test@123",
+      "id": 4
+    }
   ]
 }

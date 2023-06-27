@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { SellerLogin, SellerSignUp } from '../datatype';
-import { BehaviorSubject, tap } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -9,14 +9,15 @@ import { Router } from '@angular/router';
 })
 export class ServicesService {
   // isSellerSignedIn = new BehaviorSubject<boolean>(false)
-  isLoggedIn = new BehaviorSubject<boolean>(false)
+  errorCheck = new EventEmitter<boolean>(false);
+  isLoggedIn = new BehaviorSubject<boolean>(false);
   constructor(private http: HttpClient, private router: Router) { }
   userSignUp(data: SellerSignUp) {
     try {
       this.http
         .post('http://localhost:3000/seller', data, { observe: 'response' })
         .subscribe((result) => {
-          window.alert("Seller Sign Up Successfully")
+          window.alert("Seller Sign Up Successfully");
         })
     } catch (e) {
       console.log(e);
@@ -31,15 +32,12 @@ export class ServicesService {
     this.http.get(`http://localhost:3000/seller?email=${data.username}&password=${data.password}`,
       { observe: 'response' }).subscribe((reslut: any) => {
         if (reslut && reslut.body.length) {
-          localStorage.setItem('seller', JSON.stringify(reslut.body))
+          localStorage.setItem('seller', JSON.stringify(reslut.body));
           window.alert("Welcome!");
           this.router.navigate(['seller-home'])
-          this.isLoggedIn.next(true)
-
+          this.isLoggedIn.next(true);
         } else {
-          window.alert("Incorrect Username/Password")
-          // this.isLoggedIn.next(false)
-
+          this.errorCheck.emit(true);
         }
       })
   }

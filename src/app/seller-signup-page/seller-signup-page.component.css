@@ -9,3 +9,6 @@
     color: rgb(4, 4, 248);
     cursor: pointer;
 }
+.error{
+    color: red;
+}
