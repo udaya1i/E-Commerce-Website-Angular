@@ -287,6 +287,12 @@
       "email": "udaya",
       "password": "udaya",
       "id": 48
+    },
+    {
+      "name": "256",
+      "email": "bibek",
+      "password": "test@123",
+      "id": 49
     }
   ]
 }

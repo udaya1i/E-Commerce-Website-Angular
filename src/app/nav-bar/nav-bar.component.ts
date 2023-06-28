@@ -36,4 +36,5 @@ export class NavBarComponent implements OnInit {
     localStorage.removeItem('seller')
 
   }
+  
 }
