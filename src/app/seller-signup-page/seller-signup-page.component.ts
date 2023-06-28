@@ -9,40 +9,51 @@ import { SellerLogin, SellerSignUp } from '../datatype';
   styleUrls: ['./seller-signup-page.component.css']
 })
 export class SellerSignupPageComponent implements OnInit {
-  constructor(private ser: ServicesService, private router:Router) { }
-  showLogin=false;
-  checkError:string = '';
- ngOnInit():void{
-  if(localStorage.getItem('seller')){
-    // this.router.navigate(['seller-home'])
-    // this.ser.reloadSave();
-  }
-  this.ser.reloadSave();
-}
-  signUp(data:SellerSignUp):void{
-     this.ser.userSignUp(data)
-    //  this.ser.reloadSave();
+  constructor(private ser: ServicesService, private router: Router) { }
+  showLogin = false;
+  clickedSignup = false;
+  checkError: string = "";
+  // isEmpity: string = "";
+  ngOnInit(): void {
+    if (localStorage.getItem('seller')) {
 
+    }
+    this.ser.reloadSave();
   }
-  openLogin(){
-    this.showLogin=true;
+  signUp(data: SellerSignUp): void {
+    this.ser.userSignUp(data)
   }
-  Login(logdata:SellerSignUp){
+  openLogin() {
+    this.showLogin = true;
+  }
+  Login(logdata: SellerSignUp) {
     console.log(logdata)
   }
-  openSignUp(){
-    this.showLogin=false;
+  openSignUp() {
+    this.showLogin = false;
   }
-  LoginUser(data:SellerLogin){
+  LoginUser(data: SellerLogin) {
     this.checkError = "";
-      this.ser.LoginUser(data);
-      this.ser.reloadSave();
-      this.ser.errorCheck.subscribe((check)=>{
-        if(check){
-          this.checkError = "Username/Password Incorrect";
-        }
-      })
-    }
+    // this.isEmpity = "";
+    this.ser.LoginUser(data);
+    this.ser.reloadSave();
+    this.ser.errorCheck.subscribe((check) => {
+      if (check) {
+        this.checkError = "Username/Password Incorrect";
+      }
+    })
+    // this.ser.isEmpity.subscribe((check) => {
+    //   if (check) {
+    //     this.isEmpity = "Username/Password Can't be empity"
+    //   }
+    // })
+
+  }
+  
+  clicked(){
+    // console.log("testing");
+    this.clickedSignup = true;
+  }
 }
 
 

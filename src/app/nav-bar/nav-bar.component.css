@@ -27,6 +27,7 @@
 
 .navbar .navigation li a:hover{
     background-color: lightblue;
+    border: 1px solid rebeccapurple;
 }
 
 .navbar .search {
@@ -58,3 +59,14 @@
     border-left: 0px;
     border: 2px solid rgb(180, 205, 241);
 }
+.navbar .logoutbtn{
+    border-color: #053D3D;
+    border: 1px solid #053D3D;
+    height: 35px;
+    color :#053D3D;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 0px;
+    border: 2px solid rgb(180, 205, 241);
+}
+

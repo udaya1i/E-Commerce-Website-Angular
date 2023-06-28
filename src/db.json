@@ -1,28 +1,172 @@
 {
   "seller": [
     {
-      "name": "fasdfasdf",
-      "email": "bibek",
-      "password": "test@123",
+      "name": "udaya",
+      "email": "udaya",
+      "password": "udaya",
       "id": 1
     },
     {
-      "name": "",
-      "email": "",
-      "password": "",
+      "name": "udaya",
+      "email": "udaya",
+      "password": "udaya",
       "id": 2
     },
     {
-      "name": "",
-      "email": "",
-      "password": "",
+      "name": "fasdf",
+      "email": "asdfs",
+      "password": "sdfds",
       "id": 3
     },
     {
-      "name": "dfa",
-      "email": "bibek",
-      "password": "test@123",
+      "name": "fasdf",
+      "email": "asdfs",
+      "password": "sdfds",
       "id": 4
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 5
+    },
+    {
+      "name": "sdf",
+      "email": "sdf",
+      "password": "sdf",
+      "id": 6
+    },
+    {
+      "name": "sdf",
+      "email": "sdf",
+      "password": "sdf",
+      "id": 7
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 8
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 9
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 10
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 11
+    },
+    {
+      "name": "dfasd",
+      "email": "sdf",
+      "password": "sdf",
+      "id": 12
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 13
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 14
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 15
+    },
+    {
+      "name": "udaya",
+      "email": "udaya",
+      "password": "udaya",
+      "id": 16
+    },
+    {
+      "name": "udaya",
+      "email": "udaya@test.com",
+      "password": "udaya",
+      "id": 17
+    },
+    {
+      "name": "av",
+      "email": "av",
+      "password": "av",
+      "id": 18
+    },
+    {
+      "name": "av",
+      "email": "av",
+      "password": "",
+      "id": 19
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 20
+    },
+    {
+      "name": "asd",
+      "email": "sadff",
+      "password": "sdf",
+      "id": 21
+    },
+    {
+      "name": "asdf",
+      "email": "sdf",
+      "password": "sdf",
+      "id": 22
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 23
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 24
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 25
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 26
+    },
+    {
+      "name": "udaya",
+      "email": "udaya",
+      "password": "udaya",
+      "id": 27
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 28
     }
   ]
 }
