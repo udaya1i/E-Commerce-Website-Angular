@@ -4,14 +4,20 @@
         <input type="text" placeholder="Search in Bucket-House" />
         <button>Search</button>
     </div>
-    <ul class="navigation" *ngIf="userType ==='defalut'">
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/seller-singup-page">Seller-SignUp</a></li>
-        <li><a routerLink="">Login</a></li>
-        <li><a routerLink="">Card(0)</a></li>
-    </ul>
-    <ul class="navigation" *ngIf="userType!=='defalut'">
-        <li><a>Profile</a></li>
-        <li class="logout"><a routerLink="/" (click)="logOut()" >Log Out</a></li>
-    </ul>
+    <div class="" [ngSwitch]="userType">
+
+        <ul class="navigation" *ngSwitchCase="'defalut'">
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/seller-singup-page">Seller-SignUp</a></li>
+            <li><a routerLink="">Login</a></li>
+            <li><a routerLink="">Card(0)</a></li>
+        </ul>
+
+        <ul class="navigation" *ngSwitchCase="'seller'" >
+            <li><a>Product List</a></li>
+            <li><a>Add Product</a></li>
+            <li><a>{{sellerName}}</a></li>
+            <li><a routerLink="/" (click)="logOut()">Log Out</a></li>
+        </ul>
+    </div>
 </nav>

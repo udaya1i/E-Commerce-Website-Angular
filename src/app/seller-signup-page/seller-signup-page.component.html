@@ -6,14 +6,15 @@
             <input ngModel name="name" class="form-item" type="text" placeholder="Enter Your Name">
             <input ngModel name="email" class="form-item" type="email" placeholder="Enter Your Email">
             <input ngModel name="password" class="form-item" type="password" placeholder="Enter Your Password">
-            <button class="form-buttom"  >Sign-Up</button>
-            <a *ngIf="!clickedSignup">Already Have Account?<a (click)="openLogin()" class="loginbtn"> Log In Here</a></a>
-            <a *ngIf="clickedSignup">Sign-Up Successfully !! Click Here to<a class="loginbtn" (click)="openLogin()"> Login</a></a>
+            <button class="form-buttom" (click)="clicked()">Sign-Up</button>
+            <a *ngIf="!clickedSignup" >Already Have Account?<a (click)="openLogin()" class="loginbtn"> Log In Here</a></a>
+            <a *ngIf="clickedSignup">SignUp Successfully!! <a (click)="openLogin()" class="loginbtn">Log In Here</a></a>
+            
         </form>
     </div>
     <!-- Seller Registration page end here -->
     <!-- Login Page Start Here -->
-    <div *ngIf="showLogin" class="sub-contianer">
+    <div *ngIf="showLogin" class="sub-contianer" >
         <h1 class="text">Login Your Account</h1>
         <form #sellerLogin="ngForm" (ngSubmit)="LoginUser(sellerLogin.value)" class="common-form">
             <span class="error" >{{checkError}} </span>

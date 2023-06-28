@@ -28,6 +28,7 @@
 .navbar .navigation li a:hover{
     background-color: lightblue;
     border: 1px solid rebeccapurple;
+    cursor: pointer;
 }
 
 .navbar .search {

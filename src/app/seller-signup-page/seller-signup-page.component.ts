@@ -13,7 +13,6 @@ export class SellerSignupPageComponent implements OnInit {
   showLogin = false;
   clickedSignup = false;
   checkError: string = "";
-  // isEmpity: string = "";
   ngOnInit(): void {
     if (localStorage.getItem('seller')) {
 
@@ -22,6 +21,7 @@ export class SellerSignupPageComponent implements OnInit {
   }
   signUp(data: SellerSignUp): void {
     this.ser.userSignUp(data)
+
   }
   openLogin() {
     this.showLogin = true;
@@ -34,7 +34,6 @@ export class SellerSignupPageComponent implements OnInit {
   }
   LoginUser(data: SellerLogin) {
     this.checkError = "";
-    // this.isEmpity = "";
     this.ser.LoginUser(data);
     this.ser.reloadSave();
     this.ser.errorCheck.subscribe((check) => {
@@ -42,16 +41,9 @@ export class SellerSignupPageComponent implements OnInit {
         this.checkError = "Username/Password Incorrect";
       }
     })
-    // this.ser.isEmpity.subscribe((check) => {
-    //   if (check) {
-    //     this.isEmpity = "Username/Password Can't be empity"
-    //   }
-    // })
-
   }
-  
-  clicked(){
-    // console.log("testing");
+
+  clicked() {
     this.clickedSignup = true;
   }
 }
