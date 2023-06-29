@@ -5,6 +5,7 @@ import { SellerPageComponent } from './seller-page/seller-page.component';
 import { SellerSignupPageComponent } from './seller-signup-page/seller-signup-page.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AuthGuardGuard } from './auth-guard.guard';
+import { SellerProductAddComponent } from './seller-product-add/seller-product-add.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,11 @@ const routes: Routes = [
   {
     path:'seller-singup-page',
     component:SellerSignupPageComponent
+  },
+  {
+  path:'seller-product-add',
+  component:SellerProductAddComponent,
+  canActivate:[AuthGuardGuard]
   },
   {
     path:'404',

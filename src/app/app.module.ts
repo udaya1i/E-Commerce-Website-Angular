@@ -10,6 +10,7 @@ import { SellerSignupPageComponent } from './seller-signup-page/seller-signup-pa
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SellerProductAddComponent } from './seller-product-add/seller-product-add.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     SellerSignupPageComponent,
     ErrorPageComponent,
+    SellerProductAddComponent,
   ],
   imports: [
     BrowserModule,

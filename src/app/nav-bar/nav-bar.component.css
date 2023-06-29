@@ -75,8 +75,16 @@
     margin-right: 5px;
 
 }
-.sellerLogo{
-    margin-right: 50px;
-}
 
+
+.sellerLogo {
+    display: flex;
+    align-items: center; 
+  }
+  
+
+  .userName{
+    margin-right: 400px;
+  }
+  
 

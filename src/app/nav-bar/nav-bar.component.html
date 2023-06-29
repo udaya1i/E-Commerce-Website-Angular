@@ -1,6 +1,6 @@
 <nav class="navbar">
-    <a   class="navigation" href="#"><img src="../../assets/logo.jpg" alt="logo" class="clslogo"></a>
-   
+    <a class="navigation" href="#"><img src="../../assets/logo.jpg" alt="logo" class="clslogo"></a>
+
     <div class="search" *ngIf="userType=='defalut'">
         <input type="text" placeholder="Search in Bucket-House" />
         <button>Search</button>
@@ -15,9 +15,12 @@
         </ul>
 
         <ul class="navigation" *ngSwitchCase="'seller'">
-            <img src="../../assets/sellerlogo.jpg" alt="logo" class="logoo"><li class="sellerLogo">{{sellerName | uppercase}}</li>
-            <li><a>Product List</a></li>
-            <li><a>Add Product</a></li>
+            <li class="sellerLogo userName">
+                <img src="../../assets/sellerlogo.jpg" alt="logo" class="logoo">
+                <span> {{sellerName | uppercase}} </span>
+            </li>
+            <li><a routerLink="seller-product-add">Add Product</a></li>
+            <li><a routerLink="seller-home">Product List</a></li>
             <li><a routerLink="/" (click)="logOut()">Log Out</a></li>
         </ul>
     </div>
