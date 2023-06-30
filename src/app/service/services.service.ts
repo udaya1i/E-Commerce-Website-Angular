@@ -20,30 +20,29 @@ export class ServicesService {
   }
   userSignUp(data: SellerSignUp) {
     this.http
-      .post('http://localhost:3000/seller', data, { observe: 'response' })
-      .subscribe((result) => {
-      })
-  //   this.http.get('http://localhost:3000/seller').subscribe((reslut) => {
-  //     console.log(reslut)
-  //   })
+      .post('http://localhost:3000/seller', data)
+      .subscribe()
+    //   this.http.get('http://localhost:3000/seller').subscribe((reslut) => {
+    //     console.log(reslut)
+    //   })
 
-//     this.http.get('http://localhost:3000/seller').subscribe((result:any)=>{
-//   // const availableData = result.find((check:SellerLogin)=> check.username ===result.); 
-//   //   if(availableData){
-//   //     console.log("data already exist in dtabase");
-//   //   }
-// } else {
-//   this.http
-//     .post('http://localhost:3000/seller', data, { observe: 'response' })
-//     .subscribe((response) => {
-//       console.log('Data saved in the JSON server');
-//     });
-// }
-// });
-//   console.log();
-  
-// })
-}
+    //     this.http.get('http://localhost:3000/seller').subscribe((result:any)=>{
+    //   // const availableData = result.find((check:SellerLogin)=> check.username ===result.); 
+    //   //   if(availableData){
+    //   //     console.log("data already exist in dtabase");
+    //   //   }
+    // } else {
+    //   this.http
+    //     .post('http://localhost:3000/seller', data, { observe: 'response' })
+    //     .subscribe((response) => {
+    //       console.log('Data saved in the JSON server');
+    //     });
+    // }
+    // });
+    //   console.log();
+
+    // })
+  }
 
   LoginUser(data: SellerLogin) {
     this.http.get(`http://localhost:3000/seller?email=${data.username}&password=${data.password}`,
@@ -59,9 +58,6 @@ export class ServicesService {
       });
   }
 
-  addProduct(data:prodcutAdd){  
-    this.http.post('http://localhost:3000/addProduct',data,{observe:'response'}).subscribe()
-    console.log(data)
-
-  }
+  
+  
 }
