@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { SellerLogin, SellerSignUp } from '../datatype';
+import { SellerLogin, SellerSignUp, prodcutAdd } from '../datatype';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -45,11 +45,6 @@ export class ServicesService {
 // })
 }
 
-
-
-
-
-
   LoginUser(data: SellerLogin) {
     this.http.get(`http://localhost:3000/seller?email=${data.username}&password=${data.password}`,
       { observe: 'response' }).subscribe((reslut: any) => {
@@ -62,5 +57,11 @@ export class ServicesService {
           this.errorCheck.emit(true);
         }
       });
+  }
+
+  addProduct(data:prodcutAdd){  
+    this.http.post('http://localhost:3000/addProduct',data,{observe:'response'}).subscribe()
+    console.log(data)
+
   }
 }
