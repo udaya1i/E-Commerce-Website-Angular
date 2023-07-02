@@ -80,11 +80,9 @@
 .sellerLogo {
     display: flex;
     align-items: center; 
+    margin-right: 100px;
   }
   
 
-  .userName{
-    margin-right: 400px;
-  }
   
 

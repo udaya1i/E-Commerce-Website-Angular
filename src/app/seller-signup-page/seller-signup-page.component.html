@@ -2,22 +2,23 @@
     <!-- Seller Registration page start here -->
     <div *ngIf="!showLogin" class="sub-contianer">
         <h1 class="text">Seller Registration</h1>
-        <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value); clicked()" class="common-form">
-            <input ngModel name="name" class="form-item" type="text" placeholder="Enter Your Name">
-            <input ngModel name="email" class="form-item" type="email" placeholder="Enter Your Email">
-            <input ngModel name="password" class="form-item" type="password" placeholder="Enter Your Password">
-            <button class="form-buttom" (click)="clicked()">Sign-Up</button>
-            <a *ngIf="!clickedSignup" >Already Have Account?<a (click)="openLogin()" class="loginbtn"> Log In Here</a></a>
+        <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value); " class="common-form">
+            <input required ngModel name="name" class="form-item" type="text" placeholder="Enter Your Name">
+            <input required ngModel name="email" class="form-item" type="email" placeholder="Enter Your Email">
+            <input required ngModel name="password" class="form-item" type="password" placeholder="Enter Your Password">
+            <button class="form-buttom">Sign-Up</button>
+            <h3 *ngIf="empity!=''" style="color: red;">{{empity}}</h3>
+            <a *ngIf="!clickedSignup">Already Have Account?<a (click)="openLogin()" class="loginbtn"> Log In
+                    Here</a></a>
             <a *ngIf="clickedSignup">SignUp Successfully!! <a (click)="openLogin()" class="loginbtn">Log In Here</a></a>
-            
         </form>
     </div>
     <!-- Seller Registration page end here -->
     <!-- Login Page Start Here -->
-    <div *ngIf="showLogin" class="sub-contianer" >
+    <div *ngIf="showLogin" class="sub-contianer">
         <h1 class="text">Login Your Account</h1>
         <form #sellerLogin="ngForm" (ngSubmit)="LoginUser(sellerLogin.value)" class="common-form">
-            <span class="error" >{{checkError}} </span>
+            <span class="error">{{checkError}} </span>
             <!-- <span class="error">{{isEmpity}}</span> -->
             <input ngModel name="username" class="form-item" type="" placeholder="Enter Your Email">
             <input ngModel name="password" class="form-item" type="password" placeholder="Enter Your Password">

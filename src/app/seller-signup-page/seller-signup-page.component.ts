@@ -12,17 +12,27 @@ export class SellerSignupPageComponent implements OnInit {
   constructor(private ser: ServicesService, private router: Router) { }
   showLogin = false;
   clickedSignup = false;
+  empity: string = '';
+
   checkError: string = "";
   ngOnInit(): void {
     if (localStorage.getItem('seller')) {
-
     }
     this.ser.reloadSave();
   }
   signUp(data: SellerSignUp): void {
-    this.ser.userSignUp(data)
+    if (data.email.length >= 1 && data.name.length >= 1 && data.password.length >= 1) {
+      this.ser.userSignUp(data)
+      this.clickedSignup = true;
+    } else {
+      this.empity = "Please fill in all the required fields";
 
+      setTimeout(() => {
+        this.empity = "";
+      }, 2000);
+    }
   }
+
   openLogin() {
     this.showLogin = true;
   }
@@ -32,6 +42,7 @@ export class SellerSignupPageComponent implements OnInit {
   openSignUp() {
     this.showLogin = false;
   }
+
   LoginUser(data: SellerLogin) {
     this.checkError = "";
     this.ser.LoginUser(data);
@@ -41,10 +52,6 @@ export class SellerSignupPageComponent implements OnInit {
         this.checkError = "Username/Password Incorrect";
       }
     })
-  }
-
-  clicked() {
-    this.clickedSignup = true;
   }
 }
 
