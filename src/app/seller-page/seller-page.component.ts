@@ -11,11 +11,40 @@ import { prodcutAdd } from '../datatype';
 export class SellerPageComponent implements OnInit {
 
   productLists: prodcutAdd[] = [];
+  message: string | undefined;
 
 
   constructor(private productListService: ProductServiceService) { }
 
   ngOnInit(): void {
+    // this.productListService.getProduct().subscribe((result) => {
+    //   if (Array.isArray(result)) {
+    //     this.productLists = result;
+    //     console.log("productsas", this.productLists);
+    //   } else {
+    //     console.log("error");
+    //   }
+    // });
+    this.ProductList();
+  }
+  deleteProduct(id: number) {
+    this.productListService.deleteProduct(id).subscribe((result) => {
+      if (result) {
+        this.message = "Product Deleted Successfully";
+        this.ProductList();
+      }
+      setTimeout(() => {
+        this.message = '';
+      }, 3000);
+
+    })
+
+  }
+  editProduct(id: number) {
+    console.log("edit clicked");
+
+  }
+  ProductList() {
     this.productListService.getProduct().subscribe((result) => {
       if (Array.isArray(result)) {
         this.productLists = result;
@@ -24,13 +53,5 @@ export class SellerPageComponent implements OnInit {
         console.log("error");
       }
     });
-  }
-  deleteProduct() {
-    console.log("delete clicked");
-
-  }
-  editProduct() {
-    console.log("edit clicked");
-
   }
 }

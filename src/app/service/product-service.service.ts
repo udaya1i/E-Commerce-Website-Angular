@@ -7,19 +7,21 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductServiceService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   addProduct(data: prodcutAdd) {
     this.http.post('http://localhost:3000/addProduct', data).subscribe();
   }
 
-  getProduct(){
-   return this.http.get<prodcutAdd>('http://localhost:3000/addProduct')
+  getProduct() {
+    return this.http.get<prodcutAdd>('http://localhost:3000/addProduct')
   }
-  deleteProduct(data:any){
-     this.http.delete(`http://localhost:3000/addProduct?id`);
+  deleteProduct(id: number) {
+   return this.http.delete(`http://localhost:3000/addProduct/${id}`)
   }
-  editProduct(data:any){
-    return this.http.post(`http://localhost:3000/addProduct?id`, data);
+  editProduct(data: number) {
+    this.http.put(`http://localhost:3000/addProduct/${id}`,data).subscribe((result)=>{
+      
+    })
   }
 }

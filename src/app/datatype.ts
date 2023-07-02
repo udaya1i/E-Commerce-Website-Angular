@@ -15,6 +15,7 @@ export interface prodcutAdd{
     productPrice:string;
     productColor: string;
     description:string;
+    id:number;
 
     
 }
