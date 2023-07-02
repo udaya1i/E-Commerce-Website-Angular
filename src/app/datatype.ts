@@ -10,11 +10,11 @@ export interface SellerLogin{
 
 export interface prodcutAdd{
     productCatagory:string;
+    productImage:string;
     productName:string;
     productPrice:string;
     productColor: string;
     description:string;
-    imageUrl:string;
 
     
 }

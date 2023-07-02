@@ -6,7 +6,7 @@
         <input type="text" placeholder="Enter the color of Product" ngModel class="form-item"  name="productColor">
         <input type="text" placeholder="Enter the Price of Product" class="form-item" ngModel name="productPrice">
         <textarea type="text" maxlength="200" class="desctextarea" name="description" ngModel placeholder="Describe About Product"></textarea>
-        <input type="text" class="form-item" placeholder="Enter Image Url" ngModel name="image">
+        <input type="text" placeholder="Image Url" class="form-item" ngModel name="productImage">
         <button   class="form-buttom">Add Product</button>
         <p *ngIf="showdetails" style="color: rgb(41, 66, 4);">Product Add Successfully</p>
         <p *ngIf="dataNotFound" style="color: red;" >Please Enter Full Details About Product</p>

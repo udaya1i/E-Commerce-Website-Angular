@@ -10,29 +10,27 @@ import { prodcutAdd } from '../datatype';
 })
 export class SellerPageComponent implements OnInit {
 
-  public productLists:prodcutAdd|undefined;
+  productLists: prodcutAdd[] = [];
 
-  constructor(private productListService:ProductServiceService) { }
+
+  constructor(private productListService: ProductServiceService) { }
 
   ngOnInit(): void {
-   this.productListService.getProduct().subscribe((result)=>{
-  this.productLists = result;    
-  console.log("test",this.productLists);
-
-   })
-   console.log(this.productLists);
-   
-    
+    this.productListService.getProduct().subscribe((result) => {
+      if (Array.isArray(result)) {
+        this.productLists = result;
+        console.log("productsas", this.productLists);
+      } else {
+        console.log("error");
+      }
+    });
   }
+  deleteProduct() {
+    console.log("delete clicked");
 
-  // getAllProduct(){
-  //   console.log("testing");
-    
-  //   console.log(this.productLists);
-  //   console.log("testing");
-    
-    
-  // }
+  }
+  editProduct() {
+    console.log("edit clicked");
 
-
+  }
 }

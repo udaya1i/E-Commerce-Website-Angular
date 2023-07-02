@@ -1,8 +1,8 @@
 {
   "seller": [
     {
-      "name": "udaya",
-      "email": "udaya",
+      "name": "Udaya Subedi",
+      "email": "udaya@test.com",
       "password": "udaya",
       "id": 1
     }
@@ -10,12 +10,39 @@
   "addProduct": [
     {
       "productCatagory": "Smartphone",
-      "productName": "Iphone 14 pro max",
+      "productName": "Samsung Galaxy A23",
       "productColor": "Black",
-      "productPrice": "155000",
-      "description": "Iphone 14 pro max ",
-      "image": "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1662703372/Croma%20Assets/Communication/Mobiles/Images/261990_hmp7jd.png/mxw_640,f_auto",
+      "productPrice": "22000",
+      "description": "Samsung Galaxy Phone",
+      "productImage": "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a23-1.jpg",
       "id": 1
+    },
+    {
+      "productCatagory": "Iphone",
+      "productName": "Iphone 14 Pro Max",
+      "productColor": "White",
+      "productPrice": "190000",
+      "description": "Iphone 14 pro max.",
+      "productImage": "https://res.cloudinary.com/grover/image/upload/f_webp,q_auto/b_white,c_pad,dpr_2.0,h_500,w_520/f_auto,q_auto/v1668710497/if0x94vunpfufpi3u6wv.png",
+      "id": 2
+    },
+    {
+      "productCatagory": "Laptop",
+      "productName": "MacBook pro 14 ",
+      "productColor": "Gray",
+      "productPrice": "250000",
+      "description": "MacBook Pro 14 laptop with 8 GB RAM and 500 GB SSD",
+      "productImage": "https://www.digitaltrends.com/wp-content/uploads/2023/02/macbook-pro-14-m2-max.jpg?p=1",
+      "id": 3
+    },
+    {
+      "productCatagory": "Food",
+      "productName": "Basmati Rice (20Kg)",
+      "productColor": "null",
+      "productPrice": "35000",
+      "description": "Basmati Rice from Himalaya",
+      "productImage": "https://cheers.com.np/uploads/products/033114369031574112835443062703854767550093.png",
+      "id": 4
     }
   ]
 }

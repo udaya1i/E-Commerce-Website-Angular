@@ -20,11 +20,10 @@ export class SellerProductAddComponent implements OnInit {
   productAdd(data: prodcutAdd) {
     this.dataNotFound = false,
       this.showdetails = false
-    if (data.productName.length >= 1 && data.description.length >= 1 &&
+    if ( data.productImage.length>=1 && data.productName.length >= 1 && data.description.length >= 1 &&
       data.productPrice.length >= 1 && data.productCatagory.length >= 1 && data.productColor.length >= 1) {
       this.service.addProduct(data);
       this.showdetails = true;
-      console.log("this is the length", data.description.length);
       setTimeout(() => {
         this.showdetails = false;
       }, 5000);

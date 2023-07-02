@@ -10,11 +10,16 @@ export class ProductServiceService {
   constructor(private http:HttpClient) { }
 
   addProduct(data: prodcutAdd) {
-    this.http.post('http://localhost:3000/addProduct', data).subscribe()
-    console.log(data)
+    this.http.post('http://localhost:3000/addProduct', data).subscribe();
   }
 
   getProduct(){
    return this.http.get<prodcutAdd>('http://localhost:3000/addProduct')
+  }
+  deleteProduct(data:any){
+     this.http.delete(`http://localhost:3000/addProduct?id`);
+  }
+  editProduct(data:any){
+    return this.http.post(`http://localhost:3000/addProduct?id`, data);
   }
 }
