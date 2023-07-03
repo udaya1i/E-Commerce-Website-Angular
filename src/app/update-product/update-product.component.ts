@@ -10,20 +10,37 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UpdateProductComponent implements OnInit {
 
-  productDataById: prodcutAdd | undefined;
+  productDataById: prodcutAdd | any;
   constructor(private routerService: Router, private updateService: ProductServiceService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    let pid: any = this.route.snapshot.paramMap.get('id');
-    console.log("this is id",pid);
-    this.updateService.getProductById(pid).subscribe((res)=>{
-      this.productDataById = res;
-      console.log("this is something",res);
+    let productId = this.route.snapshot.paramMap.get('id');
+
+    productId && this.updateService.getProductById(productId).subscribe((result) => {
+      this.productDataById = result;
+      console.log(this.productDataById, result);
+
+
     })
+
 
   }
   updateProduct(id: prodcutAdd) {
-    
-  }
+    console.log("this is data",id);
+    if(this.productDataById){
+      id.id = this.productDataById.id;
+    }
+    this.updateService.updateProduct(id).subscribe((result)=>{
+  
+      if(result){
+        console.log("Product Updated Successfully");
+        this.routerService.navigate(['seller-home'])
+      }
+      else{
+        console.log("Product update failed!!!");
+        
+      }
+    })
+}
 
 }

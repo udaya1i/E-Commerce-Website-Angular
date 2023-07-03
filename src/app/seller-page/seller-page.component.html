@@ -24,10 +24,10 @@
                 <td>{{ item.description }}</td>
                 <td>{{ item.productPrice }} </td>
                 <td>
-                   <div style="padding: 10px; margin-bottom: 5px;"><a routerLink="/seller-update-product/
-                    {{item.id}}" (click)="editProduct(item.id)"> <fa-icon [icon]="editIcon"></fa-icon></a></div> 
-                   <div style="padding: 10px; margin-top: 5px;"> <fa-icon [icon]="deleteIcom" 
-                    (click)="deleteProduct(item.id)" class="delte"></fa-icon> </div> 
+                   <a  (click)="editProduct(item.id)"  routerLink="/seller-update-product/{{item.id}}"> 
+                    <fa-icon [icon]="editIcon"></fa-icon></a> 
+                    <fa-icon [icon]="deleteIcom"  
+                    (click)="deleteProduct(item.id)" class="delte"></fa-icon> 
                 </td>
             </tr>
         </tbody>

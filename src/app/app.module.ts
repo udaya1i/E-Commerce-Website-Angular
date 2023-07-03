@@ -29,7 +29,8 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule, FontAwesomeModule
+    HttpClientModule, 
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
