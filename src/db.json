@@ -11,17 +11,50 @@
       "email": "test@gamil.com",
       "password": "test",
       "id": 2
+    },
+    {
+      "name": "testuser",
+      "email": "test@test.com",
+      "password": "test",
+      "id": 3
     }
   ],
   "addProduct": [
     {
       "productCatagory": "Animal",
-      "productName": "Cat",
-      "productColor": "white and gray",
-      "productPrice": "45000",
-      "description": "little cat for sale",
+      "productName": "Baby Cat",
+      "productColor": "white and grayy",
+      "productPrice": "1900",
+      "description": "little cat for sale.",
       "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwDklGzQysPJyjWLIFEtv9nIBV8nI8srckB9QpVCwmIcgTFb_jV22rA0q0svUXCTN4-_Y&usqp=CAU",
       "id": 1
+    },
+    {
+      "productCatagory": "Smartphone",
+      "productName": "Iphone",
+      "productColor": "Black",
+      "productPrice": "$1200",
+      "description": "Iphone 14 Pro max with 4GB RAM and 128 GB Memory",
+      "productImage": "https://th.bing.com/th/id/R.2b2ac1bb5b369a4aea0e5dc1768f10b4?rik=uXHEZ0EPPT7U7w&pid=ImgRaw&r=0",
+      "id": 2
+    },
+    {
+      "productCatagory": "Smartphone",
+      "productName": "Redmi A7",
+      "productColor": "Black",
+      "productPrice": "15000",
+      "description": "Xiaomi Redmi A7 with 2 GB RAM and 32 GB storage",
+      "productImage": "https://www.thenextdroid.com/wp-content/uploads/2020/10/Xiaomi-Redmi-7A-780x470.jpg",
+      "id": 3
+    },
+    {
+      "productCatagory": "Smartphone",
+      "productName": "Samsung",
+      "productColor": "Samsung Galaxy Note 10",
+      "productPrice": "120000",
+      "description": "Samsung Galaxy Note 10 Plus.\n8GB RAM and 256 GB Storage",
+      "productImage": "https://i5.walmartimages.com/asr/3aeebb43-17c7-4683-8773-1dafbc4eb4dd.7b5db5f0e68361964564445542636774.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff",
+      "id": 4
     }
   ]
 }

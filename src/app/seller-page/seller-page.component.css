@@ -33,3 +33,9 @@ fa-icon:hover{
 .delte:hover{
     background-color: red;
 }
+.editIcon{
+    margin-bottom: 10px;
+}
+.deleteIcon{
+    margin-top: 10px;
+}

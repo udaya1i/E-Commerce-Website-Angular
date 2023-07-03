@@ -11,18 +11,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UpdateProductComponent implements OnInit {
 
   productDataById: prodcutAdd | any;
+  updateMessage:string='';
   constructor(private routerService: Router, private updateService: ProductServiceService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     let productId = this.route.snapshot.paramMap.get('id');
-
     productId && this.updateService.getProductById(productId).subscribe((result) => {
       this.productDataById = result;
       console.log(this.productDataById, result);
-
-
     })
-
 
   }
   updateProduct(id: prodcutAdd) {
@@ -33,8 +30,11 @@ export class UpdateProductComponent implements OnInit {
     this.updateService.updateProduct(id).subscribe((result)=>{
   
       if(result){
+        this.updateMessage = "Product Update Successfully!!"
+        setTimeout(() => {
+          this.routerService.navigate(['seller-home']);
+        }, 1000);
         console.log("Product Updated Successfully");
-        this.routerService.navigate(['seller-home'])
       }
       else{
         console.log("Product update failed!!!");

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { prodcutAdd } from '../datatype';
 import { ServicesService } from '../service/services.service';
 import { ProductServiceService } from '../service/product-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-seller-product-add',
@@ -12,7 +13,7 @@ export class SellerProductAddComponent implements OnInit {
   productAdded: boolean = false;
   dataNotFound: boolean = false;
 
-  constructor(private service: ProductServiceService) { }
+  constructor(private service: ProductServiceService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +27,9 @@ export class SellerProductAddComponent implements OnInit {
       this.productAdded = true;
       setTimeout(() => {
         this.productAdded = false;
-      }, 5000);
+        this.router.navigate(['seller-home'])
+        
+      }, 2000);
     }
     else {
       this.dataNotFound = true;
