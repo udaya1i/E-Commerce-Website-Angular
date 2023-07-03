@@ -20,8 +20,11 @@ export class ProductServiceService {
   deleteProduct(id: number) {
     return this.http.delete(`http://localhost:3000/addProduct/${id}`)
   }
-  editProduct(data: number) {
-    this.rouer.navigateByUrl('seller-update-product')
-    
+  getProductById(id:number){
+   return this.http.get<prodcutAdd>(`http://localhost:3000/addProduct/${id}`)
   }
+  update(product:prodcutAdd){
+    return this.http.put<prodcutAdd>(`http://localhost:3000/addProduct/${product.id}`, product);
+  }
+ 
 }

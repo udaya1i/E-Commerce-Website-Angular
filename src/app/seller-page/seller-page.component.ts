@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../service/services.service';
 import { ProductServiceService } from '../service/product-service.service';
 import { prodcutAdd } from '../datatype';
-import { faTrash, faPenAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,7 +19,7 @@ export class SellerPageComponent implements OnInit {
 
   constructor(private productListService: ProductServiceService, private router:Router) { }
   deleteIcom = faTrash;
-  editIcon = faPenAlt;
+  editIcon = faEdit;
 
 
   ngOnInit(): void {
@@ -47,8 +47,9 @@ export class SellerPageComponent implements OnInit {
 
   }
   editProduct(id: number) {
-    this.productListService.editProduct(id);
-  }
+    
+   }
+   
   ProductList() {
     this.productListService.getProduct().subscribe((result) => {
       if (Array.isArray(result)) {

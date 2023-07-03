@@ -5,26 +5,122 @@
       "email": "udaya@test.com",
       "password": "udaya",
       "id": 1
+    },
+    {
+      "name": "testUser",
+      "email": "test@gamil.com",
+      "password": "test",
+      "id": 2
     }
   ],
   "addProduct": [
     {
-      "productCatagory": "ljlkjlk",
-      "productName": "lkj",
-      "productColor": "lkj",
-      "productPrice": "lkj",
-      "description": "lkj",
-      "productImage": "https://res.cloudinary.com/grover/image/upload/f_webp,q_auto/b_white,c_pad,dpr_2.0,h_500,w_520/f_auto,q_auto/v1668710497/if0x94vunpfufpi3u6wv.png",
+      "productCatagory": "fasdf",
+      "productName": "asdfasdf",
+      "productColor": "fasdf",
+      "productPrice": "asdf",
+      "description": "sdfa",
+      "productImage": "asdf",
       "id": 1
     },
     {
-      "productCatagory": "ljlkjlkdf",
-      "productName": "lkjdf",
-      "productColor": "lkjfsdfdfsd",
-      "productPrice": "lkjfsdf",
-      "description": "lkjjsdflksjd",
-      "productImage": "https://www.digitaltrends.com/wp-content/uploads/2023/02/macbook-pro-14-m2-max.jpg?p=1",
+      "productCatagory": "fasdf",
+      "productName": "asdfasdf",
+      "productColor": "fasdf",
+      "productPrice": "asdf",
+      "description": "sdfa",
+      "productImage": "asdf",
+      "id": 2
+    },
+    {
+      "productCatagory": "fasdf",
+      "productName": "asdfasdf",
+      "productColor": "fasdf",
+      "productPrice": "asdf",
+      "description": "sdfa",
+      "productImage": "asdf",
       "id": 3
+    },
+    {
+      "productCatagory": "fasdf",
+      "productName": "asdfasdf",
+      "productColor": "fasdf",
+      "productPrice": "asdf",
+      "description": "sdfa",
+      "productImage": "asdf",
+      "id": 4
+    },
+    {
+      "productCatagory": "fasdf",
+      "productName": "asdfasdf",
+      "productColor": "fasdf",
+      "productPrice": "asdf",
+      "description": "sdfa",
+      "productImage": "asdf",
+      "id": 5
+    },
+    {
+      "productCatagory": "fasdf",
+      "productName": "asdfasdf",
+      "productColor": "fasdf",
+      "productPrice": "asdf",
+      "description": "sdfa",
+      "productImage": "asdf",
+      "id": 6
+    },
+    {
+      "productCatagory": "fasdf",
+      "productName": "asdfasdf",
+      "productColor": "fasdf",
+      "productPrice": "asdf",
+      "description": "sdfa",
+      "productImage": "asdf",
+      "id": 7
+    },
+    {
+      "productCatagory": "fasdf",
+      "productName": "asdfasdf",
+      "productColor": "fasdf",
+      "productPrice": "asdf",
+      "description": "sdfa",
+      "productImage": "asdf",
+      "id": 8
+    },
+    {
+      "productCatagory": "fasdf",
+      "productName": "asdfasdf",
+      "productColor": "fasdf",
+      "productPrice": "asdf",
+      "description": "sdfa",
+      "productImage": "asdf",
+      "id": 9
+    },
+    {
+      "productCatagory": "fasdf",
+      "productName": "asdfasdf",
+      "productColor": "fasdf",
+      "productPrice": "asdf",
+      "description": "sdfa",
+      "productImage": "asdf",
+      "id": 10
+    },
+    {
+      "productCatagory": "fasdf",
+      "productName": "asdfasdf",
+      "productColor": "fasdf",
+      "productPrice": "asdf",
+      "description": "sdfa",
+      "productImage": "asdf",
+      "id": 11
+    },
+    {
+      "productCatagory": "fasdf",
+      "productName": "asdfasdf",
+      "productColor": "fasdf",
+      "productPrice": "asdf",
+      "description": "sdfa",
+      "productImage": "asdf",
+      "id": 12
     }
   ]
 }

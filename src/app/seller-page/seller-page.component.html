@@ -1,5 +1,5 @@
 <div class="product-list">
-    <h1>List of All Products</h1    >
+    <h1>List of All Products</h1>
     <h3 style="color: green;">{{message}}</h3>
     <table>
         <thead>
@@ -24,14 +24,10 @@
                 <td>{{ item.description }}</td>
                 <td>{{ item.productPrice }} </td>
                 <td>
-                    <!-- <button (click)="editProduct(item.id)"
-                    style="background-color: rgb(64, 64, 243); color: whtie;">
-                    Edit</button> -->
-                    <fa-icon [icon]="editIcon" (click)="editProduct(item.id)" ></fa-icon>
-                    <fa-icon [icon]="deleteIcom" (click)="deleteProduct(item.id)" class="delte"></fa-icon>
-                    <!-- <button (click)="deleteProduct(item.id)"
-                    style="color: white; background-color: rgb(117, 15, 15);">
-                    Delete</button> -->
+                   <div style="padding: 10px; margin-bottom: 5px;"><a routerLink="/seller-update-product/
+                    {{item.id}}" (click)="editProduct(item.id)"> <fa-icon [icon]="editIcon"></fa-icon></a></div> 
+                   <div style="padding: 10px; margin-top: 5px;"> <fa-icon [icon]="deleteIcom" 
+                    (click)="deleteProduct(item.id)" class="delte"></fa-icon> </div> 
                 </td>
             </tr>
         </tbody>
