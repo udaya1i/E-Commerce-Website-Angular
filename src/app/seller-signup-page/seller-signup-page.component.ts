@@ -14,7 +14,7 @@ export class SellerSignupPageComponent implements OnInit {
   clickedSignup = false;
   empity: string = '';
 
-  checkError: string = "";
+  checkError: string = '';
   ngOnInit(): void {
     if (localStorage.getItem('seller')) {
     }
@@ -44,13 +44,16 @@ export class SellerSignupPageComponent implements OnInit {
   }
 
   LoginUser(data: SellerLogin) {
-    this.checkError = "";
+    this.checkError = '';
     this.ser.LoginUser(data);
     this.ser.reloadSave();
     this.ser.errorCheck.subscribe((check) => {
       if (check) {
         this.checkError = "Username/Password Incorrect";
       }
+      setTimeout(() => {
+        this.checkError = '';
+      }, 5000);
     })
   }
 }

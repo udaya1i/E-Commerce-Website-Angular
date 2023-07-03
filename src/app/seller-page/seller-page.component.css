@@ -1,5 +1,5 @@
 table{
-    text-align: center;
+    text-align: left;
     border-collapse: collapse;
 }
 table td, table th{
@@ -22,4 +22,14 @@ button {
     color: white;
     font: bold;
     cursor: pointer;
+}
+fa-icon{
+    padding: 20px;
+
+}
+fa-icon:hover{
+    background-color: green;
+}
+.delte:hover{
+    background-color: red;
 }

@@ -9,7 +9,7 @@ import { ProductServiceService } from '../service/product-service.service';
   styleUrls: ['./seller-product-add.component.css']
 })
 export class SellerProductAddComponent implements OnInit {
-  showdetails: boolean = false;
+  productAdded: boolean = false;
   dataNotFound: boolean = false;
 
   constructor(private service: ProductServiceService) { }
@@ -19,13 +19,13 @@ export class SellerProductAddComponent implements OnInit {
 
   productAdd(data: prodcutAdd) {
     this.dataNotFound = false,
-      this.showdetails = false
+      this.productAdded = false
     if ( data.productImage.length>=1 && data.productName.length >= 1 && data.description.length >= 1 &&
       data.productPrice.length >= 1 && data.productCatagory.length >= 1 && data.productColor.length >= 1) {
       this.service.addProduct(data);
-      this.showdetails = true;
+      this.productAdded = true;
       setTimeout(() => {
-        this.showdetails = false;
+        this.productAdded = false;
       }, 5000);
     }
     else {

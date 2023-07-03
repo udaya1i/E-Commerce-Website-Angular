@@ -11,6 +11,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SellerProductAddComponent } from './seller-product-add/seller-product-add.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UpdateProductComponent } from './update-product/update-product.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,13 @@ import { SellerProductAddComponent } from './seller-product-add/seller-product-a
     SellerSignupPageComponent,
     ErrorPageComponent,
     SellerProductAddComponent,
+    UpdateProductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule, 
-    HttpClientModule
+    FormsModule,
+    HttpClientModule, FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

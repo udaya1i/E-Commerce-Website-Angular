@@ -6,38 +6,44 @@ import { SellerSignupPageComponent } from './seller-signup-page/seller-signup-pa
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AuthGuardGuard } from './auth-guard.guard';
 import { SellerProductAddComponent } from './seller-product-add/seller-product-add.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component:HomeComponent
+    path: '',
+    component: HomeComponent
   },
   {
-    path:'seller-home',
-    component:SellerPageComponent,
-    pathMatch:'full',
+    path: 'seller-home',
+    component: SellerPageComponent,
+    pathMatch: 'full',
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'seller-singup-page',
+    component: SellerSignupPageComponent
+  },
+  {
+    path: 'seller-product-add',
+    component: SellerProductAddComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path:'seller-update-product',
+    component:UpdateProductComponent,
     canActivate:[AuthGuardGuard]
   },
+
   {
-    path:'seller-singup-page',
-    component:SellerSignupPageComponent
+    path: '404',
+    component: ErrorPageComponent
   },
   {
-  path:'seller-product-add',
-  component:SellerProductAddComponent,
-  canActivate:[AuthGuardGuard]
+    path: '**',
+    redirectTo: '404'
   },
-  
-  {
-    path:'404',
-    component:ErrorPageComponent
-  },
-  {
-    path:'**',
-    redirectTo:'404'
-  },
-  
- 
+
+
 ];
 
 @NgModule({
@@ -46,5 +52,5 @@ const routes: Routes = [
 })
 export class AppRoutingModule {
 
-  
- }
+
+}

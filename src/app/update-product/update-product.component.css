@@ -1,0 +1,11 @@
+.addProductWraper h1{
+    display: flex;
+    justify-content: center;
+}
+.addProductWraper form .desctextarea{
+    margin-bottom: 10px;
+    border-radius: 3px;
+    text-align: center;
+    color: black;
+    border: 2px solid rgb(180, 205, 241);
+}
