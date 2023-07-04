@@ -14,6 +14,7 @@ import { SellerProductAddComponent } from './seller-product-add/seller-product-a
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SearchProductComponent } from './search-product/search-product.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ErrorPageComponent,
     SellerProductAddComponent,
     UpdateProductComponent,
+    SearchProductComponent,
   ],
   imports: [
     BrowserModule,

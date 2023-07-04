@@ -95,5 +95,19 @@
     /* display: list-item; */
     top: 70px;
     width: 300px;
+    width: auto;
     background-color:white ;
+    border: 1px solid rgb(64, 64, 243);
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+} 
+
+.search-product li{
+    list-style-type: none;
+    width: 200px;
+}
+.search-product li a{
+    cursor: pointer;
+    border-radius: 10px;
 }

@@ -33,9 +33,12 @@ export class ProductServiceService {
     return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?_limit=3`);
   }
   getTopProducts() {
-    return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?_limit=10`);
+    return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?_limit=12`);
   }
   searchProduct(search: string) {
     return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?q=${search}`)
+  }
+  searchProductByProductName(product:string){
+    return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?q=${product}`)
   }
 }

@@ -1,0 +1,24 @@
+.search-item{
+margin: 25px auto;
+width: 800px;
+border-top: 2px solid black;
+padding: 10px;
+margin-bottom: 20px;
+}
+.search-item img{
+    width: 100%;
+    object-fit: contain;
+    /* height: 180px; */
+}
+.details h5{
+    color: blue;
+}
+.details p{
+    margin: 5px;
+}
+.details span{
+margin-right: 20px;
+}
+/* .card{
+    margin-top: 10px;
+} */
