@@ -2,22 +2,26 @@
     display: flex;
     justify-content: space-between;
 }
+
 .navbar .clslogo {
     height: 80px;
     width: 80px;
     margin: 0px;
     justify-content: center;
 }
+
 .navbar .navigation {
     display: inline-flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
+
 .navbar .navigation li {
     padding-left: 15px;
     padding-top: 20px;
 }
+
 .navbar .navigation li a {
     text-decoration: none;
     color: black;
@@ -25,7 +29,7 @@
     border-radius: 5px;
 }
 
-.navbar .navigation li a:hover{
+.navbar .navigation li a:hover {
     background-color: lightblue;
     border: 1px solid rebeccapurple;
     cursor: pointer;
@@ -38,6 +42,7 @@
     margin-left: 5%;
     margin-right: 5%;
 }
+
 .navbar .search input {
     flex: 1;
     border-color: #053D3D;
@@ -47,42 +52,48 @@
     padding-left: 15px;
     color: #053D3D;
     border-top-left-radius: 5px;
-    border-bottom-left-radius:5px ;
+    border-bottom-left-radius: 5px;
     border: 2px solid rgb(180, 205, 241);
 }
+
 .navbar .search button {
     border-color: #053D3D;
     border: 1px solid #053D3D;
     height: 35px;
-    color :#053D3D;
+    color: #053D3D;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border-left: 0px;
     border: 2px solid rgb(180, 205, 241);
 }
-.navbar .logoutbtn{
+
+.navbar .logoutbtn {
     border-color: #053D3D;
     border: 1px solid #053D3D;
     height: 35px;
-    color :#053D3D;
+    color: #053D3D;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border-left: 0px;
     border: 2px solid rgb(180, 205, 241);
 }
-.logoo{
+
+.logoo {
     height: 20px;
     margin-right: 5px;
 
 }
 
-
 .sellerLogo {
     display: flex;
-    align-items: center; 
+    align-items: center;
     margin-right: 100px;
-  }
-  
+}
 
-  
-
+.search-product {
+    position: absolute;
+    /* display: list-item; */
+    top: 70px;
+    width: 300px;
+    background-color:white ;
+}
