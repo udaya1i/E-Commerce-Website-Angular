@@ -1,1 +1,38 @@
-<h1>this is home page</h1>
+<ngb-carousel *ngIf="popularProduct">
+    <ng-template ngbSlide *ngFor="let item of popularProduct">
+        <div class="picsum-img-wrapper">
+            <img src="{{item.productImage}}" alt="Random first slide" class="imageSize" />
+        </div>
+        <div class="carousel-caption ">
+            <h3>{{item.productName}}</h3>
+            <p>{{item.description}}</p>
+            <p style="color: rgb(10, 6, 0) ; font: bolder;">RS. {{item.productPrice}}</p>
+        </div>
+    </ng-template>
+</ngb-carousel>
+<div class="allProductList">
+    <h1>Top Products</h1>
+    <div class="row wid">
+        <div class="col-sm-3 allDetails wid" *ngFor="let item of allProducts">
+            <div class="wrapperrs">
+                <div class="productImage">
+                    <img src="{{item.productImage}}" alt="Image Not Found">
+                </div>
+                <div class="product_details">
+                    <h5>{{item.productName}}</h5>
+                    <div class="productPrice">
+                        <h5>Rs. {{item.productPrice}}</h5>
+                    </div>
+                    <div class="productColor">
+                        <h5>Color: {{item.productColor}}</h5>
+                    </div>
+                </div>
+                <div class="productFooter">
+                    <a>View Details</a>
+                    <a>Add to card</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

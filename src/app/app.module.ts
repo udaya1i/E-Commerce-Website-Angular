@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SellerProductAddComponent } from './seller-product-add/seller-product-add.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UpdateProductComponent } from './update-product/update-product.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     AppRoutingModule,
     FormsModule,
     HttpClientModule, 
-    FontAwesomeModule
+    FontAwesomeModule, NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
