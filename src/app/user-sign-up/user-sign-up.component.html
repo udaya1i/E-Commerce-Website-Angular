@@ -1,0 +1,29 @@
+<div class="containerss" >
+    <!-- User Registration page start here -->
+    <div class="sub-contianer" *ngIf="!gotoLogin">
+        <h1 class="text">User Registration</h1>
+        <form #UserSignUp="ngForm" class="common-form">
+            <input required ngModel name="name" class="form-item" type="text" placeholder="Enter Your Name">
+            <input required ngModel name="email" class="form-item" type="email" placeholder="Enter Your Email">
+            <input required ngModel name="password" class="form-item" type="password" placeholder="Enter Your Password">
+            <button class="form-buttom">Sign-Up</button>
+            <p>Already have account? <a (click)="clicked()">Login Here</a></p>
+            
+        </form>
+    </div>
+    <!-- User Registration page end here -->
+    <!-- Login Page Start Here -->
+    <div class="sub-contianer" *ngIf="gotoLogin">
+        <h1 class="text">Login Your Account</h1>
+        <form #UserLogin="ngForm" class="common-form">
+            <span class="error"> </span>
+            <!-- <span class="error">{{isEmpity}}</span> -->
+            <input ngModel name="username" class="form-item" type="" placeholder="Enter Your Email">
+            <input ngModel name="password" class="form-item" type="password" placeholder="Enter Your Password">
+            <button class="form-buttom">Log-In</button>
+            <p>Don't have account? <a>Sign-Up Here</a></p>
+           
+        </form>
+    </div>
+    <!-- Login Page Start Here -->
+</div>

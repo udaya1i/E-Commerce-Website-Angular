@@ -13,12 +13,19 @@ export class SellerSignupPageComponent implements OnInit {
   showLogin = false;
   clickedSignup = false;
   empity: string = '';
+  checkacc: undefined|SellerSignUp[];
 
   checkError: string = '';
   ngOnInit(): void {
     if (localStorage.getItem('seller')) {
     }
     this.ser.reloadSave();
+    
+      // this.ser.getUser().subscribe((data)=>{
+      //     console.log(data);
+      //     this.checkacc = data[];
+      // })
+
   }
   signUp(data: SellerSignUp): void {
     if (data.email.length >= 1 && data.name.length >= 1 && data.password.length >= 1) {
