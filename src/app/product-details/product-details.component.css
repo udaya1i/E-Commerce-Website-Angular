@@ -1,0 +1,44 @@
+.proudctImage {
+
+}
+.proudctImage img{
+    object-fit: contain;
+    width: 100%;
+}
+
+
+.desc-pro{
+    margin-left: 50px;
+}
+.actionsec{
+    border: 3px solid red;
+}
+.btns button{
+    width: 500px;
+    margin-top: 10px;
+}
+.qty input{
+    width: 90%;
+}
+.qty button{
+    width: 5%;
+}
+.addtocard{
+background-color: rgb(148, 148, 226);
+}
+.buynow{
+    background-color: rgb(101, 101, 161);
+}
+.product-color{
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+
+}
+.bckclr{
+    background-color: red;
+}
+.bckclr:hover{
+    background-color: red;
+}

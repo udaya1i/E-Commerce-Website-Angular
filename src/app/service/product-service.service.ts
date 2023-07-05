@@ -26,11 +26,11 @@ export class ProductServiceService {
   }
 
   getProductById(id: string) {
-    return this.http.get(`http://localhost:3000/addProduct/${id}`);
+    return this.http.get<prodcutAdd>(`http://localhost:3000/addProduct/${id}`);
   }
 
   getPopularProduct() {
-    return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?_limit=3`);
+    return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?_limit=5`);
   }
   getTopProducts() {
     return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?_limit=12`);

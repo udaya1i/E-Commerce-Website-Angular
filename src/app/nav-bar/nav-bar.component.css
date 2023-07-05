@@ -1,6 +1,7 @@
 .navbar {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .navbar .clslogo {
@@ -15,6 +16,7 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+    margin-top: -20px;
 }
 
 .navbar .navigation li {

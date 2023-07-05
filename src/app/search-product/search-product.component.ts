@@ -16,8 +16,7 @@ export class SearchProductComponent implements OnInit {
   ngOnInit(): void {
     let productId = this.route.snapshot.paramMap.get('product');
     productId && this.service.searchProductByProductName(productId).subscribe((dta)=>{
-    this.searchedData = dta;        
+    this.searchedData = dta;   
     });
   }
-
 }

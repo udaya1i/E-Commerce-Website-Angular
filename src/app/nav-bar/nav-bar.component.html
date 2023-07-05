@@ -2,7 +2,8 @@
     <a class="navigation" href="#"><img src="../../assets/logo.jpg" alt="logo" class="clslogo"></a>
 
     <div class="search" *ngIf="userType=='defalut'">
-        <input #productName type="text" (keyup)="searchProduct($event)" (blur)="clearData()" placeholder="Search in Bucket-House" />
+        <input #productName type="text" (keyup)="searchProduct($event)" 
+        (blur)="clearData()" placeholder="Search in Bucket-House" />
         <button (click)="submit(productName.value)">Search</button>
         <ul class="search-product" *ngIf="productSearch" >
             <li *ngFor="let item of productSearch">

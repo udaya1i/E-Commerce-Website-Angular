@@ -30,7 +30,7 @@
       "productCatagory": "Smartphone",
       "productName": "Iphone",
       "productColor": "Black",
-      "productPrice": "1200",
+      "productPrice": "150000",
       "description": "Iphone 14 Pro max with 4GB RAM and 128 GB Memory",
       "productImage": "https://th.bing.com/th/id/R.2b2ac1bb5b369a4aea0e5dc1768f10b4?rik=uXHEZ0EPPT7U7w&pid=ImgRaw&r=0",
       "id": 2
@@ -39,7 +39,7 @@
       "productCatagory": "Smartphone",
       "productName": "Redmi A7",
       "productColor": "Black",
-      "productPrice": "15000",
+      "productPrice": "19000",
       "description": "Xiaomi Redmi A7 with 2 GB RAM and 32 GB storage",
       "productImage": "https://www.thenextdroid.com/wp-content/uploads/2020/10/Xiaomi-Redmi-7A-780x470.jpg",
       "id": 3
@@ -48,7 +48,7 @@
       "productCatagory": "Smartphone",
       "productName": "Samsung",
       "productColor": "Blue",
-      "productPrice": "99999",
+      "productPrice": "95000",
       "description": "Samsung Galaxy Note 10 Plus.\n8GB RAM and 256 GB Storage",
       "productImage": "https://i5.walmartimages.com/asr/3aeebb43-17c7-4683-8773-1dafbc4eb4dd.7b5db5f0e68361964564445542636774.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff",
       "id": 4
@@ -57,7 +57,7 @@
       "productCatagory": "Electronic",
       "productName": "Dell",
       "productColor": "Black",
-      "productPrice": "80000",
+      "productPrice": "76000",
       "description": "Dell Vostro 3500 i5 11 gen laptop with 8 GB RAM and 256 GB SSD.\n",
       "productImage": "data:image/jpeg;base64,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",
       "id": 5
@@ -75,7 +75,7 @@
       "productCatagory": "Shoes",
       "productName": "Nike JP",
       "productColor": "Black and white",
-      "productPrice": "25000",
+      "productPrice": "19000",
       "description": "Nike shoes in black and white color",
       "productImage": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5b0981ff-45f8-40c3-9372-32430a62aaea/dunk-high-womens-shoes-cF9txG.png",
       "id": 7
@@ -84,7 +84,7 @@
       "productCatagory": "Electronic",
       "productName": "Key Board",
       "productColor": "Black",
-      "productPrice": "1500",
+      "productPrice": "2990",
       "description": "RGB Keyboard",
       "productImage": "https://www.aliteq.com/wp-content/uploads/2021/12/Untitled-2-19.jpg",
       "id": 8
@@ -93,7 +93,7 @@
       "productCatagory": "Laptop",
       "productName": "Apple MacBook Air M1",
       "productColor": "Gray",
-      "productPrice": "150000",
+      "productPrice": "185000",
       "description": "Apple MacBook Air M1 with 4 GB RAM and 256 GB SSD.",
       "productImage": "https://www.digitaltrends.com/wp-content/uploads/2020/12/macbook-air-m1-7.jpg?fit=500%2C334&p=1",
       "id": 9
@@ -101,7 +101,7 @@
     {
       "productCatagory": "Chair",
       "productName": "GAMING CHAIR",
-      "productColor": "Orange and Black",
+      "productColor": "Orange",
       "productPrice": "34999",
       "description": "FANTECH ALPHA GC-283 GAMING CHAIR – ORANGE",
       "productImage": "https://lale.ams3.digitaloceanspaces.com/fantech/uploads/attachment/upload/1586/FANTECH_ALPHA_GC-283_GAMING_CHAIR___ORANGE_.jpg",
@@ -115,6 +115,15 @@
       "description": "AmazonBasics 3-Button USB Wired Mouse ",
       "productImage": "https://i.rtings.com/assets/products/1htouLNw/amazonbasics-3-button-usb-wired-mouse/design-medium.jpg",
       "id": 12
+    },
+    {
+      "productCatagory": "Cloth",
+      "productName": "Double Layer Waterproof Bike Raincoat With Bag",
+      "productColor": "Blue",
+      "productPrice": "799",
+      "description": "Motorcycle raincoat features a hood with drawstring, water resistant and protect your body from rain. The neck features press stud buttons, convenient to wear. Sealed at the seams to prevent rainwater",
+      "productImage": "https://new.socheko.com/public/832-832/files/D4ACF169A759DA1-with-no-bag.jpg",
+      "id": 13
     }
   ]
 }

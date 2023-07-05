@@ -60,7 +60,15 @@ p {
     background: rgb(181, 209, 200);
     cursor: pointer;
     border: 1px solid rgb(248, 250, 248);
-    padding: 3px;
+    padding: 5px;
+    text-decoration: none;
+    color: blue;
+    border-radius: 5px;
+
+}
+
+.productFooter a:hover{
+    background-color: rgb(86, 116, 106);
 }
 
 .wid {

@@ -8,6 +8,7 @@ import { AuthGuardGuard } from './auth-guard.guard';
 import { SellerProductAddComponent } from './seller-product-add/seller-product-add.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { SearchProductComponent } from './search-product/search-product.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes: Routes = [
   {
@@ -30,15 +31,18 @@ const routes: Routes = [
     canActivate: [AuthGuardGuard]
   },
   {
-    path:'seller-update-product/:id',
-    component:UpdateProductComponent,
-    canActivate:[AuthGuardGuard]
+    path: 'seller-update-product/:id',
+    component: UpdateProductComponent,
+    canActivate: [AuthGuardGuard]
   },
   {
-    path:'search-product/:product',
-    component:SearchProductComponent
+    path: 'search-product/:product',
+    component: SearchProductComponent
   },
-
+  {
+    path:'product-details/:details',
+    component:ProductDetailsComponent
+  },
   {
     path: '404',
     component: ErrorPageComponent

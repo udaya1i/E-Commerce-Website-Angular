@@ -1,0 +1,30 @@
+<div class="row" *ngIf="productDetails">
+    <div class="col-sm-6 proudctImage">
+        <img src="{{productDetails.productImage}}" alt="Image Not Found">
+    </div>
+    <div class="col-sm-6">
+        <div class=" desc-pro">
+            <h1>{{productDetails.productName}}</h1>
+            <h5>Rs. {{productDetails.productPrice}}</h5>
+            <div>
+                Color:-
+                <p [style.backgroundColor]="productDetails.productColor" class="product-color"></p>
+            </div>
+            <p>Catagory :- {{productDetails.productCatagory}}</p>
+            <p>Description:- {{productDetails.description}}</p>
+            <div class="qty">
+                <button (click)="qty('remove')">-</button>
+                <input type="text" value="{{count}}">
+                <button (click)="qty('add')" [ngClass]="{'bckclr': limited}">+</button>
+            </div>
+            <div class="btns">
+                <button class="addtocard">
+                    Add to Card
+                </button>
+                <button class="buynow">
+                    Buy Now
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

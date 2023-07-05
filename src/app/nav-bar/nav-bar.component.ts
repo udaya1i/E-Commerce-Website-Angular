@@ -41,16 +41,15 @@ export class NavBarComponent implements OnInit {
     this.productService.searchProduct(element.value).subscribe((reslut) => {
       reslut.length = 4;
       this.productSearch = reslut;
-      
-    });    
+
+    });
   }
-  clearData(){
-    this.productSearch=undefined;
+  clearData() {
+    this.productSearch = undefined;
   }
-  submit(data:string){
-    console.log("clicked", data);
-    this.router.navigate([`search-product/${data}`]);
-    
-    // this.router.navigate([`search-product/${data}`])      
+  submit(data: string) {
+    if (data) {
+      this.router.navigate([`search-product/${data}`]);
+    }
   }
 }
