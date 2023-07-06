@@ -5,24 +5,6 @@
       "email": "udaya@test.com",
       "password": "udaya",
       "id": 1
-    },
-    {
-      "name": "testUser",
-      "email": "test@gamil.com",
-      "password": "test",
-      "id": 2
-    },
-    {
-      "name": "testuser",
-      "email": "test@test.com",
-      "password": "test",
-      "id": 3
-    },
-    {
-      "name": "1",
-      "email": "1",
-      "password": "1",
-      "id": 4
     }
   ],
   "addProduct": [
@@ -124,6 +106,44 @@
       "description": "Motorcycle raincoat features a hood with drawstring, water resistant and protect your body from rain. The neck features press stud buttons, convenient to wear. Sealed at the seams to prevent rainwater",
       "productImage": "https://new.socheko.com/public/832-832/files/D4ACF169A759DA1-with-no-bag.jpg",
       "id": 13
+    }
+  ],
+  "userSign-up": [
+    {
+      "username": "test",
+      "userEmail": "test@gmail.com",
+      "userPassword": "test@123",
+      "id": 1
+    },
+    {
+      "username": "test",
+      "userEmail": "test@gmail.com",
+      "userPassword": "test@123",
+      "id": 2
+    },
+    {
+      "username": "test",
+      "userEmail": "test@gmail.com",
+      "userPassword": "test@123",
+      "id": 3
+    },
+    {
+      "username": "test",
+      "userEmail": "test@gmail.com",
+      "userPassword": "test@123",
+      "id": 4
+    },
+    {
+      "username": "udaya",
+      "userEmail": "udaya@gmail.com",
+      "userPassword": "test@123",
+      "id": 5
+    },
+    {
+      "username": "udaya",
+      "userEmail": "udaya@gmail.com",
+      "userPassword": "udaya@123",
+      "id": 6
     }
   ]
 }

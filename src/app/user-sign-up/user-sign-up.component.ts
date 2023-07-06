@@ -113,7 +113,7 @@ export class UserSignUpComponent implements OnInit {
     }
   }
   userLogin(data: UserLogin) {
-    console.log("data is ", data);
+    this.loginService.userLogin(data);
   }
 }
 
