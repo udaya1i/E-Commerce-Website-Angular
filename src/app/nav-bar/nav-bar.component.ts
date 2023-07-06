@@ -34,14 +34,13 @@ export class NavBarComponent implements OnInit {
   }
   logOut() {
     localStorage.removeItem('seller')
-
   }
   searchProduct(search: KeyboardEvent) {
     const element = search.target as HTMLInputElement;
     this.productService.searchProduct(element.value).subscribe((reslut) => {
       reslut.length = 4;
       this.productSearch = reslut;
-
+      console.log(reslut);
     });
   }
   clearData() {

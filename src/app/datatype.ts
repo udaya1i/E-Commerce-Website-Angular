@@ -17,5 +17,13 @@ export interface prodcutAdd{
     description:string;
     id:number;
 
-    
+}
+export interface UserSignup{
+    username:string;
+    userEmail:string;
+    userPassword:string;
+}
+export interface UserLogin{
+    userEmail:string;
+    userPassword:string;
 }

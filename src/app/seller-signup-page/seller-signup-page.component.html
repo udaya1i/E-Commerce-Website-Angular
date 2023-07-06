@@ -1,6 +1,6 @@
 <div class="containerss">
     <!-- Seller Registration page start here -->
-    <div *ngIf="!showLogin" class="sub-contianer">
+    <div *ngIf="showLogin" class="sub-contianer">
         <h1 class="text">Seller Registration</h1>
         <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value); " class="common-form">
             <input required ngModel name="name" class="form-item" type="text" placeholder="Enter Your Name">
@@ -15,8 +15,8 @@
     </div>
     <!-- Seller Registration page end here -->
     <!-- Login Page Start Here -->
-    <div *ngIf="showLogin" class="sub-contianer">
-        <h1 class="text">Login Your Account</h1>
+    <div *ngIf="!showLogin" class="sub-contianer">
+        <h1 class="text">Login Your Seller Account</h1>
         <form #sellerLogin="ngForm" (ngSubmit)="LoginUser(sellerLogin.value)" class="common-form">
             <span class="error">{{checkError}} </span>
             <!-- <span class="error">{{isEmpity}}</span> -->

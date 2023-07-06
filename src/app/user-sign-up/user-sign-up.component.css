@@ -16,3 +16,10 @@
     color: blue;
     cursor: pointer;
 }
+
+.error{
+    border-color: red;
+}
+.sub-contianer h1{
+    margin-bottom: 10px;
+}

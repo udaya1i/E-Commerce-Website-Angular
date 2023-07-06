@@ -15,8 +15,8 @@
 
         <ul class="navigation" *ngSwitchCase="'defalut'">
             <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/seller-singup-page">Seller</a></li>
-            <li><a routerLink="/user">Login/Signup</a></li>
+            <li><a routerLink="/seller-singup-page">Seller-Login</a></li>
+            <li><a routerLink="/user">User Login</a></li>
             <li><a routerLink="">Card(0)</a></li>
         </ul>
 
@@ -25,7 +25,7 @@
                 <img src="../../assets/sellerlogo.jpg" alt="logo" class="logoo">
                 <span> {{sellerName | uppercase}} </span>
             </li>
-            <li><a routerLink="seller-product-add">Add Product</a></li>
+            <li><a routerLink="seller-product-add">Add-Product</a></li>
             <li><a routerLink="seller-home">Product List</a></li>
             <li><a routerLink="/" (click)="logOut()">Log Out</a></li>
         </ul>
