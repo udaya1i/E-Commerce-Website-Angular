@@ -17,14 +17,14 @@
     <!-- User Registration page start here -->
     <div class="sub-contianer" *ngIf="!login">
         <h1 class="text" *ngIf="!signUp">User Registration</h1>
-        <h1 class="text" *ngIf="signUp">{{signUpMessage}}</h1>
+        <h1 class="success" *ngIf="signUp">{{signUpMessage}}</h1>
         <form #UserSignUp="ngForm" class="common-form" (ngSubmit)="userSignup(UserSignUp.value)">
             <input required ngModel name="username" class="form-item" type="text" placeholder="Enter Your Name">
             <input required ngModel name="userEmail" class="form-item" type="email" placeholder="Enter Your Email">
             <input required ngModel name="userPassword" class="form-item" type="password"
                 placeholder="Enter Your Password">
             <button class="form-buttom">Sign-Up</button>
-            <p>{{errorMessage}}</p>
+            <p class="errorMess">{{errorMessage}}</p>
             <p>Already have account? <a (click)="gotoLogin()">Login Here</a></p>
         </form>
     </div>

@@ -13,18 +13,18 @@ export class SellerSignupPageComponent implements OnInit {
   showLogin = false;
   clickedSignup = false;
   empity: string = '';
-  checkacc: undefined|SellerSignUp[];
+  checkacc: undefined | SellerSignUp[];
 
   checkError: string = '';
   ngOnInit(): void {
     if (localStorage.getItem('seller')) {
     }
     this.ser.reloadSave();
-    
-      // this.ser.getUser().subscribe((data)=>{
-      //     console.log(data);
-      //     this.checkacc = data[];
-      // })
+
+    // this.ser.getUser().subscribe((data)=>{
+    //     console.log(data);
+    //     this.checkacc = data[];
+    // })
 
   }
   signUp(data: SellerSignUp): void {
@@ -41,13 +41,13 @@ export class SellerSignupPageComponent implements OnInit {
   }
 
   openLogin() {
-    this.showLogin = true;
+    this.showLogin = false;
   }
   Login(logdata: SellerSignUp) {
     console.log(logdata)
   }
   openSignUp() {
-    this.showLogin = false;
+    this.showLogin = true;
   }
 
   LoginUser(data: SellerLogin) {

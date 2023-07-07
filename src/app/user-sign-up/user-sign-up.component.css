@@ -23,3 +23,9 @@
 .sub-contianer h1{
     margin-bottom: 10px;
 }
+.errorMess{
+    color: red;
+}
+.success{
+    color: green;
+}

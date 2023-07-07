@@ -110,40 +110,10 @@
   ],
   "userSign-up": [
     {
-      "username": "test",
-      "userEmail": "test@gmail.com",
-      "userPassword": "test@123",
-      "id": 1
-    },
-    {
-      "username": "test",
-      "userEmail": "test@gmail.com",
-      "userPassword": "test@123",
-      "id": 2
-    },
-    {
-      "username": "test",
-      "userEmail": "test@gmail.com",
-      "userPassword": "test@123",
-      "id": 3
-    },
-    {
-      "username": "test",
-      "userEmail": "test@gmail.com",
-      "userPassword": "test@123",
-      "id": 4
-    },
-    {
-      "username": "udaya",
-      "userEmail": "udaya@gmail.com",
-      "userPassword": "test@123",
-      "id": 5
-    },
-    {
       "username": "udaya",
       "userEmail": "udaya@gmail.com",
       "userPassword": "udaya@123",
-      "id": 6
+      "id": 1
     }
   ]
 }

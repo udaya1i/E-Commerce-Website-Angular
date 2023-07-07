@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { UserLogin, UserSignup } from '../datatype';
 import { UserLoginService } from '../service/user-login.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-sign-up',
   templateUrl: './user-sign-up.component.html',
   styleUrls: ['./user-sign-up.component.css']
 })
 export class UserSignUpComponent implements OnInit {
-  constructor(private loginService: UserLoginService) { }
+  constructor(private loginService: UserLoginService, private router:Router) { }
   login: boolean = true;
   isCapital: boolean = false;
   signUpMessage: string = '';
@@ -15,7 +16,9 @@ export class UserSignUpComponent implements OnInit {
   errorMessage: string = '';
   fieldempityerror: boolean = false;
   username: string = '';
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+  
+  }
   gotoSignUP() {
     this.login = false;
   }
@@ -113,7 +116,11 @@ export class UserSignUpComponent implements OnInit {
     }
   }
   userLogin(data: UserLogin) {
-    this.loginService.userLogin(data);
+    if(data.userEmail && data.userPassword){
+      this.loginService.userLogin(data);
+    }else{
+      console.log("all field are mandotary");
+    }
   }
 }
 
