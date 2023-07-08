@@ -11,6 +11,7 @@ import { prodcutAdd } from '../datatype';
 export class NavBarComponent implements OnInit {
   userType: string = 'defalut';
   sellerName: string = '';
+  userLogin: string = '';
   productSearch: undefined | prodcutAdd[];
 
   constructor(private productService: ProductServiceService, private router: Router) { }
@@ -26,15 +27,23 @@ export class NavBarComponent implements OnInit {
             this.sellerName = userName.name;
           }
         }
+        else if (localStorage.getItem('user')) {
+          this.userType = 'user';
+          let userLogindata = localStorage.getItem('user');
+          console.log("hello wolrd",userLogindata);
+          
+          let userName = userLogindata && JSON.parse(userLogindata)[0];
+          this.userLogin = userName.name;
+          console.log("this is username", this.userLogin);
+          console.log("test", userName.name);
+        }
         else {
           this.userType = 'defalut';
         }
       }
     })
   }
-  logOut() {
-    localStorage.removeItem('seller')
-  }
+
   searchProduct(search: KeyboardEvent) {
     const element = search.target as HTMLInputElement;
     this.productService.searchProduct(element.value).subscribe((reslut) => {
@@ -50,5 +59,14 @@ export class NavBarComponent implements OnInit {
     if (data) {
       this.router.navigate([`search-product/${data}`]);
     }
+  }
+  logOutSeller() {
+    localStorage.removeItem('seller');
+  }
+  logOutUser() {
+    console.log("called");
+    
+    localStorage.removeItem('user')
+    this.router.navigate(['/'])
   }
 }

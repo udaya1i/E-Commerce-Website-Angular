@@ -27,7 +27,17 @@
             </li>
             <li><a routerLink="seller-product-add">Add-Product</a></li>
             <li><a routerLink="seller-home">Product List</a></li>
-            <li><a routerLink="/" (click)="logOut()">Log Out</a></li>
+            <li><a routerLink="/" (click)="logOutSeller()">Log Out</a></li>
         </ul>
+        <ul class="navigation" *ngSwitchCase="'user'">
+            <li class="sellerLogo ">
+                <img src="../../assets/sellerlogo.jpg" alt="logo" class="logoo">
+                <span> {{userLogin | uppercase}} </span>
+            </li>
+            <li><a routerLink="seller-product-add">Home</a></li>
+            <li><a routerLink="seller-home">Card()</a></li>
+            <li><a routerLink="/" (click)="logOutUser()">Log Out</a></li>
+        </ul>
+
     </div>
 </nav>
