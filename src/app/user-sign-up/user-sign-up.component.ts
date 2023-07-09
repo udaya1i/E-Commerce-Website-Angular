@@ -115,7 +115,7 @@ export class UserSignUpComponent implements OnInit {
       }, 3000);
     }
   }
-  userLogin(data: UserLogin) {
+  userLogin(data: UserSignup) {
     if(data.userEmail && data.userPassword){
       this.loginService.userLogin(data);
     }else{

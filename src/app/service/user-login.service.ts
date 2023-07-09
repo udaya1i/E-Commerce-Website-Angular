@@ -8,10 +8,8 @@ import { Router } from '@angular/router';
 export class UserLoginService {
   constructor(private http: HttpClient, private router: Router) { }
 
-  ngOnInit(){
-    if(localStorage.getItem('user')){
-        this.router.navigate(['/'])
-    }
+  ngOnInit() {
+   
   }
 
   userSignUp(data: UserSignup) {
@@ -19,15 +17,18 @@ export class UserLoginService {
   }
 
 
-  userLogin(data: UserLogin) {
-    this.http.get(`http://localhost:3000/userSign-up?email=${data.userEmail}&password=${data.userPassword}`, { observe: 'response' })
-      .subscribe((reslut) => {
-        if (reslut) {
-          localStorage.setItem('user', JSON.stringify(reslut.body))
-          this.router.navigate(['/']);
-          console.log("called");
-
-        }
-      });
+  userLogin(data: UserSignup) {
+    this.http.get(`http://localhost:3000/userSign-up?userEmail=${data.userEmail}&userPassword=${data.userPassword}`, {observe:'response'})
+    .subscribe((res:any)=>{
+      if(res && res.body.length ){
+        console.log("called");
+        
+        localStorage.setItem('user', res.body);
+        
+      } else{
+        console.log("data not found");
+        
+      }     
+    })
   }
 }
