@@ -27,16 +27,6 @@ export class NavBarComponent implements OnInit {
             this.sellerName = userName.name;
           }
         }
-        else if (localStorage.getItem('user')) {
-          this.userType = 'user';
-          let userLogindata = localStorage.getItem('user');
-          console.log("hello wolrd",userLogindata);
-          
-          let userName = userLogindata && JSON.parse(userLogindata)[0];
-          this.userLogin = userName.name;
-          console.log("this is username", this.userLogin);
-          console.log("test", userName.name);
-        }
         else {
           this.userType = 'defalut';
         }
@@ -63,10 +53,8 @@ export class NavBarComponent implements OnInit {
   logOutSeller() {
     localStorage.removeItem('seller');
   }
-  logOutUser() {
-    console.log("called");
-    
+  userLogOut(){
     localStorage.removeItem('user')
-    this.router.navigate(['/'])
   }
+
 }
