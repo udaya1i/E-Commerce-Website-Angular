@@ -14,22 +14,24 @@ export class UserLoginService {
   ngOnInit() {
    
   }
-
+  reloadUserInfo(){
+    if(localStorage.getItem('user')){
+      this.router.navigate(['/'])
+    }
+  }
   userSignUp(data: UserSignup) {
     return this.http.post(`http://localhost:3000/userSign-up`, data).subscribe();
   }
-
-
   userLogin(data: UserSignup) {
     this.http.get(`http://localhost:3000/userSign-up?userEmail=${data.userEmail}&userPassword=${data.userPassword}`, {observe:'response'})
     .subscribe((res:any)=>{
       if(res && res.body.length ){
-       localStorage.setItem('user', res.body);    
+       localStorage.setItem('user', JSON.stringify(res.body));    
         this.router.navigate(['/']);
-        this.isLoggedIn.next(true)
+        console.log("User Login Successfully");
       } else{
-        console.log("data not found");
-        this.isEmpity.next(true);
+        console.log("Incorrect Crenditial");
+        this.isEmpity.emit(true);
       }     
     })
   }

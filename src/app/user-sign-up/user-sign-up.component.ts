@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-sign-up.component.css']
 })
 export class UserSignUpComponent implements OnInit {
-  constructor(private loginService: UserLoginService, private router:Router) { }
+  constructor(private loginService: UserLoginService, private router: Router) { }
   login: boolean = true;
   isCapital: boolean = false;
   signUpMessage: string = '';
@@ -16,8 +16,8 @@ export class UserSignUpComponent implements OnInit {
   errorMessage: string = '';
   fieldempityerror: boolean = false;
   username: string = '';
-  ngOnInit(): void { 
-  
+  ngOnInit(): void {
+    this.loginService.reloadUserInfo();
   }
   gotoSignUP() {
     this.login = false;
@@ -116,10 +116,20 @@ export class UserSignUpComponent implements OnInit {
     }
   }
   userLogin(data: UserSignup) {
-    if(data.userEmail && data.userPassword){
+    if (data.userEmail && data.userPassword) {
       this.loginService.userLogin(data);
-    }else{
+      if (this.loginService.isEmpity) {
+        setTimeout(() => {
+          this.errorMessage ='';
+        }, 3000);
+        this.errorMessage = "Incorrect Credentials"
+      }
+    } else {
       console.log("all field are mandotary");
+      setTimeout(() => {
+        this.errorMessage = '';
+      }, 3000);
+      this.errorMessage = "Please enter you username and password";
     }
   }
 }

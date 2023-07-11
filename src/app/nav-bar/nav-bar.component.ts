@@ -12,6 +12,7 @@ export class NavBarComponent implements OnInit {
   userType: string = 'defalut';
   sellerName: string = '';
   userLogin: string = '';
+  UserNames: string = '';
   productSearch: undefined | prodcutAdd[];
 
   constructor(private productService: ProductServiceService, private router: Router) { }
@@ -19,6 +20,7 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((value: any) => {
       if (value.url) {
+        console.log("this is test", value.url);
         if (localStorage.getItem('seller') && value.url.includes('seller')) {
           this.userType = 'seller';
           if (localStorage.getItem('seller')) {
@@ -27,13 +29,20 @@ export class NavBarComponent implements OnInit {
             this.sellerName = userName.name;
           }
         }
+        else if (localStorage.getItem('user')) {
+          this.userType = 'user';
+          if (localStorage.getItem('user')) {
+            let LoginUserData = localStorage.getItem('user');
+            let LoginUserName = LoginUserData && JSON.parse(LoginUserData);
+            this.UserNames =  LoginUserName[0].username;
+          }
+        }
         else {
           this.userType = 'defalut';
         }
       }
     })
   }
-
   searchProduct(search: KeyboardEvent) {
     const element = search.target as HTMLInputElement;
     this.productService.searchProduct(element.value).subscribe((reslut) => {
@@ -53,8 +62,14 @@ export class NavBarComponent implements OnInit {
   logOutSeller() {
     localStorage.removeItem('seller');
   }
-  userLogOut(){
-    localStorage.removeItem('user')
+  userLogOut() {
+    localStorage.removeItem('user');
+    setTimeout(() => {
+      this.router.navigate(['/'])
+    }, 1);
+    this.router.navigate(['/user'])
+    console.log("log out");
+
   }
 
 }

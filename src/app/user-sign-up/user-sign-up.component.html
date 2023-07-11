@@ -3,11 +3,11 @@
     <div class="sub-contianer" *ngIf="login">
         <h1 class="text">Login Your User Account</h1>
         <form #UserLogin="ngForm" (ngSubmit)="userLogin(UserLogin.value)" class="common-form">
-            <span class="error"> </span>
             <!-- <span class="error">{{isEmpity}}</span> -->
             <input ngModel name="userEmail" class="form-item" type="" placeholder="Enter Your Email">
             <input ngModel name="userPassword" class="form-item" type="password" placeholder="Enter Your Password">
             <button class="form-buttom">Log-In</button>
+            <span class="error">{{errorMessage}}</span>
             <p>Don't have account? <a (click)="gotoSignUP()" >Sign-Up Here</a></p>
         </form>
     </div>
