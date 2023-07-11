@@ -37,5 +37,9 @@ export class ProductDetailsComponent implements OnInit {
 
     }
   }
+  addToCard(){
+  
+    
+  }
 
 }

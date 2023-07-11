@@ -36,6 +36,9 @@ body {
     cursor: pointer;
 
 }
+.form-buttom:disabled{
+    cursor: not-allowed;
+}
 
 /* common form style end here */
 
@@ -51,3 +54,15 @@ body {
 }
 
 /* slider end here */
+
+.common-error{
+    color: red;
+    margin-top: -10px;
+    font-size: 12px;
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: start;
+}
+UserLogin:disabled{
+    cursor: not-allowed;
+}
