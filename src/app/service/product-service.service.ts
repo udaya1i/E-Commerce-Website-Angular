@@ -34,7 +34,7 @@ export class ProductServiceService {
     return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?_limit=5`);
   }
   getTopProducts() {
-    return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?_limit=12`);
+    return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?_limit=102`);
   }
   searchProduct(search: string) {
     return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?q=${search}`)
@@ -53,5 +53,18 @@ export class ProductServiceService {
       localStorage.setItem('addToCard', JSON.stringify([newData]))
     }
     this.cardItem.emit(addMoreDataInLocalStorage)
+  }
+  addToCardWhenUserLoggedIn(){
+
+  }
+  removeFromCard(removeProductId:number){
+    let removeItemsFromCard  = localStorage.getItem('addToCard');
+    if(removeItemsFromCard){
+      let rawJson:prodcutAdd[] = JSON.parse(removeItemsFromCard);
+      let filterIt = rawJson.filter((eg:prodcutAdd) => removeProductId !== eg.id);
+      localStorage.setItem('addToCard', JSON.stringify(filterIt));
+      this.cardItem.emit(filterIt)
+    }
+
   }
 }
