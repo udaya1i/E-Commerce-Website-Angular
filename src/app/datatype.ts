@@ -16,6 +16,7 @@ export interface prodcutAdd{
     productColor: string;
     description:string;
     id:number;
+    Qty:undefined|number;
 
 }
 export interface UserSignup{

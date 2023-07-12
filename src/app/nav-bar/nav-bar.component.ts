@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductServiceService } from '../service/product-service.service';
 import { prodcutAdd } from '../datatype';
+import { ProductDetailsComponent } from '../product-details/product-details.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -14,8 +15,10 @@ export class NavBarComponent implements OnInit {
   userLogin: string = '';
   UserNames: string = '';
   productSearch: undefined | prodcutAdd[];
+  cardItems: number = 0;
 
-  constructor(private productService: ProductServiceService, private router: Router) { }
+  constructor(private productService: ProductServiceService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.router.events.subscribe((value: any) => {
@@ -34,13 +37,20 @@ export class NavBarComponent implements OnInit {
           if (localStorage.getItem('user')) {
             let LoginUserData = localStorage.getItem('user');
             let LoginUserName = LoginUserData && JSON.parse(LoginUserData);
-            this.UserNames =  LoginUserName[0].username;
+            this.UserNames = LoginUserName[0].username;
           }
         }
         else {
           this.userType = 'defalut';
         }
       }
+    });
+    let countitems = localStorage.getItem('addToCard');
+    if (countitems) {
+      this.cardItems = JSON.parse(countitems).length
+    }
+    this.productService.cardItem.subscribe((res)=>{
+        this.cardItems = res.length;      
     })
   }
   searchProduct(search: KeyboardEvent) {
@@ -69,7 +79,7 @@ export class NavBarComponent implements OnInit {
     }, 1);
     this.router.navigate(['/user'])
     console.log("log out");
-
   }
+
 
 }

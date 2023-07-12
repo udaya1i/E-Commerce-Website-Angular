@@ -17,7 +17,7 @@
             <li><a routerLink="/">Home</a></li>
             <li><a routerLink="/seller-singup-page">Seller-Login</a></li>
             <li><a routerLink="/user">User Login</a></li>
-            <li><a routerLink="/user">Card(0)</a></li>
+            <li><a routerLink="/user">Card({{cardItems}})</a></li>
         </ul>
         <ul class="navigation" *ngSwitchCase="'seller'">
             <li class="sellerLogo ">
@@ -33,7 +33,7 @@
                 <img src="../../assets/sellerlogo.jpg" alt="logo" class="logoo">
                 <span> {{UserNames | uppercase}} </span>
             </li>
-           <li><a routerLink="/user">Card(0)</a></li>
+           <li><a routerLink="/user">Card({{cardItems}})</a></li>
            <li><a (click)="userLogOut()">Logout</a></li>
         </ul>
     </div>

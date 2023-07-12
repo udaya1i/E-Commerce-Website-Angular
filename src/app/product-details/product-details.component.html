@@ -18,8 +18,11 @@
                 <button (click)="qty('add')" [ngClass]="{'bckclr': limited}">+</button>
             </div>
             <div class="btns">
-                <button class="addtocard" (click)="addToCard()">
+                <button class="addtocard" (click)="addToCard()" *ngIf="!remoteToCard">
                     Add to Card
+                </button>
+                <button class="removeToCard" (click)="addToCard()" *ngIf="remoteToCard">
+                    Remove to card
                 </button>
                 <button class="buynow">
                     Buy Now
