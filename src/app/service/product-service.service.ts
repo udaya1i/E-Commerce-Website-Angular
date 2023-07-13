@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ProductServiceService {
-  cardItem = new EventEmitter<prodcutAdd[]|[]>();
+  cardItem = new EventEmitter<prodcutAdd[] | []>();
+  dbCardItem = new EventEmitter<any>();
 
   constructor(private http: HttpClient, private rouer: Router) { }
 
@@ -24,11 +25,9 @@ export class ProductServiceService {
   updateProduct(product: prodcutAdd) {
     return this.http.put<prodcutAdd>(`http://localhost:3000/addProduct/${product.id}`, product);
   }
-
   getProductById(id: string) {
     return this.http.get<prodcutAdd>(`http://localhost:3000/addProduct/${id}`);
   }
-
   getPopularProduct() {
     return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?_limit=5`);
   }
@@ -53,14 +52,19 @@ export class ProductServiceService {
     }
     this.cardItem.emit(addMoreDataInLocalStorage)
   }
-  addToCardWhenUserLoggedIn(addToCardData:cardData){
-      return this.http.post(`http://localhost:3000/cardDataOfUser`, addToCardData);
+  addToCardWhenUserLoggedIn(addToCardData: cardData) {
+    return this.http.post(`http://localhost:3000/cardDataOfUser`, addToCardData);
   }
-  removeFromCard(removeProductId:number){
-    let removeItemsFromCard  = localStorage.getItem('addToCard');
-    if(removeItemsFromCard){
-      let rawJson:prodcutAdd[] = JSON.parse(removeItemsFromCard);
-      let filterIt = rawJson.filter((eg:prodcutAdd) => removeProductId !== eg.id);
+  getCardItem() {
+    return this.http.get(`http://localhost:3000/cardDataOfUser`).subscribe((res)=>{
+      this.dbCardItem.emit(res);
+    })
+  }
+  removeFromCard(removeProductId: number) {
+    let removeItemsFromCard = localStorage.getItem('addToCard');
+    if (removeItemsFromCard) {
+      let rawJson: prodcutAdd[] = JSON.parse(removeItemsFromCard);
+      let filterIt = rawJson.filter((eg: prodcutAdd) => removeProductId !== eg.id);
       localStorage.setItem('addToCard', JSON.stringify(filterIt));
       this.cardItem.emit(filterIt)
     }

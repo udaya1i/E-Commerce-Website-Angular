@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { UserLogin, UserSignup, cardData, prodcutAdd } from '../datatype';
 import { UserLoginService } from '../service/user-login.service';
 import { Router } from '@angular/router';
+import { ProductServiceService } from '../service/product-service.service';
 @Component({
   selector: 'app-user-sign-up',
   templateUrl: './user-sign-up.component.html',
   styleUrls: ['./user-sign-up.component.css']
 })
 export class UserSignUpComponent implements OnInit {
-  constructor(private loginService: UserLoginService, private router: Router) { }
+  constructor(private loginService: UserLoginService, private router: Router, private productService:ProductServiceService) { }
   login: boolean = true;
   isCapital: boolean = false;
   signUpMessage: string = '';
@@ -145,22 +146,32 @@ export class UserSignUpComponent implements OnInit {
       let userDatas = localStorage.getItem('user');
       let userFullInfo = userDatas && JSON.parse(userDatas);
       let userId = userFullInfo[0].id;
-      LocallyStoredCardData.forEach((cardProduct:prodcutAdd) => {
+      LocallyStoredCardData.forEach((cardProduct:prodcutAdd, cardProductLength) => {
         let pushItemsToCard: cardData={
           ...cardProduct, 
           productId: cardProduct.id,
-          userId: cardProduct.id
-
+          userId,
         }
+        delete pushItemsToCard.id;
+        setTimeout(() => {
+          this.productService.addToCardWhenUserLoggedIn(pushItemsToCard).subscribe((result)=>{
+            if(result){
+              console.log("Product Added to Card of recently logged in user");        
+            }
+            if(LocallyStoredCardData.length >= cardProductLength+1){
+              localStorage.removeItem('addToCard')
+              console.log("this is called");
+              
+            }
+          });
+         
+        }, 100);
+
+       
       });
-
-      
     }
-    let userDetailsOfLocalStorage = localStorage.getItem('user');
-    let userObject = userDetailsOfLocalStorage && JSON.parse(userDetailsOfLocalStorage);
-
-    
-    
+    // let userDetailsOfLocalStorage = localStorage.getItem('user');
+    // let userObject = userDetailsOfLocalStorage && JSON.parse(userDetailsOfLocalStorage);
   }
 }
 

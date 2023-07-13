@@ -16,6 +16,7 @@ export class NavBarComponent implements OnInit {
   UserNames: string = '';
   productSearch: undefined | prodcutAdd[];
   cardItems: number = 0;
+  dbCardItems:number = 0;
 
   constructor(private productService: ProductServiceService, private router: Router) {
   }
@@ -52,6 +53,9 @@ export class NavBarComponent implements OnInit {
     this.productService.cardItem.subscribe((res)=>{
         this.cardItems = res.length;      
     });
+    this.productService.dbCardItem.subscribe((res)=>{
+      this.dbCardItems = res.length;
+    })
   }
   searchProduct(search: KeyboardEvent) {
     const element = search.target as HTMLInputElement;
@@ -78,6 +82,5 @@ export class NavBarComponent implements OnInit {
       this.router.navigate(['/'])
     }, 1);
     this.router.navigate(['/user'])
-    // console.log("Logout Successfully");
   }
 }

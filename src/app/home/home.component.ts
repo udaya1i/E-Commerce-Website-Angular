@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   constructor(private productService: ProductServiceService) { }
 
   ngOnInit(): void {
+    this.productService.getCardItem();
     this.productService.getPopularProduct().subscribe((result)=>{
       console.log("This is the list of popular products",result);
       this.popularProduct = result;
