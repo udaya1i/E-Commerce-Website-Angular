@@ -23,7 +23,7 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((value: any) => {
       if (value.url) {
-        console.log("this is test", value.url);
+        // console.log("this is test", value.url);
         if (localStorage.getItem('seller') && value.url.includes('seller')) {
           this.userType = 'seller';
           if (localStorage.getItem('seller')) {
@@ -51,14 +51,14 @@ export class NavBarComponent implements OnInit {
     }
     this.productService.cardItem.subscribe((res)=>{
         this.cardItems = res.length;      
-    })
+    });
   }
   searchProduct(search: KeyboardEvent) {
     const element = search.target as HTMLInputElement;
     this.productService.searchProduct(element.value).subscribe((reslut) => {
       reslut.length = 4;
       this.productSearch = reslut;
-      console.log(reslut);
+      // console.log(reslut);
     });
   }
   clearData() {
@@ -78,8 +78,6 @@ export class NavBarComponent implements OnInit {
       this.router.navigate(['/'])
     }, 1);
     this.router.navigate(['/user'])
-    console.log("log out");
+    // console.log("Logout Successfully");
   }
-
-
 }

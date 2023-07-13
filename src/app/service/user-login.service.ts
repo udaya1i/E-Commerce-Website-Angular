@@ -7,15 +7,12 @@ import { Router } from '@angular/router';
 })
 export class UserLoginService {
   isEmpity = new EventEmitter<boolean>(false);
-  isLoggedIn = new EventEmitter<boolean>(false)
-
+  isLoggedIn = new EventEmitter<boolean>(false);
   constructor(private http: HttpClient, private router: Router) { }
-
   ngOnInit() {
-   
   }
-  reloadUserInfo(){
-    if(localStorage.getItem('user')){
+  reloadUserInfo() {
+    if (localStorage.getItem('user')) {
       this.router.navigate(['/'])
     }
   }
@@ -23,16 +20,17 @@ export class UserLoginService {
     return this.http.post(`http://localhost:3000/userSign-up`, data).subscribe();
   }
   userLogin(data: UserSignup) {
-    this.http.get(`http://localhost:3000/userSign-up?userEmail=${data.userEmail}&userPassword=${data.userPassword}`, {observe:'response'})
-    .subscribe((res:any)=>{
-      if(res && res.body.length ){
-       localStorage.setItem('user', JSON.stringify(res.body));    
-        this.router.navigate(['/']);
-        console.log("User Login Successfully");
-      } else{
-        console.log("Incorrect Crenditial");
-        this.isEmpity.emit(true);
-      }     
-    })
+    this.http.get(`http://localhost:3000/userSign-up?userEmail=${data.userEmail}&userPassword=${data.userPassword}`, { observe: 'response' })
+      .subscribe((res: any) => {
+        if (res && res.body.length) {
+          localStorage.setItem('user', JSON.stringify(res.body));
+          this.router.navigate(['/']);
+          console.log("User Login Successfully");
+          this.isLoggedIn.emit(true);
+        } else {
+          console.log("Incorrect Crenditial");
+          this.isEmpity.emit(true);
+        }
+      });
   }
 }

@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductServiceService } from '../service/product-service.service';
 import { cardData, prodcutAdd } from '../datatype';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -17,9 +15,7 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private activeRouter: ActivatedRoute, private service: ProductServiceService) { }
   ngOnInit(): void {
     let pid = this.activeRouter.snapshot.paramMap.get('details');
-    // console.log("the id of the product is ", pid);
     pid && this.service.getProductById(pid).subscribe((result) => {
-      // console.log(result);
       this.productDetails = result;
       let cardItem = localStorage.getItem('addToCard');
       if (pid && cardItem) {
@@ -82,7 +78,6 @@ export class ProductDetailsComponent implements OnInit {
   removeFromCard(productId: number) {
     this.removeToCard = false;
     let item = localStorage.getItem("addToCard")
-    console.log("this is item", item);
     if (item) {
       this.service.removeFromCard(productId);
     }

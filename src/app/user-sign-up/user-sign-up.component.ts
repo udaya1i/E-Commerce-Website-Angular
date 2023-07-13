@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserLogin, UserSignup } from '../datatype';
+import { UserLogin, UserSignup, cardData, prodcutAdd } from '../datatype';
 import { UserLoginService } from '../service/user-login.service';
 import { Router } from '@angular/router';
 @Component({
@@ -29,8 +29,7 @@ export class UserSignUpComponent implements OnInit {
     if (data.userEmail !== '' && data.userPassword !== '' && data.username !== '') {
       if (data.userEmail.includes('@gmail.com') ||
         data.userEmail.includes('@yahoo.com') ||
-        data.userEmail.includes('@protonmail.com')
-      ) {
+        data.userEmail.includes('@protonmail.com')) {
         if (!data.userEmail.startsWith('1' || '2' || '3' || '4' || '5' || '6' || '7' || '8' || '9' || '0')) {
           if (data.username.length >= 4) {
             if (data.userPassword.length > 6) {
@@ -117,13 +116,20 @@ export class UserSignUpComponent implements OnInit {
   }
   userLogin(data: UserSignup) {
     if (data.userEmail && data.userPassword) {
-      this.loginService.userLogin(data);
-      if (this.loginService.isEmpity) {
-        setTimeout(() => {
-          this.errorMessage ='';
-        }, 3000);
-        this.errorMessage = "Incorrect Credentials"
-      }
+      this.loginService.userLogin(data)
+      this.loginService.isLoggedIn.subscribe((res) => {
+        if (res) {
+          this.moveLocalCardDataToDB();
+        }
+      })
+      this.loginService.isEmpity.subscribe((res) => {
+        if (res) {
+          setTimeout(() => {
+            this.errorMessage = '';
+          }, 3000);
+          this.errorMessage = "Incorrect Credentials"
+        }
+      })
     } else {
       console.log("all field are mandotary");
       setTimeout(() => {
@@ -131,6 +137,30 @@ export class UserSignUpComponent implements OnInit {
       }, 3000);
       this.errorMessage = "Please enter you username and password";
     }
+  }
+  moveLocalCardDataToDB() {
+    let localCardData = localStorage.getItem('addToCard');
+    if(localCardData){
+      let LocallyStoredCardData:prodcutAdd[] = JSON.parse(localCardData)
+      let userDatas = localStorage.getItem('user');
+      let userFullInfo = userDatas && JSON.parse(userDatas);
+      let userId = userFullInfo[0].id;
+      LocallyStoredCardData.forEach((cardProduct:prodcutAdd) => {
+        let pushItemsToCard: cardData={
+          ...cardProduct, 
+          productId: cardProduct.id,
+          userId: cardProduct.id
+
+        }
+      });
+
+      
+    }
+    let userDetailsOfLocalStorage = localStorage.getItem('user');
+    let userObject = userDetailsOfLocalStorage && JSON.parse(userDetailsOfLocalStorage);
+
+    
+    
   }
 }
 
