@@ -13,6 +13,98 @@
       "userEmail": "udaya@gmail.com",
       "userPassword": "udaya@123",
       "id": 1
+    },
+    {
+      "username": "Udaya SUbedi",
+      "userEmail": "udaya.subedi111@gmail.com",
+      "userPassword": "test@123",
+      "id": 2
+    }
+  ],
+  "cardDataOfUser": [
+    {
+      "productCatagory": "Electronics",
+      "productName": "Wireless Bluetooth Headphones",
+      "productColor": "silver",
+      "productPrice": "2499",
+      "description": "High-quality wireless headphones with Bluetooth connectivity. Features noise cancellation and built-in microphone for hands-free calling. Long battery life and comfortable design.",
+      "productImage": "https://static-01.daraz.com.np/p/1e6ec7ba11c07075950ca9d98b720d17.jpg",
+      "Qty": 1,
+      "userId": 2,
+      "productId": 14,
+      "id": 1
+    },
+    {
+      "productCatagory": "Electronics",
+      "productName": "Wireless Bluetooth Headphones",
+      "productColor": "silver",
+      "productPrice": "2499",
+      "description": "High-quality wireless headphones with Bluetooth connectivity. Features noise cancellation and built-in microphone for hands-free calling. Long battery life and comfortable design.",
+      "productImage": "https://static-01.daraz.com.np/p/1e6ec7ba11c07075950ca9d98b720d17.jpg",
+      "Qty": 1,
+      "userId": 2,
+      "productId": 14,
+      "id": 2
+    },
+    {
+      "productCatagory": "Electronics",
+      "productName": "Wireless Bluetooth Headphones",
+      "productColor": "silver",
+      "productPrice": "2499",
+      "description": "High-quality wireless headphones with Bluetooth connectivity. Features noise cancellation and built-in microphone for hands-free calling. Long battery life and comfortable design.",
+      "productImage": "https://static-01.daraz.com.np/p/1e6ec7ba11c07075950ca9d98b720d17.jpg",
+      "Qty": 1,
+      "userId": 2,
+      "productId": 14,
+      "id": 3
+    },
+    {
+      "productCatagory": "Electronics",
+      "productName": "Wireless Bluetooth Headphones",
+      "productColor": "silver",
+      "productPrice": "2499",
+      "description": "High-quality wireless headphones with Bluetooth connectivity. Features noise cancellation and built-in microphone for hands-free calling. Long battery life and comfortable design.",
+      "productImage": "https://static-01.daraz.com.np/p/1e6ec7ba11c07075950ca9d98b720d17.jpg",
+      "id": 14,
+      "Qty": 1,
+      "userId": 2,
+      "productId": 14
+    },
+    {
+      "productCatagory": "Electronics",
+      "productName": "Wireless Bluetooth Headphones",
+      "productColor": "silver",
+      "productPrice": "2499",
+      "description": "High-quality wireless headphones with Bluetooth connectivity. Features noise cancellation and built-in microphone for hands-free calling. Long battery life and comfortable design.",
+      "productImage": "https://static-01.daraz.com.np/p/1e6ec7ba11c07075950ca9d98b720d17.jpg",
+      "Qty": 1,
+      "userId": 2,
+      "productId": 14,
+      "id": 15
+    },
+    {
+      "productCatagory": "Electronics",
+      "productName": "Wireless Bluetooth Headphones",
+      "productColor": "silver",
+      "productPrice": "2499",
+      "description": "High-quality wireless headphones with Bluetooth connectivity. Features noise cancellation and built-in microphone for hands-free calling. Long battery life and comfortable design.",
+      "productImage": "https://static-01.daraz.com.np/p/1e6ec7ba11c07075950ca9d98b720d17.jpg",
+      "Qty": 1,
+      "userId": 2,
+      "productId": 14,
+      "id": 16
+    },
+    {
+      "productCatagory": "Electronics",
+      "productName": "Wireless Bluetooth Headphones",
+      "productColor": "silver",
+      "productPrice": "2499",
+      "description": "High-quality wireless headphones with Bluetooth connectivity. Features noise cancellation and built-in microphone for hands-free calling. Long battery life and comfortable design.",
+      "productImage": "https://static-01.daraz.com.np/p/1e6ec7ba11c07075950ca9d98b720d17.jpg",
+      "Qty": 5,
+      "userId": 2,
+      "productId": 14,
+      "id": 17
     }
   ],
   "addProduct": [

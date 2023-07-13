@@ -28,3 +28,15 @@ export interface UserLogin{
     userEmail:string;
     userPassword:string;
 }
+export interface cardData{
+    productCatagory:string;
+    productImage:string;
+    productName:string;
+    productPrice:string;
+    productColor:string;
+    description:string;
+    id:undefined|number;
+    Qty: undefined|number;
+    productId:number;
+    userId:number
+}

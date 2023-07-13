@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductServiceService } from '../service/product-service.service';
-import { prodcutAdd } from '../datatype';
+import { cardData, prodcutAdd } from '../datatype';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -55,23 +55,36 @@ export class ProductDetailsComponent implements OnInit {
       this.removeToCard = true;
       this.productDetails.Qty = +this.count;
       if (localStorage.getItem('user')) {
-        this.productDetails.Qty = +this.count;
-        this.service.addToCardWhenUserNotLoggedIn(this.productDetails)
+        let userstrobj = localStorage.getItem('user');
+        let userobj = userstrobj && JSON.parse(userstrobj);
+        let userId = userobj[0].id;
+        let cardDetailsOfUser: cardData = {
+          ...this.productDetails,
+          userId,
+          productId: this.productDetails.id
+        }
+        delete cardDetailsOfUser.id
+        if (delete cardDetailsOfUser.id) {
+          this.service.addToCardWhenUserLoggedIn(cardDetailsOfUser).subscribe((res) => {
+            if (res) {
+              console.log("Deleted", res);
+            } else {
+              console.log("falied to delete user");
+            }
+          })
+        }
       } else {
         this.productDetails.Qty = +this.count;
         this.service.addToCardWhenUserNotLoggedIn(this.productDetails)
       }
     }
   }
-  removeFromCard(productId:number){
+  removeFromCard(productId: number) {
     this.removeToCard = false;
-  // console.log("this is producId", productId);
-  let item = localStorage.getItem("addToCard")
-  console.log("this is item", item);
-  if(item){
-  this.service.removeFromCard(productId);    
-  }
-  
-
+    let item = localStorage.getItem("addToCard")
+    console.log("this is item", item);
+    if (item) {
+      this.service.removeFromCard(productId);
+    }
   }
 }

@@ -1,8 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { prodcutAdd } from '../datatype';
+import { cardData, prodcutAdd } from '../datatype';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -54,8 +53,8 @@ export class ProductServiceService {
     }
     this.cardItem.emit(addMoreDataInLocalStorage)
   }
-  addToCardWhenUserLoggedIn(){
-
+  addToCardWhenUserLoggedIn(addToCardData:cardData){
+      return this.http.post(`http://localhost:3000/cardDataOfUser`, addToCardData);
   }
   removeFromCard(removeProductId:number){
     let removeItemsFromCard  = localStorage.getItem('addToCard');
@@ -65,6 +64,5 @@ export class ProductServiceService {
       localStorage.setItem('addToCard', JSON.stringify(filterIt));
       this.cardItem.emit(filterIt)
     }
-
   }
 }
