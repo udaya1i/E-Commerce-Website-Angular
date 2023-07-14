@@ -2,7 +2,7 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductServiceService } from '../service/product-service.service';
 import { prodcutAdd } from '../datatype';
-import { ProductDetailsComponent } from '../product-details/product-details.component';
+// import { ProductDetailsComponent } from '../product-details/product-details.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -16,7 +16,7 @@ export class NavBarComponent implements OnInit {
   UserNames: string = '';
   productSearch: undefined | prodcutAdd[];
   cardItems: number = 0;
-  dbCardItems:number = 0;
+  // dbCardItems:number = 0;
 
   constructor(private productService: ProductServiceService, private router: Router) {
   }
@@ -53,9 +53,9 @@ export class NavBarComponent implements OnInit {
     this.productService.cardItem.subscribe((res)=>{
         this.cardItems = res.length;      
     });
-    this.productService.dbCardItem.subscribe((res)=>{
-      this.dbCardItems = res.length;
-    })
+    // this.productService.dbCardItem.subscribe((res)=>{
+    //   this.dbCardItems = res.length;
+    // })
   }
   searchProduct(search: KeyboardEvent) {
     const element = search.target as HTMLInputElement;

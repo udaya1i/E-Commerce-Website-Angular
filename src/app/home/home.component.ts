@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductServiceService } from '../service/product-service.service';
 import { prodcutAdd } from '../datatype';
-import { ResourceLoader } from '@angular/compiler';
+// import { ResourceLoader } from '@angular/compiler/';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
   constructor(private productService: ProductServiceService) { }
 
   ngOnInit(): void {
-    this.productService.getCardItem();
     this.productService.getPopularProduct().subscribe((result)=>{
       console.log("This is the list of popular products",result);
       this.popularProduct = result;
@@ -25,5 +24,4 @@ export class HomeComponent implements OnInit {
       this.allProducts = products;
     })
   }
-
 }

@@ -61,7 +61,7 @@ export class SellerSignupPageComponent implements OnInit {
       setTimeout(() => {
         this.checkError = '';
       }, 5000);
-    })
+    });
   }
 }
 

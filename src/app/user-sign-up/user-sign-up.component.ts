@@ -160,18 +160,11 @@ export class UserSignUpComponent implements OnInit {
             }
             if(LocallyStoredCardData.length >= cardProductLength+1){
               localStorage.removeItem('addToCard')
-              console.log("this is called");
-              
-            }
-          });
-         
+            }});
         }, 100);
-
-       
       });
+      this.productService.getCardListOfUser(userId);
     }
-    // let userDetailsOfLocalStorage = localStorage.getItem('user');
-    // let userObject = userDetailsOfLocalStorage && JSON.parse(userDetailsOfLocalStorage);
   }
 }
 

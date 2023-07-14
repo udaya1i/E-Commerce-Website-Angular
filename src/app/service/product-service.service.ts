@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class ProductServiceService {
   cardItem = new EventEmitter<prodcutAdd[] | []>();
-  dbCardItem = new EventEmitter<any>();
+  // dbCardItem = new EventEmitter<any>();
 
   constructor(private http: HttpClient, private rouer: Router) { }
 
@@ -48,18 +48,15 @@ export class ProductServiceService {
       addMoreDataInLocalStorage.push(newData);
       localStorage.setItem('addToCard', JSON.stringify(addMoreDataInLocalStorage));
     } else {
-      localStorage.setItem('addToCard', JSON.stringify([newData]))
+      localStorage.setItem('addToCard', JSON.stringify([newData]));
+      this.cardItem.emit([newData])
     }
     this.cardItem.emit(addMoreDataInLocalStorage)
   }
   addToCardWhenUserLoggedIn(addToCardData: cardData) {
     return this.http.post(`http://localhost:3000/cardDataOfUser`, addToCardData);
   }
-  getCardItem() {
-    return this.http.get(`http://localhost:3000/cardDataOfUser`).subscribe((res)=>{
-      this.dbCardItem.emit(res);
-    })
-  }
+  
   removeFromCard(removeProductId: number) {
     let removeItemsFromCard = localStorage.getItem('addToCard');
     if (removeItemsFromCard) {
@@ -68,5 +65,15 @@ export class ProductServiceService {
       localStorage.setItem('addToCard', JSON.stringify(filterIt));
       this.cardItem.emit(filterIt)
     }
+  }
+  getCardListOfUser(userId:number){
+    this.http.get<prodcutAdd[]>(`http://localhost:3000/cardDataOfUser?userId=`+userId, {observe:'response'})
+    .subscribe((res)=>{
+      if(res && res.body){
+        this.cardItem.emit(res.body);
+      }else{
+        console.log("There is no item in card");        
+      }
+    })
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductServiceService } from '../service/product-service.service';
 import { cardData, prodcutAdd } from '../datatype';
+import { trigger } from '@angular/animations';
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -30,6 +31,27 @@ export class ProductDetailsComponent implements OnInit {
         }
       }
     });
+    let isUser = localStorage.getItem('user');
+    if(isUser){
+      let userObj = JSON.parse(isUser);
+      let userid = userObj[0].id;
+      this.service.getCardListOfUser(userid);
+      this.service.cardItem.subscribe((res)=>{
+        let cardItemss = res.filter((res:prodcutAdd)=>pid?.toString() === res?.id.toString())
+        console.log("this is item", cardItemss);
+        if(cardItemss.length && cardItemss){
+          console.log("there is a item in card");
+          this.removeToCard = true;
+        }else{
+          console.log("there is no item in card");
+          
+        }
+      })
+    }
+
+
+
+
   }
   qty(action: string) {
     if (action === 'add' && this.count <= 4) {
@@ -63,6 +85,7 @@ export class ProductDetailsComponent implements OnInit {
         if (delete cardDetailsOfUser.id) {
           this.service.addToCardWhenUserLoggedIn(cardDetailsOfUser).subscribe((res) => {
             if (res) {
+              this.service.getCardListOfUser(userId);
               console.log("Deleted", res);
             } else {
               console.log("falied to delete user");
