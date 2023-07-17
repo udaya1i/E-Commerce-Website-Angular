@@ -66,14 +66,22 @@ export class ProductServiceService {
       this.cardItem.emit(filterIt)
     }
   }
+  getCardInformation(){
+    return this.http.get<[]>(`http://localhost:3000/cardDataOfUser`);
+  }
+  removeFromUserCard(productId:number){
+    this.http.delete(`http://localhost:3000/cardDataOfUser/${productId}`);
+  }
+  
   getCardListOfUser(userId:number){
     this.http.get<prodcutAdd[]>(`http://localhost:3000/cardDataOfUser?userId=`+userId, {observe:'response'})
     .subscribe((res)=>{
       if(res && res.body){
-        this.cardItem.emit(res.body);
+        let items = res.body;
+        this.cardItem.emit(items)
       }else{
         console.log("There is no item in card");        
       }
-    })
+    });
   }
-}
+} 

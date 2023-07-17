@@ -13,8 +13,14 @@ export class ProductDetailsComponent implements OnInit {
   limited: boolean = false;
   productDetails: prodcutAdd | undefined;
   removeToCard: boolean = false;
+  productId: prodcutAdd|undefined;
   constructor(private activeRouter: ActivatedRoute, private service: ProductServiceService) { }
   ngOnInit(): void {
+    // this.service.getCardInformation().subscribe((res) => {
+    //   console.log("this is testing asdf", res);
+
+    // })
+    // this.removeFromUserCard();
     let pid = this.activeRouter.snapshot.paramMap.get('details');
     pid && this.service.getProductById(pid).subscribe((result) => {
       this.productDetails = result;
@@ -32,26 +38,24 @@ export class ProductDetailsComponent implements OnInit {
       }
     });
     let isUser = localStorage.getItem('user');
-    if(isUser){
+    if (isUser) {
       let userObj = JSON.parse(isUser);
       let userid = userObj[0].id;
       this.service.getCardListOfUser(userid);
-      this.service.cardItem.subscribe((res)=>{
-        let cardItemss = res.filter((res:prodcutAdd)=>pid?.toString() === res?.id.toString())
-        console.log("this is item", cardItemss);
-        if(cardItemss.length && cardItemss){
-          console.log("there is a item in card");
-          this.removeToCard = true;
-        }else{
-          console.log("there is no item in card");
-          
-        }
-      })
     }
-
-
-
-
+    this.service.cardItem.subscribe((res) => {
+      let cardItemss = res.filter((res: prodcutAdd) => pid?.toString() === res.id.toString())
+      if (cardItemss.length && cardItemss) {
+        this.removeToCard = true;
+        console.log("this is type 1", typeof res);
+        console.log("tyepof 2",typeof this.productId);
+        this.productId = res[0];
+        console.log("typep of 3",typeof this.productId);
+      } else {
+        this.removeToCard = false;
+      }
+    });
+    console.log("jasdjfkasdjf test test dskjfaksdf", this.productId);
   }
   qty(action: string) {
     if (action === 'add' && this.count <= 4) {
@@ -70,7 +74,6 @@ export class ProductDetailsComponent implements OnInit {
   }
   addToCard() {
     if (this.productDetails) {
-      this.removeToCard = true;
       this.productDetails.Qty = +this.count;
       if (localStorage.getItem('user')) {
         let userstrobj = localStorage.getItem('user');
@@ -81,17 +84,12 @@ export class ProductDetailsComponent implements OnInit {
           userId,
           productId: this.productDetails.id
         }
-        delete cardDetailsOfUser.id
-        if (delete cardDetailsOfUser.id) {
-          this.service.addToCardWhenUserLoggedIn(cardDetailsOfUser).subscribe((res) => {
-            if (res) {
-              this.service.getCardListOfUser(userId);
-              console.log("Deleted", res);
-            } else {
-              console.log("falied to delete user");
-            }
-          })
-        }
+        this.service.addToCardWhenUserLoggedIn(cardDetailsOfUser).subscribe((res) => {
+          if (res) {
+            this.service.getCardListOfUser(userId);
+            this.removeToCard = true;
+          }
+        });
       } else {
         this.productDetails.Qty = +this.count;
         this.service.addToCardWhenUserNotLoggedIn(this.productDetails)
@@ -99,10 +97,15 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
   removeFromCard(productId: number) {
-    this.removeToCard = false;
-    let item = localStorage.getItem("addToCard")
-    if (item) {
-      this.service.removeFromCard(productId);
+    if (localStorage.getItem('user')) {
+      this.removeToCard = false;
+      let item = localStorage.getItem("addToCard")
+      if (item) {
+        this.service.removeFromCard(productId);
+      }
+    }else{
+      console.log("test");
+      console.log("this is productId",typeof this.productId);
     }
   }
 }

@@ -82,5 +82,6 @@ export class NavBarComponent implements OnInit {
       this.router.navigate(['/'])
     }, 1);
     this.router.navigate(['/user'])
+    this.productService.cardItem.emit([]);
   }
 }
