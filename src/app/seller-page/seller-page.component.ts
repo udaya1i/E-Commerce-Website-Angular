@@ -44,10 +44,9 @@ export class SellerPageComponent implements OnInit {
       }, 3000);
 
     })
-
   }
+
   editProduct(id: number) {
-    
    }
    
   ProductList() {

@@ -56,7 +56,7 @@ export class ProductServiceService {
   addToCardWhenUserLoggedIn(addToCardData: cardData) {
     return this.http.post(`http://localhost:3000/cardDataOfUser`, addToCardData);
   }
-  
+
   removeFromCard(removeProductId: number) {
     let removeItemsFromCard = localStorage.getItem('addToCard');
     if (removeItemsFromCard) {
@@ -66,22 +66,28 @@ export class ProductServiceService {
       this.cardItem.emit(filterIt)
     }
   }
-  getCardInformation(){
+  getCardInformation() {
     return this.http.get<[]>(`http://localhost:3000/cardDataOfUser`);
   }
-  removeFromUserCard(id:any){
-  return this.http.delete(`http://localhost:3000/cardDataOfUser/${id}`);
+  removeFromUserCard(id: any) {
+    return this.http.delete(`http://localhost:3000/cardDataOfUser/${id}`);
   }
-  
-  getCardListOfUser(userId:number){
-    this.http.get<prodcutAdd[]>(`http://localhost:3000/cardDataOfUser?userId=`+userId, {observe:'response'})
-    .subscribe((res)=>{
-      if(res && res.body){
-        let items = res.body;
-        this.cardItem.emit(items)
-      }else{
-        console.log("There is no item in card");        
-      }
-    });
+  getCardInformationOfUser(id: number) {
+    return this.http.get<cardData[]>(`http://localhost:3000/cardDataOfUser?userId=${id}`);
+  }
+  getCardListOfUser(userId: number) {
+    this.http.get<prodcutAdd[]>(`http://localhost:3000/cardDataOfUser?userId=` + userId, { observe: 'response' })
+      .subscribe((res) => {
+        if (res && res.body) {
+          let items = res.body;
+          this.cardItem.emit(items)
+        } else {
+          console.log("There is no item in card");
+        }
+      });
+  }
+  deleteProductFromCard(id: number) {
+    console.log("test");
+     return this.http.delete(`http://localhost:3000/cardDataOfUser?productId=${id}`);
   }
 } 

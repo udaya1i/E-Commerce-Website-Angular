@@ -1,0 +1,44 @@
+<!-- <div class="row">
+    <div class="col-sm-6">
+        <div class="col-sm-9 sub-contianer">
+            <table>
+                <thead class="tblheader">
+                    <th>Product Image</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </thead>
+                <tbody *ngFor="let item of productDetails">
+                    <td><img src="{{item.productImage}}" alt="Image Not Found"></td>
+                    <td>{{item.productName}}</td>
+                    <td>{{item.productPrice}}</td>
+                    <td>{{item.Qty}}</td>
+                    <td><button>Remove From Card </button></td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-sm-6 description">
+        <div class="sub-description">
+            <h3>Card Products Details </h3>
+        </div>
+    </div>
+</div> -->
+
+<div class="contianer">
+    <h1>Card Page</h1>
+    <div class="row">
+        <div class="col-sm-8 productDet">
+            <ul *ngFor="let item of productDetails">
+                <img src="{{item.productImage}}" alt="Image Not Found">
+                <li><span>Name <br></span>{{item.productName}}</li>
+                <li><span>Price <br></span>{{item.productPrice}}</li>
+                <li><span>Quantity <br></span>{{item.Qty}}</li>
+                <li><button class="form-buttom" (click)="removeFromCard(item.productId)">Remove from card</button></li>
+            </ul>
+        </div>
+        <div class="col-sm-4 productSum">
+        </div>
+    </div>
+</div>

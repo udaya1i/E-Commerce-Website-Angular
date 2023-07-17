@@ -10,6 +10,7 @@ import { UpdateProductComponent } from './update-product/update-product.componen
 import { SearchProductComponent } from './search-product/search-product.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
+import { CardComponent } from './card/card.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path:'user',
     component: UserSignUpComponent
+  },
+  {
+    path:'my-card',
+    component: CardComponent
   },
   {
     path: '404',
