@@ -27,44 +27,7 @@
       "id": 3
     }
   ],
-  "cardDataOfUser": [
-    {
-      "productCatagory": "Smartphone",
-      "productName": "Samsung",
-      "productColor": "Blue",
-      "productPrice": "95000",
-      "description": "Samsung Galaxy Note 10 Plus.\n8GB RAM and 256 GB Storage",
-      "productImage": "https://i5.walmartimages.com/asr/3aeebb43-17c7-4683-8773-1dafbc4eb4dd.7b5db5f0e68361964564445542636774.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff",
-      "id": 4,
-      "Qty": 1,
-      "userId": 1,
-      "productId": 4
-    },
-    {
-      "productCatagory": "Smartphone",
-      "productName": "Redmi A7",
-      "productColor": "Black",
-      "productPrice": "19000",
-      "description": "Xiaomi Redmi A7 with 2 GB RAM and 32 GB storage",
-      "productImage": "https://www.thenextdroid.com/wp-content/uploads/2020/10/Xiaomi-Redmi-7A-780x470.jpg",
-      "id": 3,
-      "Qty": 1,
-      "userId": 1,
-      "productId": 3
-    },
-    {
-      "productCatagory": "Smartphone",
-      "productName": "Iphone",
-      "productColor": "Black",
-      "productPrice": "150000",
-      "description": "Iphone 14 Pro max with 4GB RAM and 128 GB Memory",
-      "productImage": "https://th.bing.com/th/id/R.2b2ac1bb5b369a4aea0e5dc1768f10b4?rik=uXHEZ0EPPT7U7w&pid=ImgRaw&r=0",
-      "id": 2,
-      "Qty": 1,
-      "userId": 1,
-      "productId": 2
-    }
-  ],
+  "cardDataOfUser": [],
   "addProduct": [
     {
       "productCatagory": "Smartphone",

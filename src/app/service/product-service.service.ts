@@ -69,8 +69,8 @@ export class ProductServiceService {
   getCardInformation(){
     return this.http.get<[]>(`http://localhost:3000/cardDataOfUser`);
   }
-  removeFromUserCard(productId:number){
-    this.http.delete(`http://localhost:3000/cardDataOfUser/${productId}`);
+  removeFromUserCard(id:any){
+  return this.http.delete(`http://localhost:3000/cardDataOfUser/${id}`);
   }
   
   getCardListOfUser(userId:number){

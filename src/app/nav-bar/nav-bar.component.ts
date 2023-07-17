@@ -16,6 +16,7 @@ export class NavBarComponent implements OnInit {
   UserNames: string = '';
   productSearch: undefined | prodcutAdd[];
   cardItems: number = 0;
+  userId:number = 0;
   // dbCardItems:number = 0;
 
   constructor(private productService: ProductServiceService, private router: Router) {
@@ -39,6 +40,8 @@ export class NavBarComponent implements OnInit {
             let LoginUserData = localStorage.getItem('user');
             let LoginUserName = LoginUserData && JSON.parse(LoginUserData);
             this.UserNames = LoginUserName[0].username;
+            this.userId = LoginUserName[0].id;
+            this.productService.getCardListOfUser(this.userId)
           }
         }
         else {
@@ -50,8 +53,8 @@ export class NavBarComponent implements OnInit {
     if (countitems) {
       this.cardItems = JSON.parse(countitems).length
     }
-    this.productService.cardItem.subscribe((res)=>{
-        this.cardItems = res.length;      
+    this.productService.cardItem.subscribe((res) => {
+      this.cardItems = res.length;
     });
     // this.productService.dbCardItem.subscribe((res)=>{
     //   this.dbCardItems = res.length;
