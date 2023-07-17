@@ -20,7 +20,7 @@ export class ProductDetailsComponent implements OnInit {
     //   console.log("this is testing asdf", res);
 
     // })
-    // this.removeFromUserCard();
+    // this.removeFromUserCard(); inte
     let pid = this.activeRouter.snapshot.paramMap.get('details');
     pid && this.service.getProductById(pid).subscribe((result) => {
       this.productDetails = result;
