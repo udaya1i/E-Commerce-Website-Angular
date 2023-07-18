@@ -3,6 +3,7 @@ import { ProductServiceService } from '../service/product-service.service';
 import { cardData, prodcutAdd, totalprice } from '../datatype';
 import { defaultIfEmpty } from 'rxjs';
 import * as XLSX from 'xlsx';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -20,7 +21,7 @@ export class CardComponent implements OnInit {
     delivery: 0,
     total: 0
   }
-  constructor(private service: ProductServiceService) { }
+  constructor(private service: ProductServiceService, private router:Router) { }
   ngOnInit(): void {
     let uidObj = localStorage.getItem('user');
     if (uidObj) {
@@ -90,5 +91,10 @@ export class CardComponent implements OnInit {
     console.log("tst", this.productDetails);
     
   }
+  // ordernow(){
+   // this.router.navigate('buy-product');
+  //   console.log("test");
+    
+  // }
 }
 

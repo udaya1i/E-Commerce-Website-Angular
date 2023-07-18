@@ -1,17 +1,18 @@
 <div class="container">
-    <div class="row">
-        <div class=" buyer">
-            <h3>Buyer Information</h3>
+    <div class="row sub-container">
+        <h3>Buyer Information</h3>
+        <div class="col-sm-8 buyer">
             <form #BuyerDetails="ngForm" (ngSubmit)="submitForm(BuyerDetails.value)" class="common-form">
-                <input ngModel type="text" name="name" class="form-item">
-                <input ngModel type="text" name="email" class="form-item">
-                <input  ngModel type="text" name="password" class="form-item">
+                <span>Full Name:</span> <input ngModel type="text" placeholder="Ursus Lugos" name="name" class="form-item">
+                <span>Contact Number:</span><input ngModel type="number" placeholder="+977 9800000000"
+                    name="contact" class="form-item">
+                <span>Address:</span> <input ngModel type="text" placeholder="Kalanki-2, Kathmandu" name="address"
+                    class="form-item">
                 <button class="form-buttom">submit</button>
             </form>
         </div>
-        <div class="cproduct">
-            <h3>Product Details</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem voluptate culpa fuga!</p>
+        <div class="col-sm-4">
+            <p>Total Price: <b>{{priceDetails}}</b></p>
+            <p>Payment Method: <b>Cash on Delivery</b></p>
         </div>
     </div>
-</div>

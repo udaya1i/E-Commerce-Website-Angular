@@ -1,8 +1,11 @@
-.buyer{
+
+h3 {
+    display:flex;
     justify-content: center;
-    display: flex;
+    margin-bottom: 50px;
 }
-.product{
-    justify-content: center;
-    display: flex;
+span{
+    text-align: start;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
