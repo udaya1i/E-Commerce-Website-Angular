@@ -54,7 +54,6 @@ p {
     margin-left: 10px;
     margin-right: 10px;
     display: flex;
-    justify-content: space-between;
 }
 
 .productFooter a {
@@ -65,7 +64,8 @@ p {
     text-decoration: none;
     color: blue;
     border-radius: 5px;
-
+    width: 100%;
+    text-align: center;
 }
 
 .productFooter a:hover {

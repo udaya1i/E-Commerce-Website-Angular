@@ -23,7 +23,20 @@ export class CardComponent implements OnInit {
     }
   }
   removeFromCard(productId: number) {
-    this.service.deleteProductFromCard(productId).subscribe();
-
+    if (productId) {
+      this.service.deleteProductFromCard(productId).subscribe((res) => {
+        console.log("product deleted successfully");
+        let uidObj = localStorage.getItem('user');
+        if (uidObj) {
+          let UID = JSON.parse(uidObj)
+          let userId = UID[0].id;
+          this.service.getCardInformationOfUser(userId).subscribe((res: cardData[]) => {
+            if (res) {
+              this.productDetails = res;
+            }
+          });
+        }
+      })
+    }
   }
 }

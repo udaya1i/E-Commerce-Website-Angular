@@ -8,20 +8,16 @@ import { Router } from '@angular/router';
 export class ProductServiceService {
   cardItem = new EventEmitter<prodcutAdd[] | []>();
   // dbCardItem = new EventEmitter<any>();
-
   constructor(private http: HttpClient, private rouer: Router) { }
-
   addProduct(data: prodcutAdd) {
     this.http.post('http://localhost:3000/addProduct', data).subscribe();
   }
-
   getProduct() {
     return this.http.get<prodcutAdd>('http://localhost:3000/addProduct');
   }
   deleteProduct(id: number) {
     return this.http.delete(`http://localhost:3000/addProduct/${id}`);
   }
-
   updateProduct(product: prodcutAdd) {
     return this.http.put<prodcutAdd>(`http://localhost:3000/addProduct/${product.id}`, product);
   }
@@ -56,7 +52,6 @@ export class ProductServiceService {
   addToCardWhenUserLoggedIn(addToCardData: cardData) {
     return this.http.post(`http://localhost:3000/cardDataOfUser`, addToCardData);
   }
-
   removeFromCard(removeProductId: number) {
     let removeItemsFromCard = localStorage.getItem('addToCard');
     if (removeItemsFromCard) {
@@ -87,7 +82,6 @@ export class ProductServiceService {
       });
   }
   deleteProductFromCard(id: number) {
-    console.log("test");
-     return this.http.delete(`http://localhost:3000/cardDataOfUser?productId=${id}`);
+   return this.http.delete(`http://localhost:3000/cardDataOfUser/${id}`);
   }
 } 
