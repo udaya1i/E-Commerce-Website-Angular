@@ -27,9 +27,9 @@
 </div> -->
 
 <div class="contianer">
-    <h1>Card Page</h1>
+    <h1>Your Card </h1>
     <div class="row">
-        <div class="col-sm-8 productDet">
+        <div class="col-sm-12 productDet">
             <ul *ngFor="let item of productDetails">
                 <img src="{{item.productImage}}" alt="Image Not Found">
                 <li><span>Name <br></span>{{item.productName}}</li>
@@ -38,15 +38,20 @@
                 <li><button class="form-buttom" (click)="removeFromCard(item.productId)">Remove from card</button></li>
             </ul>
         </div>
-        <div class="col-sm-4 ">
-            <h3>Summary</h3>
+        <div class="col-sm-12 productsu">
+            <h3>Total</h3>
             <ul class="productSum">
-        <li><span>Amount</span><span>{{priceDetails.price}}</span></li>
-                <li><span>Tax</span><span>{{priceDetails.tax}}</span></li>
-                <li><span>Delivery</span><span>{{priceDetails.delivery}}</span></li>
-                <li><span>Discount</span><span>{{priceDetails.discount}}</span></li>
-                <li><b><span>Total</span></b><b><span>{{priceDetails.total}}</span></b></li>
+                <li><span>Amount :</span><span>{{priceDetails.price}}</span></li>
+                <li><span>Tax(2%) :</span><span>{{priceDetails.tax}}</span></li>
+                <li><span>Delivery :</span><span>{{priceDetails.delivery}}</span></li>
+                <li><span>Discount(5%) :</span><span>{{priceDetails.discount}}</span></li>
+                <hr>
+                <li><b><span>Total :</span></b><b><span>{{priceDetails.total}}</span></b></li>
             </ul>
+        </div>
+        <div class="col-sm-12">
+            <button class="form-buttom">Order Now</button>
+            <button class="form-buttom" (click)="exprotToExcel()">Export to Excel</button>
         </div>
     </div>
 </div>

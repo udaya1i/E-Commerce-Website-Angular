@@ -74,7 +74,7 @@ img{
 .productSum{
     border: 1px solid gray;
     border-radius: 10px;
-    height: 40vh;
+    height: 45vh;
     margin: 20px;
     padding: 0;
 }
@@ -90,4 +90,9 @@ h3{
     display: flex;
     justify-content: center;
 }
-
+.productsu{
+    margin-top: 100px;
+}
+button{
+    width: 100%;
+}

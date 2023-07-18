@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductServiceService } from '../service/product-service.service';
 import { cardData, prodcutAdd, totalprice } from '../datatype';
 import { defaultIfEmpty } from 'rxjs';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-card',
@@ -10,6 +11,8 @@ import { defaultIfEmpty } from 'rxjs';
 })
 export class CardComponent implements OnInit {
   productDetails: cardData[] = [];
+  cardData:any;
+
   priceDetails: totalprice = {
     price: 0,
     tax: 0,
@@ -59,6 +62,33 @@ export class CardComponent implements OnInit {
         }
       });
     }
+  }
+  exprotToExcel(){
+    let docTitle = `MyCard.xlsx`;
+    this.cardData = [];
+    for (let i = 0; i < this.productDetails.length; i++) {
+      this.cardData.push({
+        "S.N.": i + 1,
+        "Product Name": this.productDetails[i]["productName"],
+        "Product Catagory": this.productDetails[i]["productCatagory"],
+        "Product Color":  this.productDetails[i]["productColor"],
+        "Product Image": this.productDetails[i]["productImage"],
+        "Price": this.productDetails[i]["productPrice"],
+        "User Id": this.productDetails[i]["userId"],
+        "Qty":this.productDetails[i]["Qty"]
+      });
+    }
+    
+    try {
+      const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.cardData);
+      const wb: XLSX.WorkBook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+      XLSX.writeFile(wb, docTitle);
+    } catch (err) {
+      console.error("export error", err);
+    }
+    console.log("tst", this.productDetails);
+    
   }
 }
 
