@@ -19,6 +19,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { FooterBarComponent } from './footer-bar/footer-bar.component';
 import { CardComponent } from './card/card.component';
+import { BuyProductComponent } from './buy-product/buy-product.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { CardComponent } from './card/card.component';
     UserSignUpComponent,
     FooterBarComponent,
     CardComponent,
+    BuyProductComponent,
   ],
   imports: [
     BrowserModule,

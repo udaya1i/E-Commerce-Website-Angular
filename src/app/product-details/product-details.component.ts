@@ -47,19 +47,15 @@ export class ProductDetailsComponent implements OnInit {
       let cardItemss = res.filter((res: prodcutAdd) => pid?.toString() === res.id.toString())
       if (cardItemss.length && cardItemss) {
         this.removeToCard = true;
-        // console.log("this is type 1", typeof res);
-        // console.log("tyepof 2",typeof this.productId);
         this.productId = res[0];
-        // console.log("typep of 3",typeof this.productId);
       } else {
         this.removeToCard = false;
       }
     });
-    // this.service.cardItem.subscribe();
-    // console.log("jasdjfkasdjf test test dskjfaksdf", this.productId);
+
   }
   qty(action: string) {
-    if (action === 'add' && this.count <= 4) {
+    if (action === 'add' && this.count <= 19) {
       this.count = this.count + 1;
     } else if (action === 'remove') {
       if (this.count >= 2) {
@@ -75,7 +71,6 @@ export class ProductDetailsComponent implements OnInit {
   }
   addToCard() {
     if (this.productDetails) {
-      // this.removeToCard = true;
       this.productDetails.Qty = +this.count;
       if (localStorage.getItem('user')) {
         let userstrobj = localStorage.getItem('user');

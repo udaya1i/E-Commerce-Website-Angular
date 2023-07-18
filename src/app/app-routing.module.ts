@@ -11,6 +11,7 @@ import { SearchProductComponent } from './search-product/search-product.componen
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { CardComponent } from './card/card.component';
+import { BuyProductComponent } from './buy-product/buy-product.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,10 @@ const routes: Routes = [
   {
     path:'my-card',
     component: CardComponent
+  },
+  {
+    path:'buy-product',
+    component:BuyProductComponent
   },
   {
     path: '404',

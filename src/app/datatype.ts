@@ -40,3 +40,11 @@ export interface cardData{
     productId:number;
     userId:number
 }
+export interface totalprice{
+    price:number;
+    tax:number;
+    delivery:number;
+    discount:number;
+    total:number;
+
+}
