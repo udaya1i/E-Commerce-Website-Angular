@@ -48,3 +48,12 @@ export interface totalprice{
     total:number;
 
 }
+export interface myorderdata{
+   
+    totalPrice:number;
+    userId:number;
+    address:string;
+    name:string;
+    contact:number;
+    
+}

@@ -63,7 +63,7 @@ img{
 }
 .productDet ul {
     list-style-type: none;
-    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     
 }
 .productDet ul li{

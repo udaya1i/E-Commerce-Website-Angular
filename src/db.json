@@ -15,30 +15,28 @@
       "id": 1
     }
   ],
+  "myOrder": [
+    {
+      "name": "Udayaraj Subedi",
+      "contact": 9869539233,
+      "address": "Hadigaun-3, Kathmandu",
+      "userId": 1,
+      "totalPrice": 3000,
+      "id": 2
+    }
+  ],
   "cardDataOfUser": [
     {
-      "productCatagory": "Smartphone",
-      "productName": "Redmi A7",
+      "productCatagory": "Electronic",
+      "productName": "Key Board",
       "productColor": "Black",
-      "productPrice": "19000",
-      "description": "Xiaomi Redmi A7 with 2 GB RAM and 32 GB storage",
-      "productImage": "https://www.thenextdroid.com/wp-content/uploads/2020/10/Xiaomi-Redmi-7A-780x470.jpg",
-      "id": 3,
+      "productPrice": "2990",
+      "description": "RGB Keyboard",
+      "productImage": "https://www.aliteq.com/wp-content/uploads/2021/12/Untitled-2-19.jpg",
+      "id": 8,
       "Qty": 1,
       "userId": 1,
-      "productId": 3
-    },
-    {
-      "productCatagory": "Smartphone",
-      "productName": "Iphone",
-      "productColor": "Black",
-      "productPrice": "150000",
-      "description": "Iphone 14 Pro max with 4GB RAM and 128 GB Memory",
-      "productImage": "https://th.bing.com/th/id/R.2b2ac1bb5b369a4aea0e5dc1768f10b4?rik=uXHEZ0EPPT7U7w&pid=ImgRaw&r=0",
-      "id": 2,
-      "Qty": 1,
-      "userId": 1,
-      "productId": 2
+      "productId": 8
     }
   ],
   "addProduct": [
@@ -46,7 +44,7 @@
       "productCatagory": "Smartphone",
       "productName": "Iphone",
       "productColor": "Black",
-      "productPrice": "150000",
+      "productPrice": "10000",
       "description": "Iphone 14 Pro max with 4GB RAM and 128 GB Memory",
       "productImage": "https://th.bing.com/th/id/R.2b2ac1bb5b369a4aea0e5dc1768f10b4?rik=uXHEZ0EPPT7U7w&pid=ImgRaw&r=0",
       "id": 2
