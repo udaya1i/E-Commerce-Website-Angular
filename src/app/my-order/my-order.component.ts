@@ -8,21 +8,24 @@ import { myorderdata } from '../datatype';
   styleUrls: ['./my-order.component.css']
 })
 export class MyOrderComponent implements OnInit {
-  details:myorderdata[] = [];
+  details: myorderdata[] = [];
 
-  constructor(private serivce:MyOrderService) { }
+  constructor(private serivce: MyOrderService) { }
 
   ngOnInit(): void {
-    this.serivce.getMyOrders().subscribe((res:any)=>{
+    this.serivce.getMyOrders().subscribe((res: any) => {
       this.details = res;
       console.log("this is the details ", this.details);
     });
   }
-  // cancelOrder(id:number){
-  //   this.serivce.deleteProduct(id).subscribe((res)=>{
-  //       console.log("user deleted successfully", res);
-        
-  //   });
-   
-  // }
+  cancleOrder(id: number | undefined) {
+    if (id) {
+      this.serivce.cancelOrders(id).subscribe((res) => {
+        this.serivce.getMyOrders().subscribe((res: any) => {
+          this.details = res;
+          console.log("this is the details ", this.details);
+        });
+      });
+    }
+  }
 }

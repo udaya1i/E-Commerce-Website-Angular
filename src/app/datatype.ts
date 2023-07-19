@@ -56,5 +56,6 @@ export interface myorderdata{
     name:string;
     contact:number;
     id:number | undefined;
+    productId:number;
     
 }

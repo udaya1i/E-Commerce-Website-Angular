@@ -20,12 +20,18 @@ export class MyOrderService {
   getProducts() {
     return this.http.get(`http://localhost:3000/addProduct`)
   }
-  deleteProduc(id:number){
-    return this.http.delete(`http://localhost:3000/cardDataOfUser/${id}`, {observe:'response'})
-    .subscribe((res)=>{
-      if(res){
-        this.cardItem.emit([])
-      }
-    })
+  deleteProduc(id: number) {
+    return this.http.delete(`http://localhost:3000/cardDataOfUser/${id}`, { observe: 'response' })
+      .subscribe((res) => {
+        if (res) {
+          this.cardItem.emit([])
+        }
+      })
+  }
+  getAllOrder() {
+   return this.http.get(`http://localhost:3000/myOrder`)
+  }
+  cancelOrders(id: number) {
+   return this.http.delete(`http://localhost:3000/myOrder/${id}`);
   }
 }

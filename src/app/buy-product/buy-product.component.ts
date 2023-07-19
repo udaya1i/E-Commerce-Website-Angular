@@ -4,6 +4,7 @@ import { MyOrderService } from '../service/my-order.service';
 import { cardData, myorderdata } from '../datatype';
 import { Router } from '@angular/router';
 import { filter, iif } from 'rxjs';
+import { loadTranslations } from '@angular/localize';
 @Component({
   selector: 'app-buy-product',
   templateUrl: './buy-product.component.html',
@@ -16,7 +17,7 @@ export class BuyProductComponent implements OnInit {
     private router: Router) { }
   errorMessage: string = '';
   priceDetails: number = 0;
-  proudctId: number = 0;
+  proudctId: any;
   userId: number = 0;
   cardData: cardData[] | undefined;
   ngOnInit(): void {
@@ -33,8 +34,9 @@ export class BuyProductComponent implements OnInit {
         });
       }
     });
-    this.service.getProduct().subscribe((res) => {
-    })
+    this.service.getProduct().subscribe((res)=>{
+        this.proudctId = res.id;
+    });
   }
   submitForm(data: { contact: number, name: string, address: string }) {
     let userInfoObj = localStorage.getItem('user');
@@ -45,10 +47,11 @@ export class BuyProductComponent implements OnInit {
         ...data,
         userId,
         totalPrice: this.priceDetails,
-        id: undefined
+        id: undefined,
+        productId:this.proudctId
       }
       this.cardData?.forEach((res) => {
-        console.log("teasdkfalksdjfalksdjfaklsdfasdf", res.id);
+        // console.log("teasdkfalksdjfalksdjfaklsdfasdf", res.id);
         setTimeout(() => {
           res.id && this.service.deleteProduc(res.id)
         }, 1000);
@@ -60,7 +63,7 @@ export class BuyProductComponent implements OnInit {
         let userObj = userStr && JSON.parse(userStr);
         let userId = userObj[0].id;
         this.userId = userId;
-        console.log("this is hte id of the user", userId);
+        // console.log("this is hte id of the user", userId);
       })
     } else {
       console.log("All Field are mandatory");

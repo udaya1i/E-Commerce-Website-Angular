@@ -1,48 +1,14 @@
 {
   "seller": [],
-  "userSign-up": [],
-  "myOrder": [
+  "userSign-up": [
     {
-      "name": "Udaya Subedi",
-      "contact": 9869539234,
-      "address": "Naikap-2, Kathmandu",
-      "userId": 2,
-      "totalPrice": 18530,
-      "id": 1
-    },
-    {
-      "name": "udaya iphone",
-      "contact": 12,
-      "address": "kalanki-2, kathmandu",
-      "userId": 2,
-      "totalPrice": 58300,
+      "username": "test",
+      "userEmail": "test@gmail.com",
+      "userPassword": "test@123",
       "id": 2
-    },
-    {
-      "name": "uday subedi",
-      "contact": 123,
-      "address": "asdfasdf",
-      "userId": 2,
-      "totalPrice": 77700,
-      "id": 3
-    },
-    {
-      "name": "udaya@test.com",
-      "contact": 9,
-      "address": "Hadigaun-3, Kathmandu",
-      "userId": 2,
-      "totalPrice": 0,
-      "id": 4
-    },
-    {
-      "name": "Udaya Subedi",
-      "contact": 98,
-      "address": "Naikap-2, Kathmandu",
-      "userId": 2,
-      "totalPrice": 18530,
-      "id": 5
     }
   ],
+  "myOrder": [],
   "cardDataOfUser": [],
   "addProduct": [
     {
