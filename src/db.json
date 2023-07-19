@@ -1,44 +1,49 @@
 {
-  "seller": [
-    {
-      "name": "udaya",
-      "email": "udaya@test.com",
-      "password": "udaya",
-      "id": 1
-    }
-  ],
-  "userSign-up": [
-    {
-      "username": "udaya",
-      "userEmail": "udaya@gmail.com",
-      "userPassword": "udaya@123",
-      "id": 1
-    }
-  ],
+  "seller": [],
+  "userSign-up": [],
   "myOrder": [
     {
-      "name": "Udayaraj Subedi",
-      "contact": 9869539233,
-      "address": "Hadigaun-3, Kathmandu",
-      "userId": 1,
-      "totalPrice": 3000,
-      "id": 2
-    }
-  ],
-  "cardDataOfUser": [
+      "name": "Udaya Subedi",
+      "contact": 9869539234,
+      "address": "Naikap-2, Kathmandu",
+      "userId": 2,
+      "totalPrice": 18530,
+      "id": 1
+    },
     {
-      "productCatagory": "Electronic",
-      "productName": "Key Board",
-      "productColor": "Black",
-      "productPrice": "2990",
-      "description": "RGB Keyboard",
-      "productImage": "https://www.aliteq.com/wp-content/uploads/2021/12/Untitled-2-19.jpg",
-      "id": 8,
-      "Qty": 1,
-      "userId": 1,
-      "productId": 8
+      "name": "udaya iphone",
+      "contact": 12,
+      "address": "kalanki-2, kathmandu",
+      "userId": 2,
+      "totalPrice": 58300,
+      "id": 2
+    },
+    {
+      "name": "uday subedi",
+      "contact": 123,
+      "address": "asdfasdf",
+      "userId": 2,
+      "totalPrice": 77700,
+      "id": 3
+    },
+    {
+      "name": "udaya@test.com",
+      "contact": 9,
+      "address": "Hadigaun-3, Kathmandu",
+      "userId": 2,
+      "totalPrice": 0,
+      "id": 4
+    },
+    {
+      "name": "Udaya Subedi",
+      "contact": 98,
+      "address": "Naikap-2, Kathmandu",
+      "userId": 2,
+      "totalPrice": 18530,
+      "id": 5
     }
   ],
+  "cardDataOfUser": [],
   "addProduct": [
     {
       "productCatagory": "Smartphone",

@@ -9,3 +9,18 @@ span{
     font-weight: bold;
     margin-bottom: 10px;
 }
+.buyer p{
+    color: red;
+}
+.sum {
+    color:black
+}
+.dts{
+    border: 1px solid black;
+    margin-right: 100px;
+    width: 100%;
+}
+.dss{
+    margin-right: 100px;
+    width: 100%;
+}

@@ -1,12 +1,21 @@
-
-<div class="container">
-    <h1>My Order List</h1>
-    <div class="row">
-        <div class="col-sm-8">
-            <h1>tests</h1>
-        </div>
-        <div class="col-sm-4">
-            <h1>test</h1>
-        </div>
+<div class="contianer">
+    <h1>My Orders</h1>
+    <div class="row cl">
+        <div class="col-sm-2">Order</div>
+        <div class="col-sm-2">Order Id</div>
+        <div class="col-sm-2">Price</div>
+        <div class="col-sm-2">Progress</div>
+        <div class="col-sm-2">Action</div>
+        <hr>
+    </div>
+    <div class="row details cl" *ngFor="let item of details">
+        <div class="col-sm-2 "><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHusJo4RmSHBguX7WIy8tKW3dy832U4MqGFjXCTTd_2w&s"
+                alt="Image Not Found"></div>
+        <div class="col-sm-2">{{item.id}}</div>
+        <div class="col-sm-2">{{item.totalPrice}}</div>
+        <div class="col-sm-2">In Progress</div>
+        <div class="col-sm-2"><button class="form-buttom" >Cancel order</button></div>
+        <hr>
     </div>
 </div>

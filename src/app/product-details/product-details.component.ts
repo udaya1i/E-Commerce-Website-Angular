@@ -95,7 +95,6 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
   removeFromCard(productId: number) {
-
     if (!localStorage.getItem('user')) {
       this.removeToCard = false;
       let item = localStorage.getItem("addToCard")

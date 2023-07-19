@@ -55,5 +55,6 @@ export interface myorderdata{
     address:string;
     name:string;
     contact:number;
+    id:number | undefined;
     
 }

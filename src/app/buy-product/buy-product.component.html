@@ -3,16 +3,26 @@
         <h3>Buyer Information</h3>
         <div class="col-sm-8 buyer">
             <form #BuyerDetails="ngForm" (ngSubmit)="submitForm(BuyerDetails.value)" class="common-form">
-                <span>Full Name:</span> <input ngModel type="text" placeholder="Ursus Lugos" name="name" class="form-item">
-                <span>Contact Number:</span><input ngModel type="number" placeholder="+977 9800000000"
-                    name="contact" class="form-item">
+                <span>Full Name:</span> <input ngModel type="text" placeholder="Ursus Lugos" name="name"
+                    class="form-item">
+                <span>Contact Number:</span><input ngModel type="number" placeholder="9800000000" name="contact"
+                    class="form-item">
                 <span>Address:</span> <input ngModel type="text" placeholder="Kalanki-2, Kathmandu" name="address"
                     class="form-item">
-                <button class="form-buttom">submit</button>
+                <button class="form-buttom" (click)="submit()">submit</button>
+                <p>{{errorMessage}}</p>
             </form>
         </div>
-        <div class="col-sm-4">
-            <p>Total Price: <b>{{priceDetails}}</b></p>
-            <p>Payment Method: <b>Cash on Delivery</b></p>
+        <div class="col-sm-4 ">
+            <div class="row dss ">
+                <h5>Summery:</h5>
+                <div class="col-sm-6 dts ">
+                    <p>Total Price after Tax and Discount: <b class="sum">{{priceDetails}}</b></p>
+
+                </div>
+                <div class="col-sm-6  dts">
+                    <p>Payment Method: <b class="sum">Cash on Delivery</b></p>
+                </div>
+            </div>
         </div>
     </div>

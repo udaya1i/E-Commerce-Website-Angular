@@ -24,7 +24,7 @@
                 <button class="removeToCard" *ngIf="removeToCard" (click)="removeFromCard(productDetails.id)">
                     Remove from card
                 </button>
-                <button class="buynow" routerLink="/buy-product">
+                <button class="buynow"  (click)="addToCard()" routerLink="/my-card">
                     Buy Now
                 </button>
             </div>

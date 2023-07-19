@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 export class CardComponent implements OnInit {
   productDetails: cardData[] = [];
   cardData:any;
-
   priceDetails: totalprice = {
     price: 0,
     tax: 0,
@@ -26,12 +25,12 @@ export class CardComponent implements OnInit {
     let uidObj = localStorage.getItem('user');
     if (uidObj) {
       let UID = JSON.parse(uidObj)
-      let userId = UID[0].id;
+      // let userId = UID[0].id;
       this.service.getCardInformation().subscribe((res: cardData[]) => {
         if (res) {
           this.productDetails = res;
           let price = 0 ;
-          console.log("test", res);
+          // console.log("test", res);
           res.forEach((res)=>{
             if(res.Qty){
               price = price + (+res.productPrice * + res.Qty);
@@ -58,6 +57,7 @@ export class CardComponent implements OnInit {
           this.service.getCardInformationOfUser(userId).subscribe((res: cardData[]) => {
             if (res) {
               this.productDetails = res;
+              this.router.navigate(['/product-details/productDetails.id'])
             }
           });
         }

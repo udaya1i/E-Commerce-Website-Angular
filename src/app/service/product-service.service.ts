@@ -82,6 +82,14 @@ export class ProductServiceService {
       });
   }
   deleteProductFromCard(id: number) {
-   return this.http.delete(`http://localhost:3000/cardDataOfUser/${id}`);
+    return this.http.delete(`http://localhost:3000/cardDataOfUser/${id}`);
+  }
+  deleteProduc(id: number) {
+    return this.http.delete(`http://localhost:3000/cardDataOfUser/${id}`, { observe: 'response' })
+      .subscribe((res) => {
+        if (res) {
+          this.cardItem.emit([])
+        }
+      })
   }
 } 
