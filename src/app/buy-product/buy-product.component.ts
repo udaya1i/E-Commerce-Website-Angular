@@ -5,6 +5,7 @@ import { cardData, myorderdata } from '../datatype';
 import { Router } from '@angular/router';
 import { filter, iif } from 'rxjs';
 import { loadTranslations } from '@angular/localize';
+import { AlertmessageService } from '../service/alertmessage.service';
 @Component({
   selector: 'app-buy-product',
   templateUrl: './buy-product.component.html',
@@ -14,7 +15,8 @@ export class BuyProductComponent implements OnInit {
   constructor(
     private service: ProductServiceService,
     private orderService: MyOrderService,
-    private router: Router) { }
+    private router: Router, 
+    private alertService:AlertmessageService) { }
   errorMessage: string = '';
   priceDetails: number = 0;
   proudctId: any;
@@ -51,26 +53,25 @@ export class BuyProductComponent implements OnInit {
         productId:this.proudctId
       }
       this.cardData?.forEach((res) => {
-        // console.log("teasdkfalksdjfalksdjfaklsdfasdf", res.id);
         setTimeout(() => {
           res.id && this.service.deleteProduc(res.id)
         }, 1000);
       })
       this.orderService.myOrder(orderData).subscribe((res) => {
-        window.alert("Your Order Is placed!!!");
         this.router.navigate(['my-order'])
         let userStr = localStorage.getItem('user');
         let userObj = userStr && JSON.parse(userStr);
         let userId = userObj[0].id;
         this.userId = userId;
-        // console.log("this is hte id of the user", userId);
+        this.alertService.orderPlaced();
       })
     } else {
-      console.log("All Field are mandatory");
-      setTimeout(() => {
-        this.errorMessage = '';
-      }, 3000);
-      this.errorMessage = "All Field Are Mandatory"
+      this.alertService.empityCrenditial();
+      // console.log("All Field are mandatory");
+      // setTimeout(() => {
+      //   this.errorMessage = '';
+      // }, 3000);
+      // this.errorMessage = "All Field Are Mandatory"
     }
   }
   submit() {

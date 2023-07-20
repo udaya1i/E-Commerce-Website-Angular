@@ -4,7 +4,7 @@
         <h1 class="text">Login Your User Account</h1>
         <form #UserLogin="ngForm" (ngSubmit)="userLogin(UserLogin.value)" class="common-form">
             <!-- <span class="error">{{isEmpity}}</span> -->
-            <input required #email="ngModel" email ngModel name="userEmail" class="form-item" type="" placeholder="Enter Your Email">
+            <input #email="ngModel" required  email ngModel name="userEmail" class="form-item" type="" placeholder="Enter Your Email">
             <span *ngIf="email.invalid && email.touched" class="common-error">Please Enter Your Email Address</span>
             <input #password="ngModel" required password minlength="6" ngModel name="userPassword" class="form-item" type="password" placeholder="Enter Your Password">
             <span *ngIf="password.invalid && password.touched" class="common-error">Please Enter Your Passwored</span>
@@ -21,10 +21,13 @@
         <h1 class="text" >User Registration</h1>
         <!-- <h1 class="success" *ngIf="signUp">{{signUpMessage}}</h1> -->
         <form #UserSignUp="ngForm" class="common-form" (ngSubmit)="userSignup(UserSignUp.value)">
-            <input required ngModel name="username" class="form-item" type="text" placeholder="Enter Your Name">
-            <input required ngModel name="userEmail" class="form-item" type="email" placeholder="Enter Your Email">
-            <input required ngModel name="userPassword" class="form-item" type="password"
+            <input #username = "ngModel" minlength="2" required ngModel name="username" class="form-item" type="text" placeholder="Enter Your Name">
+            <span class="common-error" *ngIf="username.invalid && username.touched">Please Enter Username</span>
+            <input #email="ngModel" minlength="12" email required ngModel name="userEmail" class="form-item" type="email" placeholder="Enter Your Email">
+            <span class="common-error" *ngIf="email.invalid && email.touched">Please Enter Your Email Address</span>
+            <input #password="ngModel" required minlength="8" ngModel name="userPassword" class="form-item" type="password"
                 placeholder="Enter Your Password">
+            <span class="common-error" *ngIf="password.invalid && password.touched">Please Enter Strong Password</span>
             <button class="form-buttom">Sign-Up</button>
             <p *ngIf="!signUp" class="errorMess">{{errorMessage}}</p>
             <p *ngIf="!signUp">Already have account? <a (click)="gotoLogin()">Login Here</a></p>

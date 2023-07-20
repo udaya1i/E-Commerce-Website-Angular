@@ -14,6 +14,7 @@ export class ProductDetailsComponent implements OnInit {
   productDetails: prodcutAdd | undefined;
   removeToCard: boolean = false;
   productId: prodcutAdd | undefined;
+  isUserLoggedIn:boolean = false;
   constructor(private activeRouter: ActivatedRoute, private service: ProductServiceService) { }
   ngOnInit(): void {
     // this.service.getCardInformation().subscribe((res) => {
@@ -39,6 +40,7 @@ export class ProductDetailsComponent implements OnInit {
     });
     let isUser = localStorage.getItem('user');
     if (isUser) {
+      this.isUserLoggedIn = true;
       let userObj = JSON.parse(isUser);
       let userid = userObj[0].id;
       this.service.getCardListOfUser(userid);

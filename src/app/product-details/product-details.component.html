@@ -24,9 +24,15 @@
                 <button class="removeToCard" *ngIf="removeToCard" (click)="removeFromCard(productDetails.id)">
                     Remove from card
                 </button>
-                <button class="buynow"  (click)="addToCard()" routerLink="/my-card">
+                <!-- <button class="buynow"  (click)="addToCard()" routerLink="/my-card">
                     Buy Now
-                </button>
+                </button> -->
+                <button class="buynow" *ngIf="isUserLoggedIn" (click)="addToCard()" [routerLink]="isUserLoggedIn ? '/my-card' : null">
+                    Buy Now
+                  </button>
+                  <button class="buynow" *ngIf="!isUserLoggedIn" routerLink="/user">
+                    Buy Now
+                  </button>
             </div>
         </div>
     </div>
