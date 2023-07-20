@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(232, 245, 245);
+    background-color: rgb(219, 245, 245);
 }
 
 .container {
@@ -30,7 +30,7 @@ body {
     border-radius: 6px;
     border: 2px solid rgb(180, 205, 241);
     margin-bottom: 20px;
-    background-color: rgb(64, 64, 243);
+    background-color: rgb(113, 113, 240);
     color: white;
     font: bold;
     cursor: pointer;

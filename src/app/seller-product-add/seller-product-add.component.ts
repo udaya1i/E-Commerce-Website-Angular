@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { prodcutAdd } from '../datatype';
-import { ServicesService } from '../service/services.service';
 import { ProductServiceService } from '../service/product-service.service';
 import { Router } from '@angular/router';
 import { AlertmessageService } from '../service/alertmessage.service';

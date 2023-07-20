@@ -13,6 +13,7 @@ import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { CardComponent } from './card/card.component';
 import { BuyProductComponent } from './buy-product/buy-product.component';
 import { MyOrderComponent } from './my-order/my-order.component';
+import { FooterBarComponent } from './footer-bar/footer-bar.component';
 
 const routes: Routes = [
   {
@@ -62,6 +63,10 @@ const routes: Routes = [
   {
     path:'my-order',
     component:MyOrderComponent
+  },
+  {
+    path:'test', 
+    component:FooterBarComponent
   },
   {
     path: '404',

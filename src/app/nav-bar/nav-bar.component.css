@@ -2,13 +2,18 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 10px;
 }
 
 .navbar .clslogo {
-    height: 80px;
-    width: 80px;
-    margin: 0px;
+    height: 50px;
+    width: 50px;
+    position: absolute;
     justify-content: center;
+    margin-top: -1%;
+    margin-left: -4%;
 }
 
 .navbar .navigation {
@@ -40,12 +45,13 @@
 .navbar .search {
     flex: 1;
     display: flex;
-    margin-top: 13px;
+    margin-top: 10px;
     margin-left: 5%;
     margin-right: 5%;
 }
 
 .navbar .search input {
+    margin-top: -1.5%;
     flex: 1;
     border-color: #053D3D;
     border: 1px solid #053D3D;
@@ -62,6 +68,8 @@
     border-color: #053D3D;
     border: 1px solid #053D3D;
     height: 35px;
+    margin-top: -1.5%;
+
     color: #053D3D;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -83,6 +91,8 @@
 .logoo {
     height: 20px;
     margin-right: 5px;
+    margin-top: -1%;
+    margin-left: -4%;
 
 }
 
@@ -90,6 +100,8 @@
     display: flex;
     align-items: center;
     margin-right: 100px;
+    margin-top: -1%;
+    margin-left: -4%;
 }
 
 .search-product {
@@ -108,8 +120,20 @@
 .search-product li{
     list-style-type: none;
     width: 200px;
+    color: white;
 }
 .search-product li a{
     cursor: pointer;
     border-radius: 10px;
+    color: white;
+}
+.bgClr{
+    /* background:rgb(127, 196, 243); */
+    margin: 0;
+    padding: 0;
+    background-color: rgb(98, 100, 150);
+  
+}
+.navigation li a {
+    color: white;
 }

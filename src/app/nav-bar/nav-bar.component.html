@@ -1,41 +1,43 @@
-<nav class="navbar">
-    <a class="navigation" href="#"><img src="../../assets/logo.jpg" alt="logo" class="clslogo"></a>
+<div class="bgClr">
+    <nav class="navbar">
+        <a class="navigation" href="#"><img src="../../assets/logo.jpg" alt="logo" class="clslogo"></a>
 
-    <div class="search" *ngIf="userType=='defalut'">
-        <input #productName type="text" (keyup)="searchProduct($event)" (blur)="clearData()"
-            placeholder="Search in Bucket-House" />
-        <button (click)="submit(productName.value)">Search</button>
-        <ul class="search-product" *ngIf="productSearch">
-            <li *ngFor="let item of productSearch">
-                <a>{{item.productName}}</a>
-            </li>
-        </ul>
-    </div>
-    <div class="" [ngSwitch]="userType">
+        <div class="search" *ngIf="userType=='defalut'">
+            <input #productName type="text" (keyup)="searchProduct($event)" (blur)="clearData()"
+                placeholder="Search in Bucket-House" />
+            <button (click)="submit(productName.value)">Search</button>
+            <ul class="search-product" *ngIf="productSearch">
+                <li *ngFor="let item of productSearch">
+                    <a>{{item.productName}}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="" [ngSwitch]="userType">
 
-        <ul class="navigation" *ngSwitchCase="'defalut'">
-            <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/seller-singup-page">Seller-Login</a></li>
-            <li><a routerLink="/user">User Login</a></li>
-            <li><a routerLink="/user">Card({{cardItems}})</a></li>
-        </ul>
-        <ul class="navigation" *ngSwitchCase="'seller'">
-            <li class="sellerLogo ">
-                <img src="../../assets/sellerlogo.jpg" alt="logo" class="logoo">
-                <span> {{sellerName | uppercase}} </span>
-            </li>
-            <li><a routerLink="seller-product-add">Add-Product</a></li>
-            <li><a routerLink="seller-home">Product List</a></li>
-            <li><a routerLink="/" (click)="logOutSeller()">Log Out</a></li>
-        </ul>
-        <ul class="navigation" *ngSwitchCase="'user'" >
-            <li class="sellerLogo ">
-                <img src="../../assets/sellerlogo.jpg" alt="logo" class="logoo">
-                <span> {{UserNames | uppercase}} </span>
-            </li>
-           <li><a routerLink="/my-card">Card({{cardItems}})</a></li>
-           <li routerLink="/my-order"><a>My Order</a></li>
-           <li><a (click)="userLogOut()">Logout</a></li>
-        </ul>
-    </div>
-</nav>
+            <ul class="navigation" *ngSwitchCase="'defalut'">
+                <li><a routerLink="/" style="color: white;">Home</a></li>
+                <li><a  style="color: white;" routerLink="/seller-singup-page">Seller-Login</a></li>
+                <li><a  style="color: white;" routerLink="/user">User Login</a></li>
+                <li><a  style="color: white;" routerLink="/user">Card({{cardItems}})</a></li>
+            </ul>
+            <ul class="navigation" *ngSwitchCase="'seller'">
+                <li class="sellerLogo ">
+                    <img src="../../assets/sellerlogo.jpg" alt="logo" class="logoo">
+                    <span style="color: white;"> {{sellerName | uppercase}} </span>
+                </li>
+                <li><a  style="color: white;" routerLink="seller-product-add">Add-Product</a></li>
+                <li><a  style="color: white;" routerLink="seller-home">Product List</a></li>
+                <li><a  style="color: white;" routerLink="/" (click)="logOutSeller()">Log Out</a></li>
+            </ul>
+            <ul class="navigation" *ngSwitchCase="'user'">
+                <li class="sellerLogo ">
+                    <img src="../../assets/sellerlogo.jpg" alt="logo" class="logoo">
+                    <span style="color: white;"> {{UserNames | uppercase}} </span>
+                </li>
+                <li><a  style="color: white;" routerLink="/my-card">Card({{cardItems}})</a></li>
+                <li routerLink="/my-order"><a style="color: white;" >My Order</a></li>
+                <li><a style="color: white;"  (click)="userLogOut()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
