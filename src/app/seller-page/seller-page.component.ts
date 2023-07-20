@@ -4,6 +4,7 @@ import { ProductServiceService } from '../service/product-service.service';
 import { prodcutAdd } from '../datatype';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { AlertmessageService } from '../service/alertmessage.service';
 
 @Component({
   selector: 'app-seller-page',
@@ -15,13 +16,11 @@ export class SellerPageComponent implements OnInit {
   productLists: prodcutAdd[] = [];
   message: string | undefined;
   editeds:boolean =  false;
-
-
-  constructor(private productListService: ProductServiceService, private router:Router) { }
+  constructor(private productListService: ProductServiceService,
+    private alertService:AlertmessageService,
+    private router:Router) { }
   deleteIcom = faTrash;
   editIcon = faEdit;
-
-
   ngOnInit(): void {
     // this.productListService.getProduct().subscribe((result) => {
     //   if (Array.isArray(result)) {
@@ -36,25 +35,22 @@ export class SellerPageComponent implements OnInit {
   deleteProduct(id: number) {
     this.productListService.deleteProduct(id).subscribe((result) => {
       if (result) {
-        this.message = "Product Deleted Successfully";
+        
+        this.alertService.deleted();
         this.ProductList();
       }
-      setTimeout(() => {
-        this.message = '';
-      }, 3000);
-
+    
     })
   }
-
   editProduct(id: number) {
    }
-   
   ProductList() {
     this.productListService.getProduct().subscribe((result) => {
       if (Array.isArray(result)) {
         this.productLists = result;
       } else {
         console.log("error");
+        
       }
     });
   }

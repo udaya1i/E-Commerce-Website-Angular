@@ -1,34 +1,23 @@
 {
-  "seller": [],
+  "seller": [
+    {
+      "name": "udaya",
+      "email": "udaya@test.com",
+      "password": "udaya@123",
+      "id": 1
+    }
+  ],
   "userSign-up": [
     {
-      "username": "test",
-      "userEmail": "test@gmail.com",
-      "userPassword": "test@123",
-      "id": 2
+      "username": "udaya",
+      "userEmail": "udaya@gmail.com",
+      "userPassword": "udaya@123",
+      "id": 1
     }
   ],
   "myOrder": [],
   "cardDataOfUser": [],
   "addProduct": [
-    {
-      "productCatagory": "Smartphone",
-      "productName": "Iphone",
-      "productColor": "Black",
-      "productPrice": "10000",
-      "description": "Iphone 14 Pro max with 4GB RAM and 128 GB Memory",
-      "productImage": "https://th.bing.com/th/id/R.2b2ac1bb5b369a4aea0e5dc1768f10b4?rik=uXHEZ0EPPT7U7w&pid=ImgRaw&r=0",
-      "id": 2
-    },
-    {
-      "productCatagory": "Smartphone",
-      "productName": "Redmi A7",
-      "productColor": "Black",
-      "productPrice": "19000",
-      "description": "Xiaomi Redmi A7 with 2 GB RAM and 32 GB storage",
-      "productImage": "https://www.thenextdroid.com/wp-content/uploads/2020/10/Xiaomi-Redmi-7A-780x470.jpg",
-      "id": 3
-    },
     {
       "productCatagory": "Smartphone",
       "productName": "Samsung",

@@ -1,14 +1,20 @@
-<div class="addProductWraper" >
+<div class="addProductWraper">
     <h1>Add New Product</h1>
-    <form  #addProduct="ngForm" class="common-form" (ngSubmit)="productAdd(addProduct.value)">
-        <input type="text" placeholder="Enter the Product Catagory" class="form-item" ngModel name="productCatagory">
-        <input type="text" placeholder="Enter Product Name" class="form-item" ngModel name="productName">
-        <input type="text" placeholder="Enter the color of Product" ngModel class="form-item"  name="productColor">
-        <input type="text" placeholder="Enter the Price of Product" class="form-item" ngModel name="productPrice">
-        <textarea type="text" maxlength="200" class="desctextarea" name="description" ngModel placeholder="Describe About Product"></textarea>
-        <input type="text" placeholder="Image Url" class="form-item" ngModel name="productImage">
-        <button   class="form-buttom">Add Product</button>
-        <p *ngIf="productAdded" style="color: rgb(41, 66, 4);">Product Add Successfully</p>
-        <p *ngIf="dataNotFound" style="color: red;" >Please Enter Full Details About Product</p>
+    <form #addProduct="ngForm" class="common-form" (ngSubmit)="productAdd(addProduct.value)">
+        <input #productCatagory="ngModel" type="text" placeholder="Enter the Product Catagory" class="form-item" ngModel
+            name="productCatagory">
+        <input #productName="ngModel" type="text" placeholder="Enter Product Name" class="form-item" ngModel
+            name="productName">
+        <input #productColor="ngModel" type="text" placeholder="Enter the color of Product" ngModel class="form-item"
+            name="productColor">
+        <input #productPrice="ngModel" type="text" placeholder="Enter the Price of Product" class="form-item" ngModel
+            name="productPrice">
+        <textarea #description="ngModel" type="text" maxlength="200" class="desctextarea" name="description" ngModel
+            placeholder="Describe About Product"></textarea>
+        <input #productImage="ngModel" type="text" placeholder="Image Url" class="form-item" ngModel
+            name="productImage">
+        <button class="form-buttom">Add Product</button>
+        <!-- <p *ngIf="productAdded" style="color: rgb(41, 66, 4);">Product Add Successfully</p>
+        <p *ngIf="dataNotFound" style="color: red;" >Please Enter Full Details About Product</p> -->
     </form>
 </div>

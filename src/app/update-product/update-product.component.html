@@ -1,6 +1,6 @@
 <div class="addProductWraper" >
     <h1>Update Product Details</h1>
-    <h2>{{updateMessage}}</h2>
+    <!-- <h2>{{updateMessage}}</h2> -->
     <form  #productEdit="ngForm" class="common-form" (ngSubmit)="updateProduct(productEdit.value)">
         <input type="text" placeholder="Enter the Product Catagory" class="form-item" ngModel="{{productDataById.productCatagory}}" name="productCatagory">
         <input type="text" placeholder="Enter Product Name" class="form-item" ngModel="{{productDataById.productName}}" name="productName">

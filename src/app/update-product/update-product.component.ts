@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { prodcutAdd } from '../datatype';
 import { ProductServiceService } from '../service/product-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AlertmessageService } from '../service/alertmessage.service';
 @Component({
   selector: 'app-update-product',
   templateUrl: './update-product.component.html',
@@ -10,7 +11,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UpdateProductComponent implements OnInit {
   productDataById: prodcutAdd | any;
   updateMessage:string='';
-  constructor(private routerService: Router, private updateService: ProductServiceService, private route: ActivatedRoute) { }
+  constructor(private routerService: Router, 
+    private updateService: ProductServiceService, 
+    private route: ActivatedRoute,
+    private alertService: AlertmessageService) { }
   ngOnInit(): void {
     let productId = this.route.snapshot.paramMap.get('id');
     productId && this.updateService.getProductById(productId).subscribe((result) => {
@@ -19,20 +23,22 @@ export class UpdateProductComponent implements OnInit {
     })
   }
   updateProduct(id: prodcutAdd) {
-    console.log("this is data",id);
+    // console.log("this is data",id);
     if(this.productDataById){
       id.id = this.productDataById.id;
     }
     this.updateService.updateProduct(id).subscribe((result)=>{
       if(result){
-        this.updateMessage = "Product Update Successfully!!"
+        // this.updateMessage = "Product Update Successfully!!"
+        this.alertService.productUpdateSuccess();
         setTimeout(() => {
           this.routerService.navigate(['seller-home']);
         }, 1000);
-        console.log("Product Updated Successfully");
+        // console.log("Product Updated Successfully");
       }
       else{
-        console.log("Product update failed!!!");
+        // console.log("Product update failed!!!");
+        this.alertService.productUpdateFailed();
         
       }
     })
