@@ -2,8 +2,10 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:8080' // This is the base URL of your JSON Server or Spring Boot backend
 };
 
 /*
