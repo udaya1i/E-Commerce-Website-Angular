@@ -14,34 +14,37 @@ export class UpdateProductComponent implements OnInit {
   constructor(private routerService: Router, 
     private updateService: ProductServiceService, 
     private route: ActivatedRoute,
-    private alertService: AlertmessageService) { }
+    private alertService: AlertmessageService,
+    private productService:ProductServiceService) { }
   ngOnInit(): void {
+    // let productId = this.route.snapshot.paramMap.get('id');
+    // productId && this.updateService.getProductById(productId).subscribe((result) => {
+    //   this.productDataById = result;
+    //   console.log(this.productDataById, result);
+    // })
     let productId = this.route.snapshot.paramMap.get('id');
-    productId && this.updateService.getProductById(productId).subscribe((result) => {
-      this.productDataById = result;
-      console.log(this.productDataById, result);
-    })
+    console.log("this is id", productId);
+    let product =  this.productService.getProductById(productId);
+    console.log("this is product", product);
+    
+    
+    
   }
-  updateProduct(id: prodcutAdd) {
-    // console.log("this is data",id);
-    if(this.productDataById){
-      id.id = this.productDataById.id;
-    }
-    this.updateService.updateProduct(id).subscribe((result)=>{
-      if(result){
-        // this.updateMessage = "Product Update Successfully!!"
-        this.alertService.productUpdateSuccess();
-        setTimeout(() => {
-          this.routerService.navigate(['seller-home']);
-        }, 1000);
-        // console.log("Product Updated Successfully");
-      }
-      else{
-        // console.log("Product update failed!!!");
-        this.alertService.productUpdateFailed();
-        
-      }
-    })
+  updateProduct(id: prodcutAdd) {``
+    // if(this.productDataById){
+    //   id.id = this.productDataById.id;
+    // }
+    // this.updateService.updateProduct(id, "test").subscribe((result)=>{
+    //   if(result){
+    //     this.alertService.productUpdateSuccess();
+    //     setTimeout(() => {
+    //       this.routerService.navigate(['seller-home']);
+    //     }, 1000);
+    //   }
+    //   else{
+    //     this.alertService.productUpdateFailed();
+    //   }
+    // })
 }
 
 }

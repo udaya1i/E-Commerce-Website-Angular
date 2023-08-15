@@ -2,6 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { cardData, prodcutAdd } from '../datatype';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,19 +11,19 @@ export class ProductServiceService {
   // dbCardItem = new EventEmitter<any>();
   constructor(private http: HttpClient, private rouer: Router) { }
   addProduct(data: prodcutAdd) {
-    this.http.post('http://localhost:3000/addProduct', data).subscribe();
+   return this.http.post(`${environment.apiUrl}/add-new-product`, data);
   }
   getProduct() {
-    return this.http.get<prodcutAdd>('http://localhost:3000/addProduct');
+    return this.http.get<prodcutAdd>(`${environment.apiUrl}/get-all-product`);
   }
   deleteProduct(id: number) {
     return this.http.delete(`http://localhost:3000/addProduct/${id}`);
   }
-  updateProduct(product: prodcutAdd) {
-    return this.http.put<prodcutAdd>(`http://localhost:3000/addProduct/${product.id}`, product);
+  updateProduct(id:any, data:any) {
+    return this.http.put<prodcutAdd>(`${environment.apiUrl}/update-product/${id}`, data);
   }
-  getProductById(id: string) {
-    return this.http.get<prodcutAdd>(`http://localhost:3000/addProduct/${id}`);
+  getProductById(id: any) {
+    return this.http.get<prodcutAdd>(`${environment.apiUrl}/get-Product-by-id/${id}`);
   }
   getPopularProduct() {
     return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?_limit=5`);

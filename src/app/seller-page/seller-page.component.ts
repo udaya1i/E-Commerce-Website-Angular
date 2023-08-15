@@ -22,15 +22,9 @@ export class SellerPageComponent implements OnInit {
   deleteIcom = faTrash;
   editIcon = faEdit;
   ngOnInit(): void {
-    // this.productListService.getProduct().subscribe((result) => {
-    //   if (Array.isArray(result)) {
-    //     this.productLists = result;
-    //     console.log("productsas", this.productLists);
-    //   } else {
-    //     console.log("error");
-    //   }
-    // });
     this.ProductList();
+    console.log("this is test");
+    
   }
   deleteProduct(id: number) {
     this.productListService.deleteProduct(id).subscribe((result) => {
@@ -39,10 +33,11 @@ export class SellerPageComponent implements OnInit {
         this.alertService.deleted();
         this.ProductList();
       }
-    
     })
   }
-  editProduct(id: number) {
+  getProductById(id: number,) {
+   let test =  this.productListService.getProductById(id);
+    
    }
   ProductList() {
     this.productListService.getProduct().subscribe((result) => {
@@ -50,7 +45,6 @@ export class SellerPageComponent implements OnInit {
         this.productLists = result;
       } else {
         console.log("error");
-        
       }
     });
   }

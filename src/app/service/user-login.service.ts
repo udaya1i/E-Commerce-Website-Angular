@@ -18,7 +18,7 @@ export class UserLoginService {
     }
   }
   userSignUp(data: UserSignup) {
-    return this.http.post(`${environment.apiUrl}/user-register`, data).subscribe();
+    return this.http.post(`${environment.apiUrl}/user-singup`, data).subscribe();
   }
   userLogin(data: UserSignup) {
     this.http.get(`http://localhost:3000/userSign-up?userEmail=${data.userEmail}&userPassword=${data.userPassword}`, { observe: 'response' })

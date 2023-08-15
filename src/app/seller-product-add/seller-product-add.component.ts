@@ -23,19 +23,14 @@ export class SellerProductAddComponent implements OnInit {
       this.productAdded = false
     if ( data.productImage.length>=1 && data.productName.length >= 1 && data.description.length >= 1 &&
       data.productPrice.length >= 1 && data.productCatagory.length >= 1 && data.productColor.length >= 1) {
-      this.service.addProduct(data);
-      // this.productAdded = true;
-      this.alertService.productAddSuccessfully();
+      this.service.addProduct(data).subscribe(res=>{
+        this.alertService.productAddSuccessfully();
+      })
       setTimeout(() => {
-        // this.productAdded = false;
         this.router.navigate(['seller-home'])
       }, 2000);
     }
     else {
-      // this.dataNotFound = true;
-      // setTimeout(() => {
-      //   this.dataNotFound = false
-      // }, 5000);
       this.alertService.empityCrenditial();
     }
 
