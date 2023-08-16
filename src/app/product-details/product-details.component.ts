@@ -17,11 +17,7 @@ export class ProductDetailsComponent implements OnInit {
   isUserLoggedIn:boolean = false;
   constructor(private activeRouter: ActivatedRoute, private service: ProductServiceService) { }
   ngOnInit(): void {
-    // this.service.getCardInformation().subscribe((res) => {
-    //   console.log("this is testing asdf", res);
-
-    // })
-    // this.removeFromUserCard(); inte
+    
     let pid = this.activeRouter.snapshot.paramMap.get('details');
     pid && this.service.getProductById(pid).subscribe((result) => {
       this.productDetails = result;
@@ -81,9 +77,8 @@ export class ProductDetailsComponent implements OnInit {
         let cardDetailsOfUser: cardData = {
           ...this.productDetails,
           userId,
-          productId: this.productDetails.id
+          productId: this.productDetails.id,
         }
-        // delete cardDetailsOfUser.id
         this.service.addToCardWhenUserLoggedIn(cardDetailsOfUser).subscribe((res) => {
           if (res) {
             this.service.getCardListOfUser(userId);

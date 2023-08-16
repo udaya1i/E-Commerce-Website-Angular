@@ -1,9 +1,9 @@
 <div class="addProductWraper">
     <h1>Add New Product</h1>
     <form #addProduct="ngForm" class="common-form" (ngSubmit)="productAdd(addProduct.value)">
-        <input #productCatagory="ngModel" required minlength="3" type="text" placeholder="Enter the Product Catagory" class="form-item" ngModel
-            name="productCatagory">
-        <span class="common-error" *ngIf="productCatagory.invalid && productCatagory.touched ">Product catagory is
+        <input #productCategory="ngModel" required minlength="3" type="text" placeholder="Enter the Product Catagory" class="form-item" ngModel
+            name="productCategory">
+        <span class="common-error" *ngIf="productCategory.invalid && productCategory.touched ">Product category is
             mandatory</span>
         <input #productName="ngModel" type="text" placeholder="Enter Product Name" class="form-item" ngModel
             name="productName">

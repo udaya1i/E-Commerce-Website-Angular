@@ -19,11 +19,15 @@ export class SellerProductAddComponent implements OnInit {
   ngOnInit(): void {
   }
   productAdd(data: prodcutAdd) {
+    console.log("called");
     this.dataNotFound = false,
       this.productAdded = false
-    if ( data.productImage.length>=1 && data.productName.length >= 1 && data.description.length >= 1 &&
-      data.productPrice.length >= 1 && data.productCatagory.length >= 1 && data.productColor.length >= 1) {
+    if ( data.productImage.length>=1 && data.productName.length >= 1 
+      && data.description.length >= 1 && data.productPrice.length >= 1 
+      && data.productCategory.length >= 1 && data.productColor.length >= 1) {
       this.service.addProduct(data).subscribe(res=>{
+        console.log("this is result");
+        
         this.alertService.productAddSuccessfully();
       })
       setTimeout(() => {
@@ -33,6 +37,5 @@ export class SellerProductAddComponent implements OnInit {
     else {
       this.alertService.empityCrenditial();
     }
-
   }
 }

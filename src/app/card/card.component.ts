@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductServiceService } from '../service/product-service.service';
-import { cardData, prodcutAdd, totalprice } from '../datatype';
-import { defaultIfEmpty } from 'rxjs';
+import { cardData,totalprice } from '../datatype';
 import * as XLSX from 'xlsx';
 import { Router } from '@angular/router';
 
@@ -25,12 +24,10 @@ export class CardComponent implements OnInit {
     let uidObj = localStorage.getItem('user');
     if (uidObj) {
       let UID = JSON.parse(uidObj)
-      // let userId = UID[0].id;
       this.service.getCardInformation().subscribe((res: cardData[]) => {
         if (res) {
           this.productDetails = res;
           let price = 0 ;
-          // console.log("test", res);
           res.forEach((res)=>{
             if(res.Qty){
               price = price + (+res.productPrice * + res.Qty);
@@ -71,7 +68,7 @@ export class CardComponent implements OnInit {
       this.cardData.push({
         "S.N.": i + 1,
         "Product Name": this.productDetails[i]["productName"],
-        "Product Catagory": this.productDetails[i]["productCatagory"],
+        "Product Catagory": this.productDetails[i]["productCategory"],
         "Product Color":  this.productDetails[i]["productColor"],
         "Product Image": this.productDetails[i]["productImage"],
         "Price": this.productDetails[i]["productPrice"],
@@ -79,7 +76,6 @@ export class CardComponent implements OnInit {
         "Qty":this.productDetails[i]["Qty"]
       });
     }
-    
     try {
       const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.cardData);
       const wb: XLSX.WorkBook = XLSX.utils.book_new();
@@ -89,12 +85,6 @@ export class CardComponent implements OnInit {
       console.error("export error", err);
     }
     console.log("tst", this.productDetails);
-    
   }
-  // ordernow(){
-   // this.router.navigate('buy-product');
-  //   console.log("test");
-    
-  // }
 }
 

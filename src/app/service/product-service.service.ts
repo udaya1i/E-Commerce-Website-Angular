@@ -8,7 +8,6 @@ import { environment } from 'src/environments/environment';
 })
 export class ProductServiceService {
   cardItem = new EventEmitter<prodcutAdd[] | []>();
-  // dbCardItem = new EventEmitter<any>();
   constructor(private http: HttpClient, private rouer: Router) { }
   addProduct(data: prodcutAdd) {
    return this.http.post(`${environment.apiUrl}/add-new-product`, data);
@@ -17,7 +16,7 @@ export class ProductServiceService {
     return this.http.get<prodcutAdd>(`${environment.apiUrl}/get-all-product`);
   }
   deleteProduct(id: number) {
-    return this.http.delete(`http://localhost:3000/addProduct/${id}`);
+    return this.http.delete(`${environment.apiUrl}/delete-product/${id}`);
   }
   updateProduct(id:any, data:any) {
     return this.http.put<prodcutAdd>(`${environment.apiUrl}/update-product/${id}`, data);
@@ -26,16 +25,16 @@ export class ProductServiceService {
     return this.http.get<prodcutAdd>(`${environment.apiUrl}/get-Product-by-id/${id}`);
   }
   getPopularProduct() {
-    return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?_limit=5`);
+    return this.http.get<prodcutAdd[]>(`${environment.apiUrl}/get-all-product`);
   }
   getTopProducts() {
-    return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?_limit=102`);
+    return this.http.get<prodcutAdd[]>(`${environment.apiUrl}/get-all-product`);
   }
   searchProduct(search: string) {
-    return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?q=${search}`)
+    return this.http.get<prodcutAdd[]>(`${environment.apiUrl}/get-product-by-name/${search}`)
   }
-  searchProductByProductName(product: string) {
-    return this.http.get<prodcutAdd[]>(`http://localhost:3000/addProduct?q=${product}`)
+  searchProductByProductName(productname: string) {
+    return this.http.get<prodcutAdd[]>(`${environment.apiUrl}/get-product-by-name/${productname}`)
   }
   addToCardWhenUserNotLoggedIn(newData: prodcutAdd) {
     let addMoreDataInLocalStorage = [];
@@ -51,7 +50,7 @@ export class ProductServiceService {
     this.cardItem.emit(addMoreDataInLocalStorage)
   }
   addToCardWhenUserLoggedIn(addToCardData: cardData) {
-    return this.http.post(`http://localhost:3000/cardDataOfUser`, addToCardData);
+    return this.http.post(`${environment.apiUrl}/post-card-data`, addToCardData);
   }
   removeFromCard(removeProductId: number) {
     let removeItemsFromCard = localStorage.getItem('addToCard');
@@ -63,7 +62,7 @@ export class ProductServiceService {
     }
   }
   getCardInformation() {
-    return this.http.get<[]>(`http://localhost:3000/cardDataOfUser`);
+    return this.http.get<[]>(`${environment.apiUrl}/get-card-data`);
   }
   removeFromUserCard(id: any) {
     return this.http.delete(`http://localhost:3000/cardDataOfUser/${id}`);

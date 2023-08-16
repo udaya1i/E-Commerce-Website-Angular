@@ -29,7 +29,6 @@ export class SellerPageComponent implements OnInit {
   deleteProduct(id: number) {
     this.productListService.deleteProduct(id).subscribe((result) => {
       if (result) {
-        
         this.alertService.deleted();
         this.ProductList();
       }

@@ -63,6 +63,8 @@ export class NavBarComponent implements OnInit {
   searchProduct(search: KeyboardEvent) {
     const element = search.target as HTMLInputElement;
     this.productService.searchProduct(element.value).subscribe((reslut) => {
+      console.log("this is test projdct list", reslut);
+      
       reslut.length = 4;
       this.productSearch = reslut;
       // console.log(reslut);

@@ -9,7 +9,7 @@ export interface SellerLogin{
 }
 
 export interface prodcutAdd{
-    productCatagory:string;
+    productCategory:string;
     productImage:string;
     productName:string;
     productPrice:string;
@@ -29,7 +29,7 @@ export interface UserLogin{
     userPassword:string;
 }
 export interface cardData{
-    productCatagory:string;
+    productCategory:string;
     productImage:string;
     productName:string;
     productPrice:string;
